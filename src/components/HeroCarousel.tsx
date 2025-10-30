@@ -72,7 +72,7 @@ export const HeroCarousel = () => {
       <div className="relative h-full flex items-center justify-center">
         {slides[currentSlide].id === 1 && (
           <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce" style={{ fontFamily: 'serif' }}>
+            <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce">
               {slides[currentSlide].title}
             </h1>
             <p className="text-3xl md:text-5xl text-accent-foreground font-light font-gabarito">
