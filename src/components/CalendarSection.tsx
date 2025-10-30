@@ -12,7 +12,7 @@ const attractions = [
     name: "Espetáculo de Luzes",
     date: "05/12",
     time: "19h",
-    type: "show",
+    type: "musica",
     description: "Um espetáculo mágico de luzes que ilumina toda a rua.",
     image: null,
     accessibility: "Acessível para todos",
@@ -139,11 +139,11 @@ export const CalendarSection = () => {
         {/* Attractions grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {filteredAttractions.map((attraction) => {
-            const Icon = languageIcons[attraction.type as keyof typeof languageIcons];
+            const Icon = languageIcons[attraction.type as keyof typeof languageIcons] || Music;
             return (
               <Card key={attraction.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <Icon className="w-20 h-20 text-primary" />
+                  {Icon && <Icon className="w-20 h-20 text-primary" />}
                 </div>
                 <CardHeader>
                   <div className="flex items-start justify-between gap-2 mb-2">
