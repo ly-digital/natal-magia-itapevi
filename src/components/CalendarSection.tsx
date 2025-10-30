@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -141,26 +142,28 @@ export const CalendarSection = () => {
           {filteredAttractions.map((attraction) => {
             const Icon = languageIcons[attraction.type as keyof typeof languageIcons] || Music;
             return (
-              <Card key={attraction.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  {Icon && <Icon className="w-20 h-20 text-primary" />}
-                </div>
-                <CardHeader>
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <CardTitle className="text-xl">{attraction.name}</CardTitle>
-                    <Badge className={languageColors[attraction.type as keyof typeof languageColors]}>
-                      {types.find((t) => t.id === attraction.type)?.label}
-                    </Badge>
+              <Link key={attraction.id} to={`/evento/${attraction.id}`}>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
+                  <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                    {Icon && <Icon className="w-20 h-20 text-primary" />}
                   </div>
-                  <CardDescription>
-                    {attraction.date} às {attraction.time}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-3">{attraction.description}</p>
-                  <p className="text-xs text-primary font-medium">{attraction.accessibility}</p>
-                </CardContent>
-              </Card>
+                  <CardHeader>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <CardTitle className="text-xl">{attraction.name}</CardTitle>
+                      <Badge className={languageColors[attraction.type as keyof typeof languageColors]}>
+                        {types.find((t) => t.id === attraction.type)?.label}
+                      </Badge>
+                    </div>
+                    <CardDescription>
+                      {attraction.date} às {attraction.time}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-3">{attraction.description}</p>
+                    <p className="text-xs text-primary font-medium">{attraction.accessibility}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>
