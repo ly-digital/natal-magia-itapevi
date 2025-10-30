@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/rua-de-natal-logo.png";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,23 +33,48 @@ export const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <img src={logo} alt="Rua de Natal Itapevi" className="h-12 md:h-16" />
+        <Link to="/" className="cursor-pointer">
+          <img src={logo} alt="Rua de Natal Itapevi" className="h-12 md:h-16" />
+        </Link>
         
         <div className="flex items-center gap-6">
-          <Button
-            variant="ghost"
-            onClick={() => scrollToSection("sobre")}
-            className="text-primary-foreground hover:text-accent font-semibold transition-colors"
-          >
-            Sobre
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => scrollToSection("calendario")}
-            className="text-primary-foreground hover:text-accent font-semibold transition-colors"
-          >
-            Calendário
-          </Button>
+          {isHomePage ? (
+            <>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("sobre")}
+                className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+              >
+                Sobre
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("calendario")}
+                className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+              >
+                Calendário
+              </Button>
+            </>
+          ) : (
+            <>
+              <Link to="/#sobre">
+                <Button
+                  variant="ghost"
+                  className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+                >
+                  Sobre
+                </Button>
+              </Link>
+              <Link to="/#calendario">
+                <Button
+                  variant="ghost"
+                  className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+                >
+                  Calendário
+                </Button>
+              </Link>
+            </>
+          )}
           <a
             href="https://instagram.com"
             target="_blank"
