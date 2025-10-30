@@ -1,7 +1,11 @@
 export const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 px-4 bg-background">
-      <div className="container mx-auto max-w-4xl">
+    <section id="sobre" className="py-20 px-4 bg-background relative overflow-hidden">
+      {/* Decorative corner elements */}
+      <div className="absolute top-10 left-10 w-24 h-24 border-l-4 border-t-4 border-primary opacity-20 rounded-tl-3xl" />
+      <div className="absolute bottom-10 right-10 w-24 h-24 border-r-4 border-b-4 border-primary opacity-20 rounded-br-3xl" />
+      
+      <div className="container mx-auto max-w-4xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-effloresce">
           Sobre o Evento
         </h2>

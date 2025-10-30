@@ -40,12 +40,12 @@ const languageIcons = {
 };
 
 const languageColors = {
-  musica: "bg-secondary",
-  teatro: "bg-accent",
-  danca: "bg-primary",
-  circo: "bg-muted",
-  papainoel: "bg-accent",
-  paradinha: "bg-secondary",
+  musica: "bg-secondary text-white",
+  teatro: "bg-accent text-foreground",
+  danca: "bg-primary text-primary-foreground",
+  circo: "bg-muted text-foreground",
+  papainoel: "bg-accent text-foreground",
+  paradinha: "bg-secondary text-white",
 };
 
 export const CalendarSection = () => {

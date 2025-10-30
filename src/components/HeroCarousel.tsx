@@ -50,9 +50,9 @@ export const HeroCarousel = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        {[...Array(20)].map((_, i) => (
+      {/* Decorative snowflakes */}
+      <div className="absolute inset-0 opacity-20">
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="absolute text-accent animate-snow-fall"
@@ -71,55 +71,55 @@ export const HeroCarousel = () => {
       {/* Slides */}
       <div className="relative h-full flex items-center justify-center">
         {slides[currentSlide].id === 1 && (
-          <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce">
+          <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
+            <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce drop-shadow-2xl">
               {slides[currentSlide].title}
             </h1>
-            <p className="text-3xl md:text-5xl text-accent-foreground font-light font-gabarito">
+            <p className="text-3xl md:text-5xl text-primary-foreground font-light font-gabarito">
               {slides[currentSlide].subtitle}
             </p>
-            <p className="text-2xl md:text-4xl text-accent font-semibold font-gabarito">
+            <p className="text-2xl md:text-4xl text-accent font-semibold font-gabarito drop-shadow-lg">
               {slides[currentSlide].date}
             </p>
             <div className="space-y-3 text-xl md:text-2xl">
               {slides[currentSlide].highlights?.map((item, idx) => (
-                <p key={idx} className="text-accent-foreground font-medium font-gabarito">
+                <p key={idx} className="text-primary-foreground font-medium font-gabarito">
                   {item}
                 </p>
               ))}
             </div>
-            <p className="text-lg md:text-xl text-accent-foreground mt-8 font-gabarito">
+            <p className="text-lg md:text-xl text-primary-foreground mt-8 font-gabarito">
               {slides[currentSlide].info}
             </p>
           </div>
         )}
 
         {slides[currentSlide].id === 2 && (
-          <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce">
+          <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
+            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce drop-shadow-2xl">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-2xl md:text-3xl text-accent-foreground font-gabarito">
+            <p className="text-2xl md:text-3xl text-primary-foreground font-gabarito">
               {slides[currentSlide].dates}
             </p>
-            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito">
+            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito drop-shadow-lg">
               {slides[currentSlide].time}
             </p>
           </div>
         )}
 
         {slides[currentSlide].id === 3 && (
-          <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce">
+          <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
+            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce drop-shadow-2xl">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-2xl md:text-3xl text-accent-foreground font-gabarito">
+            <p className="text-2xl md:text-3xl text-primary-foreground font-gabarito">
               {slides[currentSlide].dates}
             </p>
-            <p className="text-xl md:text-2xl text-accent-foreground font-gabarito">
+            <p className="text-xl md:text-2xl text-primary-foreground font-gabarito">
               {slides[currentSlide].location}
             </p>
-            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito">
+            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito drop-shadow-lg">
               {slides[currentSlide].time}
             </p>
           </div>
@@ -131,7 +131,7 @@ export const HeroCarousel = () => {
         variant="ghost"
         size="icon"
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-accent-foreground hover:text-accent hover:bg-accent/20"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-foreground hover:text-accent hover:bg-primary-foreground/20"
       >
         <ChevronLeft className="w-8 h-8" />
       </Button>
@@ -139,7 +139,7 @@ export const HeroCarousel = () => {
         variant="ghost"
         size="icon"
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-accent-foreground hover:text-accent hover:bg-accent/20"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-primary-foreground hover:text-accent hover:bg-primary-foreground/20"
       >
         <ChevronRight className="w-8 h-8" />
       </Button>
@@ -153,7 +153,7 @@ export const HeroCarousel = () => {
             className={`w-3 h-3 rounded-full transition-all ${
               idx === currentSlide
                 ? "bg-accent w-8"
-                : "bg-accent-foreground/50 hover:bg-accent-foreground"
+                : "bg-primary-foreground/50 hover:bg-primary-foreground"
             }`}
           />
         ))}

@@ -26,7 +26,7 @@ export const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-primary/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          : "bg-primary/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -36,14 +36,14 @@ export const Navigation = () => {
           <Button
             variant="ghost"
             onClick={() => scrollToSection("sobre")}
-            className="text-accent-foreground hover:text-accent font-semibold"
+            className="text-primary-foreground hover:text-accent font-semibold transition-colors"
           >
             Sobre
           </Button>
           <Button
             variant="ghost"
             onClick={() => scrollToSection("calendario")}
-            className="text-accent-foreground hover:text-accent font-semibold"
+            className="text-primary-foreground hover:text-accent font-semibold transition-colors"
           >
             Calendário
           </Button>
@@ -51,7 +51,7 @@ export const Navigation = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent-foreground hover:text-accent transition-colors"
+            className="text-primary-foreground hover:text-accent transition-colors"
           >
             <Instagram className="w-6 h-6" />
           </a>

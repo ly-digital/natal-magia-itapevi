@@ -17,49 +17,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 25 20% 97%;
-    --foreground: 348 75% 15%;
+    --background: 30 11% 92%;
+    --foreground: 3 67% 29%;
 
     --card: 0 0% 100%;
-    --card-foreground: 348 75% 15%;
+    --card-foreground: 3 67% 29%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 348 75% 15%;
+    --popover-foreground: 3 67% 29%;
 
-    --primary: 348 75% 32%;
-    --primary-foreground: 43 100% 95%;
+    --primary: 160 100% 19%;
+    --primary-foreground: 45 95% 63%;
 
-    --secondary: 150 55% 25%;
-    --secondary-foreground: 43 100% 95%;
+    --secondary: 8 66% 48%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 25 15% 90%;
-    --muted-foreground: 348 20% 45%;
+    --muted: 30 11% 92%;
+    --muted-foreground: 160 50% 30%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 348 75% 15%;
+    --accent: 45 95% 63%;
+    --accent-foreground: 3 67% 29%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 348 20% 85%;
-    --input: 348 20% 90%;
-    --ring: 43 74% 49%;
+    --border: 30 11% 85%;
+    --input: 30 11% 90%;
+    --ring: 45 95% 63%;
 
     --radius: 0.75rem;
     
-    /* Christmas theme colors */
-    --christmas-red: 348 75% 32%;
-    --christmas-green: 150 55% 25%;
-    --christmas-gold: 43 74% 49%;
-    --christmas-cream: 25 20% 97%;
+    /* Christmas theme colors - Official Brand Guide */
+    --christmas-green: 160 100% 19%;        /* #006345 */
+    --christmas-green-dark: 160 100% 14%;   /* #004731 */
+    --christmas-red: 8 66% 48%;             /* #cb3e29 */
+    --christmas-burgundy: 3 67% 29%;        /* #7a1c18 */
+    --christmas-gold: 45 95% 63%;           /* #fbc942 */
+    --christmas-bronze: 37 56% 40%;         /* #9c6d2c */
+    --christmas-cream: 30 11% 92%;          /* #ecebe9 */
     
     /* Gradients */
-    --gradient-festive: linear-gradient(135deg, hsl(348 75% 32%), hsl(348 75% 42%));
-    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 84% 59%));
+    --gradient-festive: linear-gradient(135deg, hsl(160 100% 19%), hsl(8 66% 48%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 63%), hsl(37 56% 40%));
+    --gradient-green: linear-gradient(135deg, hsl(160 100% 19%), hsl(160 100% 14%));
     
     /* Shadows */
-    --shadow-festive: 0 10px 40px -10px hsl(348 75% 32% / 0.4);
-    --shadow-gold: 0 4px 20px hsl(43 74% 49% / 0.3);
+    --shadow-festive: 0 10px 40px -10px hsl(160 100% 19% / 0.4);
+    --shadow-gold: 0 4px 20px hsl(45 95% 63% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -83,33 +87,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 348 75% 8%;
-    --foreground: 43 100% 95%;
+    --background: 160 100% 14%;
+    --foreground: 30 11% 92%;
 
-    --card: 348 75% 12%;
-    --card-foreground: 43 100% 95%;
+    --card: 160 100% 19%;
+    --card-foreground: 30 11% 92%;
 
-    --popover: 348 75% 12%;
-    --popover-foreground: 43 100% 95%;
+    --popover: 160 100% 19%;
+    --popover-foreground: 30 11% 92%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 348 75% 15%;
+    --primary: 45 95% 63%;
+    --primary-foreground: 3 67% 29%;
 
-    --secondary: 150 55% 25%;
-    --secondary-foreground: 43 100% 95%;
+    --secondary: 8 66% 48%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 348 50% 15%;
-    --muted-foreground: 25 20% 70%;
+    --muted: 160 50% 20%;
+    --muted-foreground: 30 11% 75%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 348 75% 15%;
+    --accent: 45 95% 63%;
+    --accent-foreground: 3 67% 29%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 348 50% 20%;
-    --input: 348 50% 20%;
-    --ring: 43 74% 49%;
+    --border: 160 50% 25%;
+    --input: 160 50% 25%;
+    --ring: 45 95% 63%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
