@@ -72,23 +72,23 @@ export const HeroCarousel = () => {
       <div className="relative h-full flex items-center justify-center">
         {slides[currentSlide].id === 1 && (
           <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h1 className="text-6xl md:text-8xl font-bold text-accent" style={{ fontFamily: 'serif' }}>
+            <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce" style={{ fontFamily: 'serif' }}>
               {slides[currentSlide].title}
             </h1>
-            <p className="text-3xl md:text-5xl text-accent-foreground font-light">
+            <p className="text-3xl md:text-5xl text-accent-foreground font-light font-gabarito">
               {slides[currentSlide].subtitle}
             </p>
-            <p className="text-2xl md:text-4xl text-accent font-semibold">
+            <p className="text-2xl md:text-4xl text-accent font-semibold font-gabarito">
               {slides[currentSlide].date}
             </p>
             <div className="space-y-3 text-xl md:text-2xl">
               {slides[currentSlide].highlights?.map((item, idx) => (
-                <p key={idx} className="text-accent-foreground font-medium">
+                <p key={idx} className="text-accent-foreground font-medium font-gabarito">
                   {item}
                 </p>
               ))}
             </div>
-            <p className="text-lg md:text-xl text-accent-foreground mt-8">
+            <p className="text-lg md:text-xl text-accent-foreground mt-8 font-gabarito">
               {slides[currentSlide].info}
             </p>
           </div>
@@ -96,13 +96,13 @@ export const HeroCarousel = () => {
 
         {slides[currentSlide].id === 2 && (
           <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h2 className="text-5xl md:text-7xl font-bold text-accent">
+            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-2xl md:text-3xl text-accent-foreground">
+            <p className="text-2xl md:text-3xl text-accent-foreground font-gabarito">
               {slides[currentSlide].dates}
             </p>
-            <p className="text-3xl md:text-4xl text-accent font-semibold">
+            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito">
               {slides[currentSlide].time}
             </p>
           </div>
@@ -110,16 +110,16 @@ export const HeroCarousel = () => {
 
         {slides[currentSlide].id === 3 && (
           <div className="text-center text-accent-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h2 className="text-5xl md:text-7xl font-bold text-accent">
+            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-2xl md:text-3xl text-accent-foreground">
+            <p className="text-2xl md:text-3xl text-accent-foreground font-gabarito">
               {slides[currentSlide].dates}
             </p>
-            <p className="text-xl md:text-2xl text-accent-foreground">
+            <p className="text-xl md:text-2xl text-accent-foreground font-gabarito">
               {slides[currentSlide].location}
             </p>
-            <p className="text-3xl md:text-4xl text-accent font-semibold">
+            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito">
               {slides[currentSlide].time}
             </p>
           </div>
