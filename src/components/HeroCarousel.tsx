@@ -6,27 +6,12 @@ const slides = [
   {
     id: 1,
     title: "Rua de Natal",
-    subtitle: "Itapevi",
-    date: "5 a 23 de Dezembro",
-    highlights: [
-      "+ de 50 atrações",
-      "Música • Teatro",
-      "Dança • Circo",
-    ],
-    info: "Espetáculo de luzes todos os dias às 19h",
+    subtitle: "ITAPEVI",
   },
   {
     id: 2,
-    title: "Visite o Papai Noel",
-    dates: "Dias 05, 06, 07, 12, 13, 14, 19, 20, 21, 22, 23",
-    time: "a partir das 19h",
-  },
-  {
-    id: 3,
-    title: "Paradinha de Natal",
-    dates: "Dias 05, 07, 12, 13, 14, 19, 20, 21, 22, 23",
-    location: "Saída da Praça 18 de Fevereiro",
-    time: "às 18h",
+    title: "Paradinha",
+    subtitle: "DE NATAL",
   },
 ];
 
@@ -49,81 +34,42 @@ export const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 px-4">
-      {/* Decorative snowflakes */}
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-accent animate-snow-fall"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 10}s`,
-              animationDuration: `${10 + Math.random() * 10}s`,
-              fontSize: `${10 + Math.random() * 20}px`,
-            }}
-          >
-            ❄
-          </div>
-        ))}
+    <div className="relative min-h-screen w-full overflow-hidden bg-black flex items-center justify-center">
+      {/* Decorative elements - Crescent moon on left */}
+      <div className="absolute left-[5%] md:left-[10%] top-[15%] md:top-[20%] w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 opacity-40 z-0">
+        <svg viewBox="0 0 100 100" className="w-full h-full">
+          <path
+            d="M 30 10 A 40 40 0 1 0 30 90 A 35 35 0 1 1 30 10"
+            fill="#FDB913"
+          />
+        </svg>
+      </div>
+      
+      {/* Decorative stars on right */}
+      <div className="absolute right-[5%] md:right-[15%] top-[20%] w-12 h-12 md:w-16 md:h-16 opacity-50 z-0">
+        <svg viewBox="0 0 51 48" className="w-full h-full fill-accent">
+          <path d="M25.5 0L31.5532 16.5532L48 22.5L31.5532 28.4468L25.5 45L19.4468 28.4468L3 22.5L19.4468 16.5532L25.5 0Z" />
+        </svg>
+      </div>
+      <div className="absolute right-[8%] md:right-[12%] top-[40%] w-10 h-10 md:w-14 md:h-14 opacity-40 z-0">
+        <svg viewBox="0 0 51 48" className="w-full h-full fill-accent">
+          <path d="M25.5 0L31.5532 16.5532L48 22.5L31.5532 28.4468L25.5 45L19.4468 28.4468L3 22.5L19.4468 16.5532L25.5 0Z" />
+        </svg>
+      </div>
+      <div className="absolute right-[12%] md:right-[18%] top-[60%] w-8 h-8 md:w-12 md:h-12 opacity-35 z-0">
+        <svg viewBox="0 0 51 48" className="w-full h-full fill-accent">
+          <path d="M25.5 0L31.5532 16.5532L48 22.5L31.5532 28.4468L25.5 45L19.4468 28.4468L3 22.5L19.4468 16.5532L25.5 0Z" />
+        </svg>
       </div>
 
-      {/* Slides */}
-      <div className="relative container mx-auto flex items-center justify-center min-h-[80vh]">
-        {slides[currentSlide].id === 1 && (
-          <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce drop-shadow-2xl">
-              {slides[currentSlide].title}
-            </h1>
-            <p className="text-3xl md:text-5xl text-primary-foreground font-light font-gabarito">
-              {slides[currentSlide].subtitle}
-            </p>
-            <p className="text-2xl md:text-4xl text-accent font-semibold font-gabarito drop-shadow-lg">
-              {slides[currentSlide].date}
-            </p>
-            <div className="space-y-3 text-xl md:text-2xl">
-              {slides[currentSlide].highlights?.map((item, idx) => (
-                <p key={idx} className="text-primary-foreground font-medium font-gabarito">
-                  {item}
-                </p>
-              ))}
-            </div>
-            <p className="text-lg md:text-xl text-primary-foreground mt-8 font-gabarito">
-              {slides[currentSlide].info}
-            </p>
-          </div>
-        )}
-
-        {slides[currentSlide].id === 2 && (
-          <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce drop-shadow-2xl">
-              {slides[currentSlide].title}
-            </h2>
-            <p className="text-2xl md:text-3xl text-primary-foreground font-gabarito">
-              {slides[currentSlide].dates}
-            </p>
-            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito drop-shadow-lg">
-              {slides[currentSlide].time}
-            </p>
-          </div>
-        )}
-
-        {slides[currentSlide].id === 3 && (
-          <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
-            <h2 className="text-5xl md:text-7xl font-bold text-accent font-effloresce drop-shadow-2xl">
-              {slides[currentSlide].title}
-            </h2>
-            <p className="text-2xl md:text-3xl text-primary-foreground font-gabarito">
-              {slides[currentSlide].dates}
-            </p>
-            <p className="text-xl md:text-2xl text-primary-foreground font-gabarito">
-              {slides[currentSlide].location}
-            </p>
-            <p className="text-3xl md:text-4xl text-accent font-semibold font-gabarito drop-shadow-lg">
-              {slides[currentSlide].time}
-            </p>
-          </div>
-        )}
+      {/* Main content */}
+      <div className="relative z-10 text-center px-4 space-y-6 md:space-y-8 animate-in fade-in duration-1000">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-accent font-effloresce leading-tight tracking-wide">
+          {slides[currentSlide].title}
+        </h1>
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-[0.3em] uppercase text-white">
+          {slides[currentSlide].subtitle}
+        </p>
       </div>
 
       {/* Navigation buttons */}
@@ -131,21 +77,21 @@ export const HeroCarousel = () => {
         variant="ghost"
         size="icon"
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-foreground hover:text-accent hover:bg-primary-foreground/20"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white hover:text-accent hover:bg-white/10 z-20"
       >
-        <ChevronLeft className="w-8 h-8" />
+        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
       </Button>
       <Button
         variant="ghost"
         size="icon"
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-primary-foreground hover:text-accent hover:bg-primary-foreground/20"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white hover:text-accent hover:bg-white/10 z-20"
       >
-        <ChevronRight className="w-8 h-8" />
+        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
       </Button>
 
       {/* Dots indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, idx) => (
           <button
             key={idx}
@@ -153,7 +99,7 @@ export const HeroCarousel = () => {
             className={`w-3 h-3 rounded-full transition-all ${
               idx === currentSlide
                 ? "bg-accent w-8"
-                : "bg-primary-foreground/50 hover:bg-primary-foreground"
+                : "bg-white/50 hover:bg-white"
             }`}
           />
         ))}

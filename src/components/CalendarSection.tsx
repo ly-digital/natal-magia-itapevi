@@ -10,25 +10,44 @@ import { Music, Theater, Users, Tent, Gift, Bus } from "lucide-react";
 const attractions = [
   {
     id: 1,
-    name: "Espetáculo de Luzes",
+    name: "Espetáculo de Dança Natalina",
     date: "05/12",
     time: "19h",
-    type: "musica",
-    description: "Um espetáculo mágico de luzes que ilumina toda a rua.",
+    type: "danca",
+    description: "Performance de dança com figurinos natalinos coloridos.",
     image: null,
     accessibility: "Acessível para todos",
   },
   {
     id: 2,
-    name: "Papai Noel",
+    name: "Paradinha de Natal",
     date: "05/12",
-    time: "19h",
-    type: "papainoel",
-    description: "Encontro com o Papai Noel para fotos e conversas.",
+    time: "18h",
+    type: "paradinha",
+    description: "Desfile mágico com personagens natalinos pelas ruas.",
     image: null,
     accessibility: "Acessível para todos",
   },
-  // Add more attractions here
+  {
+    id: 3,
+    name: "Apresentação Circense",
+    date: "06/12",
+    time: "20h",
+    type: "circo",
+    description: "Circo com acrobacias e performances encantadoras.",
+    image: null,
+    accessibility: "Acessível para todos",
+  },
+  {
+    id: 4,
+    name: "Show Musical de Natal",
+    date: "07/12",
+    time: "19h",
+    type: "musica",
+    description: "Coral e banda tocando clássicos natalinos.",
+    image: null,
+    accessibility: "Acessível para todos",
+  },
 ];
 
 const languageIcons = {
@@ -83,13 +102,13 @@ export const CalendarSection = () => {
         </h2>
 
         {/* Filters */}
-        <div className="max-w-6xl mx-auto mb-12 space-y-6">
+        <div className="max-w-6xl mx-auto mb-16 space-y-8">
           <Input
             type="text"
             placeholder="Buscar atração..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="max-w-md mx-auto"
+            className="max-w-md mx-auto text-lg"
           />
 
           <div className="flex flex-wrap gap-3 justify-center">
@@ -100,7 +119,7 @@ export const CalendarSection = () => {
             >
               Todas as datas
             </Button>
-            {dates.map((date) => (
+            {dates.slice(0, 10).map((date) => (
               <Button
                 key={date}
                 variant={selectedDate === date ? "default" : "outline"}
@@ -138,14 +157,14 @@ export const CalendarSection = () => {
         </div>
 
         {/* Attractions grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {filteredAttractions.map((attraction) => {
             const Icon = languageIcons[attraction.type as keyof typeof languageIcons] || Music;
             return (
               <Link key={attraction.id} to={`/evento/${attraction.id}`}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    {Icon && <Icon className="w-20 h-20 text-primary" />}
+                <Card className="overflow-hidden hover:shadow-2xl transition-all hover:scale-105 cursor-pointer h-full border-2">
+                  <div className="h-56 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                    {Icon && <Icon className="w-24 h-24 text-primary" />}
                   </div>
                   <CardHeader>
                     <div className="flex items-start justify-between gap-2 mb-2">
@@ -154,7 +173,7 @@ export const CalendarSection = () => {
                         {types.find((t) => t.id === attraction.type)?.label}
                       </Badge>
                     </div>
-                    <CardDescription>
+                    <CardDescription className="text-base">
                       {attraction.date} às {attraction.time}
                     </CardDescription>
                   </CardHeader>
