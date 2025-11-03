@@ -76,9 +76,9 @@ export const CalendarSection = () => {
   });
 
   return (
-    <section id="calendario" className="py-20 px-4 bg-muted/30">
+    <section id="calendario" className="py-20 px-4 bg-background">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-effloresce">
+        <h2 className="text-4xl md:text-6xl font-bold text-primary text-center mb-16 font-effloresce">
           Programação
         </h2>
 

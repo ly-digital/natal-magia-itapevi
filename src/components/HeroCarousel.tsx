@@ -49,7 +49,7 @@ export const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary">
+    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 px-4">
       {/* Decorative snowflakes */}
       <div className="absolute inset-0 opacity-20">
         {[...Array(15)].map((_, i) => (
@@ -69,7 +69,7 @@ export const HeroCarousel = () => {
       </div>
 
       {/* Slides */}
-      <div className="relative h-full flex items-center justify-center">
+      <div className="relative container mx-auto flex items-center justify-center min-h-[80vh]">
         {slides[currentSlide].id === 1 && (
           <div className="text-center text-primary-foreground px-4 space-y-8 animate-in fade-in duration-1000">
             <h1 className="text-6xl md:text-8xl font-bold text-accent font-effloresce drop-shadow-2xl">
