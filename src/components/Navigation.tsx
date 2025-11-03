@@ -43,14 +43,21 @@ export const Navigation = () => {
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("sobre")}
-                className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+                className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
               >
                 Sobre
               </Button>
               <Button
                 variant="ghost"
+                onClick={() => scrollToSection("informacoes")}
+                className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
+              >
+                Informações
+              </Button>
+              <Button
+                variant="ghost"
                 onClick={() => scrollToSection("calendario")}
-                className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+                className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
               >
                 Calendário
               </Button>
@@ -60,15 +67,23 @@ export const Navigation = () => {
               <Link to="/#sobre">
                 <Button
                   variant="ghost"
-                  className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+                  className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
                 >
                   Sobre
+                </Button>
+              </Link>
+              <Link to="/#informacoes">
+                <Button
+                  variant="ghost"
+                  className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
+                >
+                  Informações
                 </Button>
               </Link>
               <Link to="/#calendario">
                 <Button
                   variant="ghost"
-                  className="text-primary-foreground hover:text-accent font-semibold transition-colors"
+                  className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
                 >
                   Calendário
                 </Button>
@@ -76,10 +91,10 @@ export const Navigation = () => {
             </>
           )}
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/ruadenatalitapevi"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-foreground hover:text-accent transition-colors"
+            className="text-primary-foreground hover:text-[#7a1c18] transition-colors"
           >
             <Instagram className="w-6 h-6" />
           </a>
