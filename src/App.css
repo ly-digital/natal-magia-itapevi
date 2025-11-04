@@ -40,3 +40,55 @@
 .read-the-docs {
   color: #888;
 }
+
+/* 1. Estilo para a seção Sobre */
+#sobre {
+  /* Garante que o fundo vermelho ocupe todo o espaço */
+  background-color: #7a1c18;
+
+  /* Zera padding/margin para que a transição seja "colada" */
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+
+  /* Centraliza o conteúdo horizontalmente */
+  text-align: center;
+
+  /* Opcional: define uma altura mínima se a seção estiver vazia */
+  min-height: 250px;
+}
+
+/* 2. Estilo para o container da imagem/título (Ajuste o nome da classe conforme seu código) */
+.estrelas-lua-container {
+  /* Use flexbox para alinhar a imagem e o título */
+  display: flex;
+  flex-direction: column; /* Coloca os elementos em coluna (um em cima do outro) */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+}
+
+/* 3. Estilo para a imagem das estrelas/lua (Ajuste o nome da classe conforme seu código) */
+.estrelas-lua {
+  /* Garante que não haja margens/espaços indesejados ao redor da imagem */
+  margin: 0 !important;
+  padding: 0 !important;
+
+  /* A imagem SOBRE_ESTRELAS.webp tem fundo transparente, se for um SVG, pode ser mais fácil */
+  /* Ajuste a largura se a imagem estiver muito pequena/grande */
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+/* 4. Estilo para o título (Geralmente <h1> ou <h2>) */
+#sobre h1,
+#sobre h2 {
+  /* Tenta puxar o título para cima, sobrepondo ligeiramente a imagem se necessário */
+  margin-top: -30px; /* Use valores negativos para mover para cima */
+  position: relative;
+  z-index: 10; /* Garante que o título fique sobre a imagem */
+}
+
+/* 5. Tenta anular qualquer margem no elemento abaixo (o banner verde) */
+.section-abaixo {
+  margin-top: 0 !important;
+}
