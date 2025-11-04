@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -97,6 +97,11 @@ const ProgramacaoCompleta = () => {
   const [selectedTime, setSelectedTime] = useState("all");
   const [selectedType, setSelectedType] = useState("");
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Função para verificar se evento já passou
   const isEventPast = (dateStr: string, timeStr: string) => {
     const eventDate = new Date(`${dateStr}T${timeStr}`);
@@ -169,10 +174,10 @@ const ProgramacaoCompleta = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#7a1c18]">
+    <div className="min-h-screen bg-[#004731]">
       <Navigation />
       
-      <main className="container mx-auto px-4 py-32 md:py-24">
+      <main className="container mx-auto px-4 pt-40 pb-12 md:pt-32 md:pb-16">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Navegação Lateral - Fixa no scroll */}
           <aside className="lg:w-80 lg:sticky lg:top-24 lg:self-start space-y-6">
@@ -183,24 +188,22 @@ const ProgramacaoCompleta = () => {
               </div>
               <div className="p-4">
                 <TooltipProvider>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {types.map((type) => {
                       const Icon = type.icon;
                       return (
                         <Tooltip key={type.id}>
                           <TooltipTrigger asChild>
-                            <Button
-                              variant="ghost"
-                              size="icon"
+                            <button
                               onClick={() => setSelectedType(selectedType === type.id ? "" : type.id)}
-                              className={
+                              className={`rounded-full w-10 h-10 flex items-center justify-center transition-colors ${
                                 selectedType === type.id
-                                  ? "bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 rounded-full w-12 h-12"
-                                  : "bg-white/10 text-white hover:bg-white/20 rounded-full w-12 h-12"
-                              }
+                                  ? "bg-[#fbc942] text-[#7a1c18]"
+                                  : "bg-white/10 text-white hover:bg-white/20"
+                              }`}
                             >
                               <Icon className="w-5 h-5" />
-                            </Button>
+                            </button>
                           </TooltipTrigger>
                           <TooltipContent side="bottom" className="bg-white text-[#7a1c18] font-gabarito font-semibold">
                             <p>{type.label}</p>
@@ -301,11 +304,6 @@ const ProgramacaoCompleta = () => {
               <p className="text-white text-lg font-gabarito">
                 Confira abaixo todos os dias e horários das atrações da Rua de Natal Itapevi 2025.
               </p>
-              <div className="mt-4">
-                <Badge className="bg-[#fbc942] text-[#7a1c18] font-gabarito font-semibold text-base px-4 py-2">
-                  {filteredAttractions.length} {filteredAttractions.length === 1 ? "evento encontrado" : "eventos encontrados"}
-                </Badge>
-              </div>
             </div>
 
             {/* Grid de Eventos */}
