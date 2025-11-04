@@ -27,29 +27,39 @@ Crie uma planilha com as seguintes colunas (ou use o template abaixo):
 | Coluna | Tipo | Exemplo | Descrição |
 |--------|------|---------|-----------|
 | **id** | Número | 1 | ID único do evento |
-| **nome** | Texto | "Paradinha de Natal" | Nome do evento |
-| **data** | Data | 2025-12-05 | Data no formato YYYY-MM-DD |
-| **horario** | Hora | 19:00 | Horário no formato HH:MM (24h) |
-| **linguagem** | Texto | paradinha | Categoria: musica, teatro, danca, circo, papainoel, paradinha |
-| **sinopse** | Texto | "Desfile mágico..." | Descrição do evento (máx 200 caracteres) |
-| **local** | Texto | "Praça 18 de Fevereiro" | Opções: "Praça 18 de Fevereiro" ou "Rua Leopoldina de Camargo, 260" |
-| **libras** | Sim/Não | sim | "sim" se tiver intérprete de libras, "nao" caso contrário |
-| **imagem** | Texto | evento-001.jpg | Nome do arquivo da imagem (opcional) |
+| **name** | Texto | "Paradinha de Natal" | Nome do evento |
+| **date** | Data | 2025-12-05 | Data no formato YYYY-MM-DD |
+| **time** | Hora | 19:00 | Horário no formato HH:MM (24h) |
+| **type** | Texto | paradinha | Categoria: musica, teatro, danca, circo, papainoel, paradinha |
+| **synopsis** | Texto | "Desfile mágico..." | Descrição do evento (máx 200 caracteres) |
+| **location** | Texto | "Praça 18 de Fevereiro" | Opções: "Praça 18 de Fevereiro" ou "Rua Leopoldina de Camargo, 260" |
+| **hasLibras** | Booleano | true | true se tiver intérprete de libras, false caso contrário |
+| **image** | Texto | evento-001.jpg | Nome do arquivo da imagem (opcional, pode ficar vazio) |
 
 ---
 
 ## Template CSV
 
+Existe um arquivo modelo **`programacao-eventos.csv`** na raiz do projeto com eventos de exemplo já preenchidos. 
+
+Você pode:
+1. Abrir o arquivo no Excel, Google Sheets ou qualquer editor de planilhas
+2. Editar os eventos existentes ou adicionar novos
+3. Salvar e fazer upload do arquivo atualizado
+
 Copie e cole no Excel/Google Sheets:
 
 ```
-id,nome,data,horario,linguagem,sinopse,local,libras,imagem
-1,Paradinha de Natal,2025-12-05,19:00,paradinha,"Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",Praça 18 de Fevereiro,sim,evento-001.jpg
-2,Espetáculo de Luzes,2025-12-06,20:30,teatro,"Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",Rua Leopoldina de Camargo 260,nao,evento-002.jpg
-3,O Príncipe da Paz,2025-12-07,19:30,teatro,"Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.",Rua Leopoldina de Camargo 260,sim,evento-003.jpg
-4,Visita ao Papai Noel,2025-12-08,18:00,papainoel,"Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas.",Praça 18 de Fevereiro,nao,evento-004.jpg
-5,Concerto de Natal,2025-12-10,20:00,musica,"Apresentação musical com canções natalinas interpretadas por artistas locais.",Rua Leopoldina de Camargo 260,sim,evento-005.jpg
+id,name,date,time,type,synopsis,location,hasLibras,image
+1,Paradinha de Natal,2025-12-05,19:00,paradinha,"Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",Praça 18 de Fevereiro,true,
+2,Espetáculo de Luzes,2025-12-06,20:30,teatro,"Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.","Rua Leopoldina de Camargo, 260",false,
+3,O Príncipe da Paz,2025-12-07,19:30,teatro,"Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.","Rua Leopoldina de Camargo, 260",true,
 ```
+
+**Observações importantes:**
+- A coluna `image` pode ficar vazia (sem valor) se ainda não tiver a imagem
+- Use `true` ou `false` para a coluna `hasLibras` (não use "sim" ou "não")
+- As vírgulas dentro da sinopse devem estar entre aspas duplas
 
 ---
 
@@ -64,8 +74,8 @@ id,nome,data,horario,linguagem,sinopse,local,libras,imagem
 - `paradinha` - Paradinha
 
 ### Libras:
-- `sim` - Evento com intérprete de Libras
-- `nao` - Evento sem intérprete de Libras
+- `true` - Evento com intérprete de Libras
+- `false` - Evento sem intérprete de Libras
 
 ### Local:
 - `Praça 18 de Fevereiro`
