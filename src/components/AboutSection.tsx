@@ -4,17 +4,17 @@ export const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 px-4 bg-[#7a1c18] relative overflow-hidden">
       <div className="container mx-auto max-w-5xl relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-[#fbc942] text-center mb-8 font-effloresce">
-          Sobre
-        </h2>
-        
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-8">
           <img 
             src={sobreEstrelasImage} 
             alt="Decoração de estrelas da Rua de Natal" 
             className="max-w-full h-auto"
           />
         </div>
+        
+        <h2 className="text-4xl md:text-6xl font-bold text-[#fbc942] text-center mb-12 font-effloresce">
+          Sobre
+        </h2>
 
         <div className="bg-[#006345] backdrop-blur-sm rounded-2xl p-8 md:p-16 border-2 border-[#fbc942]/30">
           <div className="space-y-6 text-white leading-relaxed font-gabarito text-lg md:text-xl text-center">
