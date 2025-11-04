@@ -171,32 +171,7 @@ export const CalendarSection = () => {
 
         {/* Filters */}
         <div className="max-w-6xl mx-auto mb-12 space-y-6">
-          {/* Filtros de período */}
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Button
-              variant="outline"
-              onClick={() => setSelectedPeriod("upcoming")}
-              className={selectedPeriod === "upcoming" ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 border-[#fbc942] rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
-            >
-              Próximos Eventos
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => setSelectedPeriod("past")}
-              className={selectedPeriod === "past" ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 border-[#fbc942] rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
-            >
-              Eventos Passados
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => setSelectedPeriod("all")}
-              className={selectedPeriod === "all" ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 border-[#fbc942] rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
-            >
-              Todos
-            </Button>
-          </div>
-
-          {/* Filtros de tipo */}
+          {/* Filtros de linguagem */}
           <div className="flex flex-wrap gap-3 justify-center items-center">
             <Button
               variant={selectedType === "" ? "default" : "outline"}
@@ -204,7 +179,7 @@ export const CalendarSection = () => {
               className={selectedType === "" ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
             >
               <Star className="w-4 h-4 mr-2" />
-              Todas as Linguagens
+              Todos
             </Button>
             {types.map((type) => {
               const Icon = languageIcons[type.id as keyof typeof languageIcons];
@@ -222,8 +197,8 @@ export const CalendarSection = () => {
             })}
           </div>
 
-          {/* Dropdowns de data e horário */}
-          <div className="flex flex-wrap gap-4 justify-start max-w-2xl">
+          {/* Dropdown de data */}
+          <div className="flex justify-start">
             <Select value={selectedDate} onValueChange={setSelectedDate}>
               <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
                 <SelectValue placeholder="Todas as datas" />
@@ -233,20 +208,6 @@ export const CalendarSection = () => {
                 {availableDates.map((date) => (
                   <SelectItem key={date} value={date}>
                     {formatDate(date)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedTime} onValueChange={setSelectedTime}>
-              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[220px]">
-                <SelectValue placeholder="Todos os horários" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Todos os horários</SelectItem>
-                {timeSlots.map((slot) => (
-                  <SelectItem key={slot.id} value={slot.id}>
-                    {slot.label}
                   </SelectItem>
                 ))}
               </SelectContent>
