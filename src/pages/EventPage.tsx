@@ -181,7 +181,7 @@ export default function EventPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    <Link to="/#calendario" className="group relative">
+                    <Link to="/programacao-completa" className="group relative">
                       <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:border-[#7a1c18] transition-all cursor-pointer">
                         <Star className="w-5 h-5 text-foreground group-hover:text-[#7a1c18]" />
                       </div>
@@ -194,7 +194,7 @@ export default function EventPage() {
                     {eventTypes.map((type) => {
                       const TypeIcon = type.icon;
                       return (
-                        <Link key={type.id} to={`/#calendario?tipo=${type.id}`} className="group relative">
+                        <Link key={type.id} to={`/programacao-completa?tipo=${type.id}`} className="group relative">
                           <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:border-[#7a1c18] transition-all cursor-pointer">
                             <TypeIcon className="w-5 h-5 text-foreground group-hover:text-[#7a1c18]" />
                           </div>

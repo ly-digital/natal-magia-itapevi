@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -93,14 +93,24 @@ const timeSlots = [
 ];
 
 const ProgramacaoCompleta = () => {
+  const [searchParams] = useSearchParams();
+  const tipoFromUrl = searchParams.get("tipo");
+  
   const [selectedDate, setSelectedDate] = useState("all");
   const [selectedTime, setSelectedTime] = useState("all");
-  const [selectedType, setSelectedType] = useState("");
+  const [selectedType, setSelectedType] = useState(tipoFromUrl || "");
 
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Update selected type when URL parameter changes
+  useEffect(() => {
+    if (tipoFromUrl) {
+      setSelectedType(tipoFromUrl);
+    }
+  }, [tipoFromUrl]);
 
   // Função para verificar se evento já passou
   const isEventPast = (dateStr: string, timeStr: string) => {
