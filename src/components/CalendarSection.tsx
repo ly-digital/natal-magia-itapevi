@@ -176,7 +176,7 @@ export const CalendarSection = () => {
             <Button
               variant={selectedType === "" ? "default" : "outline"}
               onClick={() => setSelectedType("")}
-              className={selectedType === "" ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
+              className={selectedType === "" ? "bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 border-none rounded-full font-gabarito font-semibold shadow-lg" : "bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full font-gabarito transition-all"}
             >
               <Star className="w-4 h-4 mr-2" />
               Todos
@@ -188,7 +188,7 @@ export const CalendarSection = () => {
                   key={type.id}
                   variant="outline"
                   onClick={() => setSelectedType(type.id)}
-                  className={selectedType === type.id ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 border-[#fbc942] rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
+                  className={selectedType === type.id ? "bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 border-none rounded-full font-gabarito font-semibold shadow-lg" : "bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full font-gabarito transition-all"}
                 >
                   <Icon className="w-4 h-4 mr-2" />
                   {type.label}
@@ -201,10 +201,10 @@ export const CalendarSection = () => {
           <div className="flex flex-wrap gap-4 justify-between items-center">
             <div className="flex flex-wrap gap-4">
               <Select value={selectedDate} onValueChange={setSelectedDate}>
-                <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
+                <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
                   <SelectValue placeholder="Todas as datas" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#004731] border-white/30">
+                <SelectContent className="bg-white border-white/30">
                   <SelectItem value="all">Todas as datas</SelectItem>
                   {availableDates.map((date) => (
                     <SelectItem key={date} value={date}>
@@ -215,10 +215,10 @@ export const CalendarSection = () => {
               </Select>
 
               <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[220px]">
+                <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[220px] hover:bg-white/15 hover:border-white/60 transition-all">
                   <SelectValue placeholder="Todos os horários" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#004731] border-white/30">
+                <SelectContent className="bg-white border-white/30">
                   <SelectItem value="all">Todos os horários</SelectItem>
                   {timeSlots.map((slot) => (
                     <SelectItem key={slot.id} value={slot.id}>
@@ -230,10 +230,10 @@ export const CalendarSection = () => {
             </div>
 
             <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
-              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
+              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
                 <SelectValue placeholder="Filtrar por período" />
               </SelectTrigger>
-              <SelectContent className="bg-[#004731] border-white/30">
+              <SelectContent className="bg-white border-white/30">
                 <SelectItem value="upcoming">Próximos eventos</SelectItem>
                 <SelectItem value="past">Eventos passados</SelectItem>
                 <SelectItem value="all">Todos os eventos</SelectItem>
@@ -250,28 +250,28 @@ export const CalendarSection = () => {
             
             return (
               <Link key={attraction.id} to={`/evento/${attraction.id}`}>
-                <Card className="overflow-hidden hover:shadow-2xl transition-all hover:scale-[1.02] cursor-pointer h-full bg-[#004731] border-[#fbc942]/30 rounded-2xl">
+                <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 cursor-pointer h-full bg-white/95 backdrop-blur-sm border-2 border-white/40 hover:border-[#fbc942] rounded-2xl">
                   {/* Imagem ou placeholder */}
                   <div className="relative h-48 overflow-hidden">
                     {attraction.image ? (
                       <img 
                         src={attraction.image} 
                         alt={attraction.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/20 to-[#7a1c18]/20 flex items-center justify-center">
-                        <Icon className="w-20 h-20 text-[#fbc942]/40" />
+                      <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30 flex items-center justify-center">
+                        <Icon className="w-20 h-20 text-[#fbc942]/60" />
                       </div>
                     )}
                     
                     {/* Badges sobrepostos na imagem */}
                     <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-                      <Badge className="bg-[#fbc942] text-[#006345] border-none font-gabarito font-semibold">
+                      <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-semibold shadow-lg">
                         {types.find((t) => t.id === attraction.type)?.label}
                       </Badge>
                       {isPast && (
-                        <Badge className="bg-red-600 text-white border-none font-gabarito font-semibold">
+                        <Badge className="bg-[#7a1c18] text-white border-none font-gabarito font-semibold shadow-lg">
                           Evento encerrado
                         </Badge>
                       )}
@@ -280,30 +280,30 @@ export const CalendarSection = () => {
 
                   {/* Conteúdo do card */}
                   <CardContent className="p-5 space-y-3">
-                    <h3 className="text-xl text-[#fbc942] font-effloresce leading-tight">{attraction.name}</h3>
+                    <h3 className="text-xl text-[#7a1c18] font-effloresce leading-tight font-bold">{attraction.name}</h3>
                     
-                    <p className="text-sm text-white/90 font-gabarito line-clamp-2 leading-relaxed">
+                    <p className="text-sm text-gray-700 font-gabarito line-clamp-2 leading-relaxed">
                       {attraction.synopsis}
                     </p>
                     
                     <div className="space-y-2 pt-2">
-                      <div className="flex items-center gap-2 text-white/80">
+                      <div className="flex items-center gap-2 text-[#006345]">
                         <CalendarIcon className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-sm font-gabarito">{formatDate(attraction.date)}</span>
+                        <span className="text-sm font-gabarito font-semibold">{formatDate(attraction.date)}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-white/80">
+                      <div className="flex items-center gap-2 text-[#006345]">
                         <Clock className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-sm font-gabarito">{attraction.time}</span>
+                        <span className="text-sm font-gabarito font-semibold">{attraction.time}</span>
                       </div>
-                      <div className="flex items-start gap-2 text-white/80">
+                      <div className="flex items-start gap-2 text-[#006345]">
                         <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm font-gabarito leading-tight">{attraction.location}</span>
+                        <span className="text-sm font-gabarito font-semibold leading-tight">{attraction.location}</span>
                       </div>
                     </div>
 
                     {attraction.hasLibras && (
                       <div className="pt-2">
-                        <Badge className="bg-[#fbc942] text-[#006345] border-none font-gabarito font-semibold">
+                        <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-semibold">
                           <Languages className="w-3 h-3 mr-1" />
                           Libras
                         </Badge>
@@ -325,7 +325,7 @@ export const CalendarSection = () => {
         {filteredAttractions.length > 4 && (
           <div className="text-center mt-8">
             <Link to="/programacao-completa">
-              <Button className="bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 font-gabarito text-lg px-8 py-6">
+              <Button className="bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 hover:shadow-xl font-gabarito font-semibold text-lg px-8 py-6 rounded-full transition-all">
                 Ver Programação Completa ({filteredAttractions.length} eventos)
               </Button>
             </Link>
