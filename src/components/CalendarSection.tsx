@@ -176,7 +176,7 @@ export const CalendarSection = () => {
             <Button
               variant={selectedType === "" ? "default" : "outline"}
               onClick={() => setSelectedType("")}
-              className={selectedType === "" ? "bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 border-none rounded-full font-gabarito font-semibold shadow-lg" : "bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full font-gabarito transition-all"}
+              className={selectedType === "" ? "bg-[#fbc942] text-[#7a1c18] hover:bg-white hover:text-[#7a1c18] border-none rounded-full font-gabarito font-semibold shadow-lg transition-all" : "bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white hover:text-[#7a1c18] rounded-full font-gabarito transition-all"}
             >
               <Star className="w-4 h-4 mr-2" />
               Todos
@@ -188,7 +188,7 @@ export const CalendarSection = () => {
                   key={type.id}
                   variant="outline"
                   onClick={() => setSelectedType(type.id)}
-                  className={selectedType === type.id ? "bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 border-none rounded-full font-gabarito font-semibold shadow-lg" : "bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full font-gabarito transition-all"}
+                  className={selectedType === type.id ? "bg-[#fbc942] text-[#7a1c18] hover:bg-white hover:text-[#7a1c18] border-none rounded-full font-gabarito font-semibold shadow-lg transition-all" : "bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white hover:text-[#7a1c18] rounded-full font-gabarito transition-all"}
                 >
                   <Icon className="w-4 h-4 mr-2" />
                   {type.label}
@@ -250,7 +250,7 @@ export const CalendarSection = () => {
             
             return (
               <Link key={attraction.id} to={`/evento/${attraction.id}`}>
-                <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 cursor-pointer h-full bg-white/95 backdrop-blur-sm border-2 border-white/40 hover:border-[#fbc942] rounded-2xl">
+                <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 cursor-pointer h-full bg-[#004731] backdrop-blur-sm border-2 border-white/20 hover:border-[#fbc942] rounded-2xl">
                   {/* Imagem ou placeholder */}
                   <div className="relative h-48 overflow-hidden">
                     {attraction.image ? (
@@ -280,22 +280,22 @@ export const CalendarSection = () => {
 
                   {/* Conteúdo do card */}
                   <CardContent className="p-5 space-y-3">
-                    <h3 className="text-xl text-[#7a1c18] font-effloresce leading-tight font-bold">{attraction.name}</h3>
+                    <h3 className="text-xl text-[#fbc942] font-effloresce leading-tight font-bold">{attraction.name}</h3>
                     
-                    <p className="text-sm text-gray-700 font-gabarito line-clamp-2 leading-relaxed">
+                    <p className="text-sm text-white/90 font-gabarito line-clamp-2 leading-relaxed">
                       {attraction.synopsis}
                     </p>
                     
                     <div className="space-y-2 pt-2">
-                      <div className="flex items-center gap-2 text-[#006345]">
+                      <div className="flex items-center gap-2 text-white/80">
                         <CalendarIcon className="w-4 h-4 flex-shrink-0" />
                         <span className="text-sm font-gabarito font-semibold">{formatDate(attraction.date)}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-[#006345]">
+                      <div className="flex items-center gap-2 text-white/80">
                         <Clock className="w-4 h-4 flex-shrink-0" />
                         <span className="text-sm font-gabarito font-semibold">{attraction.time}</span>
                       </div>
-                      <div className="flex items-start gap-2 text-[#006345]">
+                      <div className="flex items-start gap-2 text-white/80">
                         <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
                         <span className="text-sm font-gabarito font-semibold leading-tight">{attraction.location}</span>
                       </div>
