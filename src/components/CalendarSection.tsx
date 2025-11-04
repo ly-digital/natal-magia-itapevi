@@ -197,8 +197,8 @@ export const CalendarSection = () => {
             })}
           </div>
 
-          {/* Dropdown de data */}
-          <div className="flex justify-start">
+          {/* Dropdowns de data e horário */}
+          <div className="flex flex-wrap gap-4 justify-start">
             <Select value={selectedDate} onValueChange={setSelectedDate}>
               <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
                 <SelectValue placeholder="Todas as datas" />
@@ -208,6 +208,20 @@ export const CalendarSection = () => {
                 {availableDates.map((date) => (
                   <SelectItem key={date} value={date}>
                     {formatDate(date)}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <Select value={selectedTime} onValueChange={setSelectedTime}>
+              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[220px]">
+                <SelectValue placeholder="Todos os horários" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todos os horários</SelectItem>
+                {timeSlots.map((slot) => (
+                  <SelectItem key={slot.id} value={slot.id}>
+                    {slot.label}
                   </SelectItem>
                 ))}
               </SelectContent>
