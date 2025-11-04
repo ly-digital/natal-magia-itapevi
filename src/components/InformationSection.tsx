@@ -1,51 +1,60 @@
-import { MapPin, Calendar, Clock, Heart } from "lucide-react";
+import { MapPin, Calendar, Clock, User } from "lucide-react";
 
 export const InformationSection = () => {
   const infos = [
     {
       icon: MapPin,
       title: "Localização",
-      content: "Rua Leopoldina de Camargo, 260 - Itapevi",
+      subtitle: "Rua Leopoldina de Camargo, 260 - Itapevi",
+      content: "Em frente ao Ita Shopping",
     },
     {
       icon: Calendar,
       title: "Quando",
-      content: "De 05 a 23 de dezembro",
+      subtitle: "De 05 a 23 de dezembro",
+      content: "★ ENTRADA GRATUITA",
+      highlight: true,
     },
     {
       icon: Clock,
       title: "Horário",
-      content: "Diariamente das 19h às 23h",
+      subtitle: "Diariamente das 19h às 23h",
+      content: "Confira a programação completa",
     },
     {
-      icon: Heart,
+      icon: User,
       title: "Acessibilidade",
-      content: "Entrada Gratuita e recursos de acessibilidade",
+      subtitle: "Consulte programação",
+      content: "",
     },
   ];
 
   return (
-    <section id="informacoes" className="py-20 px-4 bg-background">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-6xl font-bold text-primary text-center mb-16 font-effloresce">
-          Informações
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="informacoes" className="py-20 px-4 bg-[#006345]">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {infos.map((info, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl border-2 border-[#006345]/20 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              className="bg-[#004731] p-8 rounded-2xl border-2 border-[#9c6d2c]/30"
             >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-16 h-16 bg-[#006345] rounded-full flex items-center justify-center">
-                  <info.icon className="w-8 h-8 text-[#fbc942]" />
+              <div className="flex items-start gap-6">
+                <div className="w-16 h-16 bg-[#9c6d2cd1] rounded-full flex items-center justify-center flex-shrink-0">
+                  <info.icon className="w-8 h-8 text-[#9c6d2c]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#7a1c18] font-gabarito">
-                  {info.title}
-                </h3>
-                <p className="text-base text-[#006345] font-gabarito leading-relaxed">
-                  {info.content}
-                </p>
+                <div className="flex-1 space-y-2">
+                  <h3 className="text-2xl font-bold text-[#9c6d2c] font-effloresce">
+                    {info.title}
+                  </h3>
+                  <p className="text-white font-bold font-gabarito text-lg">
+                    {info.subtitle}
+                  </p>
+                  {info.content && (
+                    <p className={`font-gabarito text-base ${info.highlight ? 'text-[#9c6d2c]' : 'text-white'}`}>
+                      {info.content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           ))}
