@@ -197,33 +197,46 @@ export const CalendarSection = () => {
             })}
           </div>
 
-          {/* Dropdowns de data e horário */}
-          <div className="flex flex-wrap gap-4 justify-start">
-            <Select value={selectedDate} onValueChange={setSelectedDate}>
-              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
-                <SelectValue placeholder="Todas as datas" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Todas as datas</SelectItem>
-                {availableDates.map((date) => (
-                  <SelectItem key={date} value={date}>
-                    {formatDate(date)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Dropdowns de data, horário e período */}
+          <div className="flex flex-wrap gap-4 justify-between items-center">
+            <div className="flex flex-wrap gap-4">
+              <Select value={selectedDate} onValueChange={setSelectedDate}>
+                <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
+                  <SelectValue placeholder="Todas as datas" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#004731] border-white/30">
+                  <SelectItem value="all">Todas as datas</SelectItem>
+                  {availableDates.map((date) => (
+                    <SelectItem key={date} value={date}>
+                      {formatDate(date)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
-            <Select value={selectedTime} onValueChange={setSelectedTime}>
-              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[220px]">
-                <SelectValue placeholder="Todos os horários" />
+              <Select value={selectedTime} onValueChange={setSelectedTime}>
+                <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[220px]">
+                  <SelectValue placeholder="Todos os horários" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#004731] border-white/30">
+                  <SelectItem value="all">Todos os horários</SelectItem>
+                  {timeSlots.map((slot) => (
+                    <SelectItem key={slot.id} value={slot.id}>
+                      {slot.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
+              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito w-[200px]">
+                <SelectValue placeholder="Filtrar por período" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Todos os horários</SelectItem>
-                {timeSlots.map((slot) => (
-                  <SelectItem key={slot.id} value={slot.id}>
-                    {slot.label}
-                  </SelectItem>
-                ))}
+              <SelectContent className="bg-[#004731] border-white/30">
+                <SelectItem value="upcoming">Próximos eventos</SelectItem>
+                <SelectItem value="past">Eventos passados</SelectItem>
+                <SelectItem value="all">Todos os eventos</SelectItem>
               </SelectContent>
             </Select>
           </div>
