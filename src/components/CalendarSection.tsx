@@ -230,52 +230,72 @@ export const CalendarSection = () => {
         </div>
 
         {/* Attractions grid - Limitado a 4 eventos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {displayedAttractions.map((attraction) => {
             const Icon = languageIcons[attraction.type as keyof typeof languageIcons] || Music;
             const isPast = isEventPast(attraction.date, attraction.time);
             
             return (
               <Link key={attraction.id} to={`/evento/${attraction.id}`}>
-                <Card className="overflow-hidden hover:shadow-2xl transition-all hover:scale-105 cursor-pointer h-full bg-[#004731] border-[#fbc942]/30 relative">
-                  {isPast && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <Badge className="bg-red-600 text-white border-red-700 font-gabarito">
-                        Evento Encerrado
-                      </Badge>
-                    </div>
-                  )}
-                  <div className="h-56 bg-gradient-to-br from-[#fbc942]/20 to-[#7a1c18]/20 flex items-center justify-center">
-                    {Icon && <Icon className="w-24 h-24 text-[#fbc942]" />}
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl text-[#fbc942] font-effloresce mb-2">{attraction.name}</CardTitle>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <Badge className="w-fit bg-[#fbc942]/20 text-[#fbc942] border border-[#fbc942]/50 font-gabarito">
+                <Card className="overflow-hidden hover:shadow-2xl transition-all hover:scale-[1.02] cursor-pointer h-full bg-[#004731] border-[#fbc942]/30 rounded-2xl">
+                  {/* Imagem ou placeholder */}
+                  <div className="relative h-48 overflow-hidden">
+                    {attraction.image ? (
+                      <img 
+                        src={attraction.image} 
+                        alt={attraction.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/20 to-[#7a1c18]/20 flex items-center justify-center">
+                        <Icon className="w-20 h-20 text-[#fbc942]/40" />
+                      </div>
+                    )}
+                    
+                    {/* Badges sobrepostos na imagem */}
+                    <div className="absolute top-3 left-3 flex flex-wrap gap-2">
+                      <Badge className="bg-[#fbc942] text-[#006345] border-none font-gabarito font-semibold">
                         {types.find((t) => t.id === attraction.type)?.label}
                       </Badge>
-                      {attraction.hasLibras && (
-                        <Badge className="w-fit bg-blue-600/20 text-blue-400 border border-blue-400/50 font-gabarito">
-                          <Languages className="w-3 h-3 mr-1" />
-                          Libras
+                      {isPast && (
+                        <Badge className="bg-red-600 text-white border-none font-gabarito font-semibold">
+                          Evento encerrado
                         </Badge>
                       )}
                     </div>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <p className="text-sm text-white/80 font-gabarito line-clamp-3">{attraction.synopsis}</p>
-                    <div className="flex items-center gap-2 text-white/70">
-                      <CalendarIcon className="w-4 h-4 flex-shrink-0" />
-                      <span className="text-sm font-gabarito">{formatDate(attraction.date)}</span>
+                  </div>
+
+                  {/* Conteúdo do card */}
+                  <CardContent className="p-5 space-y-3">
+                    <h3 className="text-xl text-[#fbc942] font-effloresce leading-tight">{attraction.name}</h3>
+                    
+                    <p className="text-sm text-white/90 font-gabarito line-clamp-2 leading-relaxed">
+                      {attraction.synopsis}
+                    </p>
+                    
+                    <div className="space-y-2 pt-2">
+                      <div className="flex items-center gap-2 text-white/80">
+                        <CalendarIcon className="w-4 h-4 flex-shrink-0" />
+                        <span className="text-sm font-gabarito">{formatDate(attraction.date)}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-white/80">
+                        <Clock className="w-4 h-4 flex-shrink-0" />
+                        <span className="text-sm font-gabarito">{attraction.time}</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-white/80">
+                        <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm font-gabarito leading-tight">{attraction.location}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 text-white/70">
-                      <Clock className="w-4 h-4 flex-shrink-0" />
-                      <span className="text-sm font-gabarito">{attraction.time}</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-white/70">
-                      <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm font-gabarito">{attraction.location}</span>
-                    </div>
+
+                    {attraction.hasLibras && (
+                      <div className="pt-2">
+                        <Badge className="bg-[#fbc942] text-[#006345] border-none font-gabarito font-semibold">
+                          <Languages className="w-3 h-3 mr-1" />
+                          Libras
+                        </Badge>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </Link>
