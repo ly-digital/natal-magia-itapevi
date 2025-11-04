@@ -2,7 +2,7 @@ import sobreEstrelasImage from "@/assets/sobre-estrelas.webp";
 
 export const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 px-4 bg-[#7a1c18] relative overflow-hidden">
+    <section id="sobre" className="pt-0 pb-20 px-4 bg-[#7a1c18] relative overflow-hidden">
       <div className="container mx-auto max-w-5xl relative z-10">
         <div className="flex justify-center mb-8">
           <img 
