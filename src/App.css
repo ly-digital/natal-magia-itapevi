@@ -40,15 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-.estrelas-lua-container {
-  display: flex;
-  flex-direction: column; /* Coloca os elementos em coluna (um em cima do outro) */
-  align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente */
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-}
