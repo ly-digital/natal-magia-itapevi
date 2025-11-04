@@ -5,13 +5,15 @@ import { Button } from "@/components/ui/button";
 const slides = [
   {
     id: 1,
-    title: "Rua de Natal",
-    subtitle: "ITAPEVI",
+    pretitle: "De 05 a 23 de dezembro",
+    title: "+ de 50 atrações gratuitas",
+    subtitle: "música, dança, circo e teatro",
   },
   {
     id: 2,
-    title: "Paradinha",
-    subtitle: "DE NATAL",
+    pretitle: "",
+    title: "Visite o Papai Noel",
+    subtitle: "datas e horário (das 19h00 às 23h)",
   },
 ];
 
@@ -63,11 +65,16 @@ export const HeroCarousel = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-4 space-y-6 md:space-y-8 animate-in fade-in duration-1000">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-accent font-effloresce leading-tight tracking-wide">
+      <div className="relative z-10 text-center px-4 space-y-4 md:space-y-6 animate-in fade-in duration-1000">
+        {slides[currentSlide].pretitle && (
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-wide uppercase text-white/90">
+            {slides[currentSlide].pretitle}
+          </p>
+        )}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-accent font-effloresce leading-tight tracking-wide">
           {slides[currentSlide].title}
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-[0.3em] uppercase text-white">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-wide lowercase text-white">
           {slides[currentSlide].subtitle}
         </p>
       </div>
