@@ -36,21 +36,21 @@ export const InformationSection = () => {
           {infos.map((info, index) => (
             <div
               key={index}
-              className="bg-[#004731] p-8 rounded-2xl border-2 border-[#9c6d2c]/30"
+              className="bg-[#004731] p-8 rounded-2xl border-2 border-[#fbc942]/30"
             >
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-[#9c6d2cd1] rounded-full flex items-center justify-center flex-shrink-0">
-                  <info.icon className="w-8 h-8 text-[#9c6d2c]" />
+                <div className="w-16 h-16 bg-[#fbc942d1] rounded-full flex items-center justify-center flex-shrink-0">
+                  <info.icon className="w-8 h-8 text-[#fbc942]" />
                 </div>
                 <div className="flex-1 space-y-2">
-                  <h3 className="text-2xl font-bold text-[#9c6d2c] font-effloresce">
+                  <h3 className="text-2xl font-bold text-[#fbc942] font-effloresce">
                     {info.title}
                   </h3>
                   <p className="text-white font-bold font-gabarito text-lg">
                     {info.subtitle}
                   </p>
                   {info.content && (
-                    <p className={`font-gabarito text-base ${info.highlight ? 'text-[#9c6d2c]' : 'text-white'}`}>
+                    <p className={`font-gabarito text-base ${info.highlight ? 'text-[#fbc942]' : 'text-white'}`}>
                       {info.content}
                     </p>
                   )}
