@@ -8,7 +8,7 @@ export const AboutSection = () => {
           <img 
             src={sobreEstrelasImage} 
             alt="Decoração de estrelas da Rua de Natal" 
-            className="max-w-full h-auto"
+            className="estrelas-lua-container max-w-full h-auto"
           />
         </div>
         
