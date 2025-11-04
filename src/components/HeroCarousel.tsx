@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroAtracoes from "@/assets/hero-atracoes.jpg";
 import heroPapaiNoel from "@/assets/hero-papai-noel.jpg";
 import heroLuzes from "@/assets/hero-luzes.jpg";
@@ -82,6 +83,17 @@ export const HeroCarousel = () => {
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-wide lowercase text-white drop-shadow-lg animate-fade-in">
           {slides[currentSlide].subtitle}
         </p>
+        
+        {/* Botão CTA apenas no primeiro slide */}
+        {currentSlide === 0 && (
+          <div className="pt-6 animate-fade-in">
+            <Link to="/#calendario">
+              <Button className="bg-[#fbc942] text-[#7a1c18] hover:bg-white hover:text-[#7a1c18] font-gabarito font-bold text-lg px-8 py-6 rounded-full shadow-2xl hover:shadow-[0_0_30px_rgba(251,201,66,0.6)] transition-all hover:scale-105">
+                Ver Próximos Eventos
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
 
       {/* Navigation buttons */}
