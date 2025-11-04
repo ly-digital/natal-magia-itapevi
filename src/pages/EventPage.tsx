@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, MapPin } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, Star } from "lucide-react";
 import { Music, Theater, Users, Tent, Gift, Bus } from "lucide-react";
 
 // Mock data - replace with real data
@@ -66,6 +67,11 @@ export default function EventPage() {
   const { id } = useParams();
   const event = events.find((e) => e.id === id);
 
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   if (!event) {
     return (
       <div className="min-h-screen">
@@ -85,12 +91,22 @@ export default function EventPage() {
 
   const Icon = languageIcons[event.type as keyof typeof languageIcons];
   const otherEvents = events.filter((e) => e.id !== id);
+  const sameDayEvents = events.filter((e) => e.id !== id && e.date === event.date);
+  
+  const eventTypes = [
+    { id: "musica", label: "Música", icon: Music },
+    { id: "teatro", label: "Teatro", icon: Theater },
+    { id: "danca", label: "Dança", icon: Users },
+    { id: "circo", label: "Circo", icon: Tent },
+    { id: "papainoel", label: "Papai Noel", icon: Gift },
+    { id: "paradinha", label: "Paradinha", icon: Bus },
+  ];
 
   return (
     <div className="min-h-screen">
       <Navigation />
       
-      <main className="container mx-auto px-4 py-8 md:py-12">
+      <main className="container mx-auto px-4 pt-24 pb-12">
         <Link to="/#calendario">
           <Button variant="ghost" className="mb-6 gap-2">
             <ArrowLeft className="w-4 h-4" />
@@ -151,14 +167,82 @@ export default function EventPage() {
             </Card>
           </div>
 
-          {/* Sidebar - Other Events */}
-          <div className="lg:col-span-1">
+          {/* Sidebar */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* Categorias de Eventos */}
             <Card className="sticky top-24">
+              <CardHeader>
+                <CardTitle className="text-xl font-effloresce">Categorias</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <Link to="/#calendario">
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start gap-2 bg-white/10 backdrop-blur-sm border-white/40 text-foreground hover:bg-white hover:text-[#7a1c18] transition-all"
+                  >
+                    <Star className="w-4 h-4" />
+                    Todos os Eventos
+                  </Button>
+                </Link>
+                {eventTypes.map((type) => {
+                  const TypeIcon = type.icon;
+                  return (
+                    <Link key={type.id} to={`/#calendario?tipo=${type.id}`}>
+                      <Button 
+                        variant="outline" 
+                        className="w-full justify-start gap-2 bg-white/10 backdrop-blur-sm border-white/40 text-foreground hover:bg-white hover:text-[#7a1c18] transition-all"
+                      >
+                        <TypeIcon className="w-4 h-4" />
+                        {type.label}
+                      </Button>
+                    </Link>
+                  );
+                })}
+              </CardContent>
+            </Card>
+
+            {/* Eventos No Mesmo Dia */}
+            {sameDayEvents.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl font-effloresce">Eventos no Mesmo Dia</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {sameDayEvents.map((sameDayEvent) => {
+                    const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
+                    return (
+                      <Link key={sameDayEvent.id} to={`/evento/${sameDayEvent.id}`}>
+                        <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                          <CardContent className="p-4">
+                            <div className="flex gap-3">
+                              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
+                                {SameDayIcon && <SameDayIcon className="w-6 h-6 text-primary" />}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-semibold text-sm line-clamp-2 mb-1">
+                                  {sameDayEvent.name}
+                                </h3>
+                                <p className="text-xs text-muted-foreground">
+                                  {sameDayEvent.time}
+                                </p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </Link>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Outros Eventos */}
+            <Card>
               <CardHeader>
                 <CardTitle className="text-xl font-effloresce">Outros Eventos</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {otherEvents.map((otherEvent) => {
+                {otherEvents.slice(0, 5).map((otherEvent) => {
                   const OtherIcon = languageIcons[otherEvent.type as keyof typeof languageIcons];
                   return (
                     <Link key={otherEvent.id} to={`/evento/${otherEvent.id}`}>
