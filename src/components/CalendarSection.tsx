@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Music, Theater, Users, Tent, Gift, Bus } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Music, Theater, Users, Tent, Gift, Bus, Calendar as CalendarIcon, Clock, Accessibility, Star } from "lucide-react";
 
 // Eventos principais conforme PDF
 const attractions = [
@@ -69,8 +69,7 @@ const languageColors = {
 };
 
 export const CalendarSection = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState("all");
   const [selectedType, setSelectedType] = useState("");
 
   const dates = Array.from({ length: 19 }, (_, i) => {
@@ -88,98 +87,98 @@ export const CalendarSection = () => {
   ];
 
   const filteredAttractions = attractions.filter((attraction) => {
-    const matchesSearch = attraction.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesDate = !selectedDate || attraction.date === selectedDate;
+    const matchesDate = selectedDate === "all" || attraction.date === selectedDate;
     const matchesType = !selectedType || attraction.type === selectedType;
-    return matchesSearch && matchesDate && matchesType;
+    return matchesDate && matchesType;
   });
 
   return (
     <section id="calendario" className="py-20 px-4 bg-[#006345]">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold text-[#fbc942] text-center mb-16 font-effloresce">
-          Programação
-        </h2>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <CalendarIcon className="w-10 h-10 md:w-12 md:h-12 text-[#fbc942]" />
+          <h2 className="text-4xl md:text-6xl font-bold text-[#fbc942] text-center font-effloresce">
+            Programação
+          </h2>
+        </div>
+        <p className="text-center text-white text-lg md:text-xl mb-12 font-gabarito">
+          Confira todas as atrações do festival
+        </p>
 
         {/* Filters */}
-        <div className="max-w-6xl mx-auto mb-16 space-y-8">
-          <Input
-            type="text"
-            placeholder="Buscar atração..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="max-w-md mx-auto text-lg"
-          />
-
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Button
-              variant={selectedDate === "" ? "default" : "outline"}
-              onClick={() => setSelectedDate("")}
-              className="rounded-full"
-            >
-              Todas as datas
-            </Button>
-            {dates.slice(0, 10).map((date) => (
-              <Button
-                key={date}
-                variant={selectedDate === date ? "default" : "outline"}
-                onClick={() => setSelectedDate(date)}
-                className="rounded-full"
-              >
-                {date}
-              </Button>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-3 justify-center">
+        <div className="max-w-6xl mx-auto mb-12 space-y-6">
+          <div className="flex flex-wrap gap-3 justify-center items-center">
             <Button
               variant={selectedType === "" ? "default" : "outline"}
               onClick={() => setSelectedType("")}
-              className="rounded-full"
+              className={selectedType === "" ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
             >
-              Todas as linguagens
+              <Star className="w-4 h-4 mr-2" />
+              Todos
             </Button>
             {types.map((type) => {
               const Icon = languageIcons[type.id as keyof typeof languageIcons];
               return (
                 <Button
                   key={type.id}
-                  variant={selectedType === type.id ? "default" : "outline"}
+                  variant="outline"
                   onClick={() => setSelectedType(type.id)}
-                  className="rounded-full gap-2"
+                  className={selectedType === type.id ? "bg-[#fbc942] text-[#006345] hover:bg-[#fbc942]/90 border-[#fbc942] rounded-full font-gabarito" : "bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full font-gabarito"}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4 mr-2" />
                   {type.label}
                 </Button>
               );
             })}
           </div>
+
+          <div className="flex justify-start max-w-xs">
+            <Select value={selectedDate} onValueChange={setSelectedDate}>
+              <SelectTrigger className="bg-transparent border-white/30 text-white font-gabarito">
+                <SelectValue placeholder="Todas as datas" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todas as datas</SelectItem>
+                {dates.map((date) => (
+                  <SelectItem key={date} value={date}>
+                    {date}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         {/* Attractions grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {filteredAttractions.map((attraction) => {
             const Icon = languageIcons[attraction.type as keyof typeof languageIcons] || Music;
             return (
               <Link key={attraction.id} to={`/evento/${attraction.id}`}>
-                <Card className="overflow-hidden hover:shadow-2xl transition-all hover:scale-105 cursor-pointer h-full border-2">
-                  <div className="h-56 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    {Icon && <Icon className="w-24 h-24 text-primary" />}
+                <Card className="overflow-hidden hover:shadow-2xl transition-all hover:scale-105 cursor-pointer h-full bg-[#004731] border-[#fbc942]/30">
+                  <div className="h-56 bg-gradient-to-br from-[#fbc942]/20 to-[#7a1c18]/20 flex items-center justify-center">
+                    {Icon && <Icon className="w-24 h-24 text-[#fbc942]" />}
                   </div>
                   <CardHeader>
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <CardTitle className="text-xl">{attraction.name}</CardTitle>
-                      <Badge className={languageColors[attraction.type as keyof typeof languageColors]}>
-                        {types.find((t) => t.id === attraction.type)?.label}
-                      </Badge>
-                    </div>
-                    <CardDescription className="text-base">
-                      {attraction.date} às {attraction.time}
-                    </CardDescription>
+                    <CardTitle className="text-2xl text-[#fbc942] font-effloresce mb-2">{attraction.name}</CardTitle>
+                    <Badge className="w-fit bg-[#fbc942]/20 text-[#fbc942] border border-[#fbc942]/50 font-gabarito">
+                      {types.find((t) => t.id === attraction.type)?.label}
+                    </Badge>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-3">{attraction.description}</p>
-                    <p className="text-xs text-primary font-medium">{attraction.accessibility}</p>
+                  <CardContent className="space-y-3">
+                    <p className="text-sm text-white/80 font-gabarito">{attraction.description}</p>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CalendarIcon className="w-4 h-4" />
+                      <span className="text-sm font-gabarito">{attraction.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-gabarito">{attraction.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#fbc942] pt-2">
+                      <Accessibility className="w-4 h-4" />
+                      <span className="text-sm font-gabarito font-medium">{attraction.accessibility}</span>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
@@ -188,7 +187,7 @@ export const CalendarSection = () => {
         </div>
 
         {filteredAttractions.length === 0 && (
-          <p className="text-center text-muted-foreground text-lg mt-12">
+          <p className="text-center text-white/70 text-lg mt-12 font-gabarito">
             Nenhuma atração encontrada com os filtros selecionados.
           </p>
         )}
