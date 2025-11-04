@@ -2,7 +2,7 @@ import sobreEstrelasImage from "@/assets/sobre-estrelas.webp";
 
 export const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 px-4 bg-[#7a1c18] relative overflow-hidden">
+    <section id="sobre" className="pt-20 pb-0 px-4 bg-[#7a1c18] relative overflow-hidden">
       <div className="container mx-auto max-w-5xl relative z-10">
         <div className="flex justify-center mb-4">
           <img 
@@ -12,11 +12,11 @@ export const AboutSection = () => {
           />
         </div>
         
-        <h2 className="text-4xl md:text-6xl font-bold text-[#fbc942] text-center mb-8 font-effloresce">
+        <h2 className="text-4xl md:text-6xl font-bold text-[#fbc942] text-center mb-0 font-effloresce">
           Sobre
         </h2>
 
-        <div className="bg-[#006345] backdrop-blur-sm rounded-2xl p-8 md:p-16 border-2 border-[#fbc942]/30">
+        <div className="bg-[#006345] backdrop-blur-sm rounded-2xl p-8 md:p-16 border-2 border-[#fbc942]/30 mt-8">
           <div className="space-y-6 text-white leading-relaxed font-gabarito text-lg md:text-xl text-center">
             <p>
               A <span className="text-[#fbc942] font-bold">Rua de Natal Itapevi</span> chega à sua <span className="text-[#fbc942] font-bold">3ª edição</span>, em dezembro de 2025, 
