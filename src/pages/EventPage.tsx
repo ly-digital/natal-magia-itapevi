@@ -90,8 +90,18 @@ export default function EventPage() {
   }
 
   const Icon = languageIcons[event.type as keyof typeof languageIcons];
-  const otherEvents = events.filter((e) => e.id !== id);
   const sameDayEvents = events.filter((e) => e.id !== id && e.date === event.date);
+  
+  // Get next day events
+  const getNextDayEvents = () => {
+    const currentDate = new Date(event.date.split('/').reverse().join('-'));
+    const nextDay = new Date(currentDate);
+    nextDay.setDate(currentDate.getDate() + 1);
+    const nextDayStr = `${String(nextDay.getDate()).padStart(2, '0')}/${String(nextDay.getMonth() + 1).padStart(2, '0')}`;
+    return events.filter((e) => e.id !== id && e.date === nextDayStr);
+  };
+  
+  const nextDayEvents = getNextDayEvents();
   
   const eventTypes = [
     { id: "musica", label: "Música", icon: Music },
@@ -107,12 +117,6 @@ export default function EventPage() {
       <Navigation />
       
       <main className="container mx-auto px-4 pt-24 pb-12">
-        <Link to="/#calendario">
-          <Button variant="ghost" className="mb-6 gap-2">
-            <ArrowLeft className="w-4 h-4" />
-            Voltar para Programação
-          </Button>
-        </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
@@ -168,106 +172,114 @@ export default function EventPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
-            {/* Categorias de Eventos */}
-            <Card className="sticky top-24">
-              <CardHeader>
-                <CardTitle className="text-xl font-effloresce">Categorias</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <Link to="/#calendario">
-                  <Button 
-                    variant="outline" 
-                    className="w-full justify-start gap-2 bg-white/10 backdrop-blur-sm border-white/40 text-foreground hover:bg-white hover:text-[#7a1c18] transition-all"
-                  >
-                    <Star className="w-4 h-4" />
-                    Todos os Eventos
-                  </Button>
-                </Link>
-                {eventTypes.map((type) => {
-                  const TypeIcon = type.icon;
-                  return (
-                    <Link key={type.id} to={`/#calendario?tipo=${type.id}`}>
-                      <Button 
-                        variant="outline" 
-                        className="w-full justify-start gap-2 bg-white/10 backdrop-blur-sm border-white/40 text-foreground hover:bg-white hover:text-[#7a1c18] transition-all"
-                      >
-                        <TypeIcon className="w-4 h-4" />
-                        {type.label}
-                      </Button>
-                    </Link>
-                  );
-                })}
-              </CardContent>
-            </Card>
-
-            {/* Eventos No Mesmo Dia */}
-            {sameDayEvents.length > 0 && (
+          <div className="lg:col-span-1">
+            <div className="sticky top-24 space-y-6">
+              {/* Categorias de Eventos - Icons only horizontal */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-xl font-effloresce">Eventos no Mesmo Dia</CardTitle>
+                  <CardTitle className="text-xl font-effloresce">Categorias</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  {sameDayEvents.map((sameDayEvent) => {
-                    const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
-                    return (
-                      <Link key={sameDayEvent.id} to={`/evento/${sameDayEvent.id}`}>
-                        <Card className="hover:shadow-md transition-shadow cursor-pointer">
-                          <CardContent className="p-4">
-                            <div className="flex gap-3">
-                              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                                {SameDayIcon && <SameDayIcon className="w-6 h-6 text-primary" />}
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <h3 className="font-semibold text-sm line-clamp-2 mb-1">
-                                  {sameDayEvent.name}
-                                </h3>
-                                <p className="text-xs text-muted-foreground">
-                                  {sameDayEvent.time}
-                                </p>
-                              </div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </Link>
-                    );
-                  })}
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Outros Eventos */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl font-effloresce">Outros Eventos</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {otherEvents.slice(0, 5).map((otherEvent) => {
-                  const OtherIcon = languageIcons[otherEvent.type as keyof typeof languageIcons];
-                  return (
-                    <Link key={otherEvent.id} to={`/evento/${otherEvent.id}`}>
-                      <Card className="hover:shadow-md transition-shadow cursor-pointer">
-                        <CardContent className="p-4">
-                          <div className="flex gap-3">
-                            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                              {OtherIcon && <OtherIcon className="w-6 h-6 text-primary" />}
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="font-semibold text-sm line-clamp-2 mb-1">
-                                {otherEvent.name}
-                              </h3>
-                              <p className="text-xs text-muted-foreground">
-                                {otherEvent.date} às {otherEvent.time}
-                              </p>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Link to="/#calendario" className="group relative">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:border-[#7a1c18] transition-all cursor-pointer">
+                        <Star className="w-5 h-5 text-foreground group-hover:text-[#7a1c18]" />
+                      </div>
+                      <div className="absolute left-1/2 -translate-x-1/2 top-14 z-50 hidden group-hover:block">
+                        <div className="bg-white text-[#7a1c18] px-3 py-2 rounded-lg shadow-xl whitespace-nowrap text-sm font-gabarito font-semibold">
+                          Todos os Eventos
+                        </div>
+                      </div>
+                    </Link>
+                    {eventTypes.map((type) => {
+                      const TypeIcon = type.icon;
+                      return (
+                        <Link key={type.id} to={`/#calendario?tipo=${type.id}`} className="group relative">
+                          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:border-[#7a1c18] transition-all cursor-pointer">
+                            <TypeIcon className="w-5 h-5 text-foreground group-hover:text-[#7a1c18]" />
+                          </div>
+                          <div className="absolute left-1/2 -translate-x-1/2 top-14 z-50 hidden group-hover:block">
+                            <div className="bg-white text-[#7a1c18] px-3 py-2 rounded-lg shadow-xl whitespace-nowrap text-sm font-gabarito font-semibold">
+                              {type.label}
                             </div>
                           </div>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  );
-                })}
-              </CardContent>
-            </Card>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Eventos No Mesmo Dia */}
+              {sameDayEvents.length > 0 && (
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-effloresce">Eventos no Mesmo Dia</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    {sameDayEvents.map((sameDayEvent) => {
+                      const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
+                      return (
+                        <Link key={sameDayEvent.id} to={`/evento/${sameDayEvent.id}`}>
+                          <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                            <CardContent className="p-4">
+                              <div className="flex gap-3">
+                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
+                                  {SameDayIcon && <SameDayIcon className="w-6 h-6 text-primary" />}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <h3 className="font-semibold text-sm line-clamp-2 mb-1">
+                                    {sameDayEvent.name}
+                                  </h3>
+                                  <p className="text-xs text-muted-foreground">
+                                    {sameDayEvent.time}
+                                  </p>
+                                </div>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </Link>
+                      );
+                    })}
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Eventos do Dia Seguinte */}
+              {nextDayEvents.length > 0 && (
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-effloresce">Eventos do Dia Seguinte</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    {nextDayEvents.map((nextEvent) => {
+                      const NextIcon = languageIcons[nextEvent.type as keyof typeof languageIcons];
+                      return (
+                        <Link key={nextEvent.id} to={`/evento/${nextEvent.id}`}>
+                          <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                            <CardContent className="p-4">
+                              <div className="flex gap-3">
+                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
+                                  {NextIcon && <NextIcon className="w-6 h-6 text-primary" />}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <h3 className="font-semibold text-sm line-clamp-2 mb-1">
+                                    {nextEvent.name}
+                                  </h3>
+                                  <p className="text-xs text-muted-foreground">
+                                    {nextEvent.date} às {nextEvent.time}
+                                  </p>
+                                </div>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </Link>
+                      );
+                    })}
+                  </CardContent>
+                </Card>
+              )}
+            </div>
           </div>
         </div>
       </main>
