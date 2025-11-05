@@ -81,13 +81,6 @@ export const Navigation = () => {
                       </Button>
                       <Button
                         variant="ghost"
-                        onClick={() => scrollToSection("informacoes")}
-                        className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg"
-                      >
-                        Informações
-                      </Button>
-                      <Button
-                        variant="ghost"
                         onClick={() => scrollToSection("calendario")}
                         className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg"
                       >
@@ -102,14 +95,6 @@ export const Navigation = () => {
                           className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
                         >
                           Sobre
-                        </Button>
-                      </Link>
-                      <Link to="/#informacoes" onClick={() => setIsMenuOpen(false)}>
-                        <Button
-                          variant="ghost"
-                          className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
-                        >
-                          Informações
                         </Button>
                       </Link>
                       <Link to="/#calendario" onClick={() => setIsMenuOpen(false)}>
@@ -155,13 +140,6 @@ export const Navigation = () => {
                 </Button>
                 <Button
                   variant="ghost"
-                  onClick={() => scrollToSection("informacoes")}
-                  className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
-                >
-                  Informações
-                </Button>
-                <Button
-                  variant="ghost"
                   onClick={() => scrollToSection("calendario")}
                   className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
                 >
@@ -176,14 +154,6 @@ export const Navigation = () => {
                     className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
                   >
                     Sobre
-                  </Button>
-                </Link>
-                <Link to="/#informacoes">
-                  <Button
-                    variant="ghost"
-                    className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
-                  >
-                    Informações
                   </Button>
                 </Link>
                 <Link to="/#calendario">
