@@ -5,7 +5,7 @@ export const InformationSection = () => {
     {
       icon: MapPin,
       title: "Localização",
-      subtitle: "Rua Leopoldina de Camargo, 260 - Itapevi",
+      subtitle: "Rua Leopoldina de Camargo, 260 Itapevi",
       content: "Em frente ao Ita Shopping",
     },
     {
@@ -19,7 +19,7 @@ export const InformationSection = () => {
       icon: Clock,
       title: "Horário",
       subtitle: "Diariamente das 19h às 23h",
-      content: "Confira a programação completa",
+      content: "",
     },
     {
       icon: User,
