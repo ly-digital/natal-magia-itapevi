@@ -6,6 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
 import { BalletDancer, CircusTent, SantaHat } from "./icons/CustomIcons";
+import evento1 from "@/assets/evento-1.png";
+import evento2 from "@/assets/evento-2.png";
+import evento3 from "@/assets/evento-3.png";
+import evento4 from "@/assets/evento-4.png";
+import evento6 from "@/assets/evento-6.png";
+import evento7 from "@/assets/evento-7.png";
+import evento8 from "@/assets/evento-8.png";
 
 // Estrutura de dados dos eventos
 // Para adicionar eventos, edite o arquivo attractions-data.ts ou importe via CSV
@@ -13,13 +20,13 @@ const attractions = [
   {
     id: 1,
     name: "Paradinha de Natal",
-    date: "2025-12-05", // Formato: YYYY-MM-DD
+    date: "2025-11-04",
     time: "19:00",
     type: "paradinha",
     synopsis: "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
-    image: null, // Imagem 800x600px (4:3)
+    image: evento1,
   },
   {
     id: 2,
@@ -30,7 +37,7 @@ const attractions = [
     synopsis: "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: false,
-    image: null,
+    image: evento2,
   },
   {
     id: 3,
@@ -41,7 +48,7 @@ const attractions = [
     synopsis: "Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: null,
+    image: evento3,
   },
   {
     id: 4,
@@ -52,7 +59,7 @@ const attractions = [
     synopsis: "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
     location: "Praça 18 de Fevereiro",
     hasLibras: false,
-    image: null,
+    image: evento4,
   },
   {
     id: 5,
@@ -63,7 +70,29 @@ const attractions = [
     synopsis: "Apresentação musical com canções natalinas interpretadas por artistas locais.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: null,
+    image: evento6,
+  },
+  {
+    id: 6,
+    name: "Batalha de Bonecos de Neve",
+    date: "2025-11-01",
+    time: "07:00",
+    type: "circo",
+    synopsis: "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
+    location: "",
+    hasLibras: false,
+    image: evento7,
+  },
+  {
+    id: 7,
+    name: "A Dança dos Brinquedos",
+    date: "2025-12-24",
+    time: "15:00",
+    type: "danca",
+    synopsis: "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
+    location: "",
+    hasLibras: true,
+    image: evento8,
   },
 ];
 
