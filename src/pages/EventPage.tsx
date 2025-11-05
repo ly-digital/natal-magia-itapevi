@@ -345,7 +345,7 @@ export default function EventPage() {
                 <Card className="bg-[#004731] border-white/20 shadow-xl">
                   <CardHeader className="bg-[#006345] border-b border-white/10">
                     <CardTitle className="text-xl font-effloresce text-[#fbc942]">
-                      Outros Eventos do Dia
+                      Eventos no mesmo dia
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
