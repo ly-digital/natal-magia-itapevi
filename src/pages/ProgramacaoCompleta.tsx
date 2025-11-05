@@ -202,8 +202,8 @@ const ProgramacaoCompleta = () => {
         {/* Filtros Centralizados em Linha Horizontal */}
         <div className="mb-8 flex flex-col items-center gap-6">
           {/* Categorias de Eventos */}
-          <div className="w-full max-w-4xl">
-            <h3 className="text-lg font-bold text-[#fbc942] font-effloresce mb-3 text-center">Categorias</h3>
+          <div className="w-full max-w-4xl text-center">
+            <h3 className="text-lg font-bold text-[#fbc942] font-effloresce mb-4">Categorias</h3>
             <TooltipProvider>
               <div className="flex flex-wrap justify-center gap-3">
                 {types.map((type) => {
@@ -222,7 +222,7 @@ const ProgramacaoCompleta = () => {
                           <Icon className="w-6 h-6" />
                         </button>
                       </TooltipTrigger>
-                      <TooltipContent side="bottom" className="bg-white text-[#7a1c18] font-gabarito font-semibold">
+                      <TooltipContent side="bottom" className="bg-white text-[#7a1c18] font-gabarito font-semibold z-50">
                         <p>{type.label}</p>
                       </TooltipContent>
                     </Tooltip>
@@ -233,10 +233,11 @@ const ProgramacaoCompleta = () => {
           </div>
 
           {/* Filtros de Data e Horário */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-2xl">
-            <div className="w-full sm:w-64">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full">
+            <div className="w-full sm:w-auto sm:min-w-[280px] text-center">
+              <h3 className="text-sm font-bold text-[#fbc942] font-effloresce mb-2">Data</h3>
               <Select value={selectedDate} onValueChange={setSelectedDate}>
-                <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15 h-12">
+                <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15 h-12 w-full">
                   <CalendarIcon className="w-4 h-4 mr-2" />
                   <SelectValue placeholder="Todas as datas" />
                 </SelectTrigger>
@@ -251,9 +252,10 @@ const ProgramacaoCompleta = () => {
               </Select>
             </div>
 
-            <div className="w-full sm:w-64">
+            <div className="w-full sm:w-auto sm:min-w-[280px] text-center">
+              <h3 className="text-sm font-bold text-[#fbc942] font-effloresce mb-2">Horário</h3>
               <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15 h-12">
+                <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15 h-12 w-full">
                   <Clock className="w-4 h-4 mr-2" />
                   <SelectValue placeholder="Todos os horários" />
                 </SelectTrigger>
