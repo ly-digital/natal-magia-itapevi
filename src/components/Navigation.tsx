@@ -109,7 +109,7 @@ export const Navigation = () => {
             </Sheet>
 
             <Link to="/" className="absolute left-1/2 -translate-x-1/2 cursor-pointer">
-              <img src={logo} alt="Rua de Natal Itapevi" className="h-10" />
+              <img src={logo} alt="Rua de Natal Itapevi" className="h-14" />
             </Link>
 
             <a
