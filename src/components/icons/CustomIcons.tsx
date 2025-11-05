@@ -1,10 +1,10 @@
 import { LucideProps } from "lucide-react";
-import icDanca from "@/assets/ic-danca.png";
+import icBailarina from "@/assets/ic-bailarina.svg";
 import icCirco from "@/assets/ic-circo.svg";
 
 export const BalletDancer = ({ size = 24, color = "currentColor", className }: LucideProps) => (
   <img 
-    src={icDanca} 
+    src={icBailarina} 
     width={size} 
     height={size} 
     style={{ color }}
