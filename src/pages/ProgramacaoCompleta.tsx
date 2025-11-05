@@ -189,88 +189,90 @@ const ProgramacaoCompleta = () => {
       <Navigation />
       
       <main className="container mx-auto px-4 pt-40 pb-12 md:pt-32 md:pb-16">
+        {/* Cabeçalho */}
+        <div className="mb-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#fbc942] font-effloresce mb-4">
+            Programação Completa
+          </h1>
+          <p className="text-white text-lg font-gabarito">
+            Confira abaixo todos os dias e horários das atrações da Rua de Natal Itapevi 2025.
+          </p>
+        </div>
+
+        {/* Filtros Centralizados em Linha Horizontal */}
+        <div className="mb-8 flex flex-col items-center gap-6">
+          {/* Categorias de Eventos */}
+          <div className="w-full max-w-4xl">
+            <h3 className="text-lg font-bold text-[#fbc942] font-effloresce mb-3 text-center">Categorias</h3>
+            <TooltipProvider>
+              <div className="flex flex-wrap justify-center gap-3">
+                {types.map((type) => {
+                  const Icon = type.icon;
+                  return (
+                    <Tooltip key={type.id}>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => setSelectedType(selectedType === type.id ? "" : type.id)}
+                          className={`rounded-full w-12 h-12 flex items-center justify-center transition-colors ${
+                            selectedType === type.id
+                              ? "bg-[#fbc942] text-[#7a1c18]"
+                              : "bg-white/10 text-white hover:bg-white/20"
+                          }`}
+                        >
+                          <Icon className="w-6 h-6" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom" className="bg-white text-[#7a1c18] font-gabarito font-semibold">
+                        <p>{type.label}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  );
+                })}
+              </div>
+            </TooltipProvider>
+          </div>
+
+          {/* Filtros de Data e Horário */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-2xl">
+            <div className="w-full sm:w-64">
+              <Select value={selectedDate} onValueChange={setSelectedDate}>
+                <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15 h-12">
+                  <CalendarIcon className="w-4 h-4 mr-2" />
+                  <SelectValue placeholder="Todas as datas" />
+                </SelectTrigger>
+                <SelectContent className="bg-white border-white/30 z-50">
+                  <SelectItem value="all">Todas as datas</SelectItem>
+                  {availableDates.map((date) => (
+                    <SelectItem key={date} value={date}>
+                      {formatDate(date)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="w-full sm:w-64">
+              <Select value={selectedTime} onValueChange={setSelectedTime}>
+                <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15 h-12">
+                  <Clock className="w-4 h-4 mr-2" />
+                  <SelectValue placeholder="Todos os horários" />
+                </SelectTrigger>
+                <SelectContent className="bg-white border-white/30 z-50">
+                  <SelectItem value="all">Todos os horários</SelectItem>
+                  {timeSlots.map((slot) => (
+                    <SelectItem key={slot.id} value={slot.id}>
+                      {slot.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Navegação Lateral - Fixa no scroll */}
           <aside className="lg:w-80 lg:sticky lg:top-24 lg:self-start space-y-6">
-            {/* Categorias de Eventos */}
-            <Card className="bg-[#004731] border-white/20 overflow-hidden">
-              <div className="p-4 bg-[#006345]">
-                <h3 className="text-lg font-bold text-[#fbc942] font-effloresce">Categorias</h3>
-              </div>
-              <div className="p-4">
-                <TooltipProvider>
-                  <div className="flex flex-wrap gap-2">
-                    {types.map((type) => {
-                      const Icon = type.icon;
-                      return (
-                        <Tooltip key={type.id}>
-                          <TooltipTrigger asChild>
-                            <button
-                              onClick={() => setSelectedType(selectedType === type.id ? "" : type.id)}
-                              className={`rounded-full w-10 h-10 flex items-center justify-center transition-colors ${
-                                selectedType === type.id
-                                  ? "bg-[#fbc942] text-[#7a1c18]"
-                                  : "bg-white/10 text-white hover:bg-white/20"
-                              }`}
-                            >
-                              <Icon className="w-5 h-5" />
-                            </button>
-                          </TooltipTrigger>
-                          <TooltipContent side="bottom" className="bg-white text-[#7a1c18] font-gabarito font-semibold">
-                            <p>{type.label}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      );
-                    })}
-                  </div>
-                </TooltipProvider>
-              </div>
-            </Card>
-
-            {/* Filtro de Data */}
-            <Card className="bg-[#004731] border-white/20 overflow-hidden">
-              <div className="p-4 bg-[#006345]">
-                <h3 className="text-lg font-bold text-[#fbc942] font-effloresce">Data</h3>
-              </div>
-              <div className="p-4">
-                <Select value={selectedDate} onValueChange={setSelectedDate}>
-                  <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15">
-                    <SelectValue placeholder="Todas as datas" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white border-white/30">
-                    <SelectItem value="all">Todas as datas</SelectItem>
-                    {availableDates.map((date) => (
-                      <SelectItem key={date} value={date}>
-                        {formatDate(date)}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </Card>
-
-            {/* Filtro de Horário */}
-            <Card className="bg-[#004731] border-white/20 overflow-hidden">
-              <div className="p-4 bg-[#006345]">
-                <h3 className="text-lg font-bold text-[#fbc942] font-effloresce">Horário</h3>
-              </div>
-              <div className="p-4">
-                <Select value={selectedTime} onValueChange={setSelectedTime}>
-                  <SelectTrigger className="bg-white/10 border-white/40 text-white font-gabarito hover:bg-white/15">
-                    <SelectValue placeholder="Todos os horários" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white border-white/30">
-                    <SelectItem value="all">Todos os horários</SelectItem>
-                    {timeSlots.map((slot) => (
-                      <SelectItem key={slot.id} value={slot.id}>
-                        {slot.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </Card>
-
             {/* Eventos do Dia */}
             {eventsOfSelectedDay.length > 0 && (
               <Card className="bg-[#004731] border-white/20 overflow-hidden">
@@ -307,15 +309,6 @@ const ProgramacaoCompleta = () => {
 
           {/* Conteúdo Principal */}
           <div className="flex-1">
-            {/* Cabeçalho */}
-            <div className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-[#fbc942] font-effloresce mb-4">
-                Programação Completa
-              </h1>
-              <p className="text-white text-lg font-gabarito">
-                Confira abaixo todos os dias e horários das atrações da Rua de Natal Itapevi 2025.
-              </p>
-            </div>
 
             {/* Grid de Eventos */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
