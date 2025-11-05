@@ -5,6 +5,14 @@ export const Footer = () => {
   return (
     <footer className="bg-[#7a1c18] py-20 px-4">
       <div className="container mx-auto">
+        <div className="max-w-6xl mx-auto mb-8">
+          <img
+            src={sponsorsLogo}
+            alt="Fomento, Apresentação, Patrocínio, Apoio, Produção e Realização"
+            className="w-full h-auto"
+          />
+        </div>
+        
         <div className="text-center mb-12">
           <a 
             href="https://instagram.com/ruadenatalitapevi" 
@@ -16,14 +24,6 @@ export const Footer = () => {
             <Instagram className="w-6 h-6" />
             <span>@ruadenatalitapevi</span>
           </a>
-        </div>
-        
-        <div className="max-w-6xl mx-auto mb-12">
-          <img
-            src={sponsorsLogo}
-            alt="Fomento, Apresentação, Patrocínio, Apoio, Produção e Realização"
-            className="w-full h-auto"
-          />
         </div>
         
         <div className="text-center">
