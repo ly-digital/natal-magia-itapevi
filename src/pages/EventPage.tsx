@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, MapPin, Star, Users } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, Star, Languages, Share2 } from "lucide-react";
 import { Music, Theater, Bus } from "lucide-react";
 import { BalletDancer, CircusTent, SantaHat } from "@/components/icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
@@ -181,131 +181,193 @@ export default function EventPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-[#004731] to-[#006345]">
       <Navigation />
       
-      <main className="container mx-auto px-4 pt-32 md:pt-24 pb-12">
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Cover Image */}
-            <div className="relative h-64 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg overflow-hidden flex items-center justify-center">
-              {Icon && <Icon className="w-32 h-32 md:w-40 md:h-40 text-primary" />}
+      <main className="pt-20 md:pt-24 pb-16">
+        {/* Hero Section with Image */}
+        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+          {event.image ? (
+            <img 
+              src={event.image} 
+              alt={event.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30 flex items-center justify-center">
+              {Icon && <Icon className="w-32 h-32 md:w-48 md:h-48 text-[#fbc942]/60" />}
             </div>
-
-            {/* Event Header */}
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-4 flex-wrap">
-                <h1 className="text-4xl md:text-5xl font-bold text-primary font-effloresce">
-                  {event.name}
-                </h1>
-                <Badge className={languageColors[event.type as keyof typeof languageColors]}>
-                  {typeLabels[event.type as keyof typeof typeLabels]}
-                </Badge>
-              </div>
-
-              {/* Event Details */}
-              <div className="flex flex-wrap gap-4 text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  <span className="font-semibold text-foreground">{event.date}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <span>{event.time}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span>{event.location}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Description */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl font-effloresce">Sobre o Evento</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-foreground leading-relaxed">{event.fullDescription}</p>
-                <div className="pt-4 border-t">
-                  <p className="text-sm text-primary font-medium flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    {event.accessibility}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+          )}
+          
+          {/* Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#004731] via-[#004731]/50 to-transparent" />
+          
+          {/* Back Button */}
+          <div className="absolute top-6 left-4 md:left-8 z-10">
+            <Link to="/programacao-completa">
+              <Button 
+                variant="outline" 
+                className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-[#7a1c18] transition-all shadow-xl"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Voltar
+              </Button>
+            </Link>
           </div>
+          
+          {/* Event Badge */}
+          <div className="absolute top-6 right-4 md:right-8 z-10">
+            <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-bold text-sm px-4 py-2 shadow-xl">
+              {typeLabels[event.type as keyof typeof typeLabels]}
+            </Badge>
+          </div>
+        </div>
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
-              {/* Categorias de Eventos - Icons only horizontal */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl font-effloresce">Categorias</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Link to="/programacao-completa" className="group relative">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:border-[#7a1c18] transition-all cursor-pointer">
-                        <Star className="w-5 h-5 text-foreground group-hover:text-[#7a1c18]" />
+        {/* Main Content Container */}
+        <div className="container mx-auto px-4 -mt-24 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-2 space-y-6 animate-fade-in">
+              {/* Event Title Card */}
+              <Card className="bg-[#004731] border-[#fbc942]/30 border-2 shadow-2xl overflow-hidden">
+                <CardContent className="p-6 md:p-8">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#fbc942] font-effloresce mb-4 leading-tight">
+                    {event.name}
+                  </h1>
+                  <p className="text-white/90 text-lg md:text-xl font-gabarito leading-relaxed">
+                    {event.description}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Event Details Card */}
+              <Card className="bg-[#004731] border-white/20 shadow-xl">
+                <CardContent className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-4 p-4 bg-[#006345] rounded-lg">
+                      <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
+                        <Calendar className="w-6 h-6 text-[#7a1c18]" />
                       </div>
-                      <div className="absolute left-1/2 -translate-x-1/2 top-14 z-50 hidden group-hover:block">
-                        <div className="bg-white text-[#7a1c18] px-3 py-2 rounded-lg shadow-xl whitespace-nowrap text-sm font-gabarito font-semibold">
-                          Todos os Eventos
+                      <div>
+                        <p className="text-white/70 text-sm font-gabarito">Data</p>
+                        <p className="text-white font-bold text-lg font-gabarito">{event.date}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 p-4 bg-[#006345] rounded-lg">
+                      <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-6 h-6 text-[#7a1c18]" />
+                      </div>
+                      <div>
+                        <p className="text-white/70 text-sm font-gabarito">Horário</p>
+                        <p className="text-white font-bold text-lg font-gabarito">{event.time}</p>
+                      </div>
+                    </div>
+                    
+                    {event.location && (
+                      <div className="flex items-start gap-4 p-4 bg-[#006345] rounded-lg md:col-span-2">
+                        <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-6 h-6 text-[#7a1c18]" />
+                        </div>
+                        <div>
+                          <p className="text-white/70 text-sm font-gabarito">Local</p>
+                          <p className="text-white font-bold text-lg font-gabarito">{event.location}</p>
                         </div>
                       </div>
-                    </Link>
-                    {eventTypes.map((type) => {
-                      const TypeIcon = type.icon;
-                      return (
-                        <Link key={type.id} to={`/programacao-completa?tipo=${type.id}`} className="group relative">
-                          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:border-[#7a1c18] transition-all cursor-pointer">
-                            <TypeIcon className="w-5 h-5 text-foreground group-hover:text-[#7a1c18]" />
-                          </div>
-                          <div className="absolute left-1/2 -translate-x-1/2 top-14 z-50 hidden group-hover:block">
-                            <div className="bg-white text-[#7a1c18] px-3 py-2 rounded-lg shadow-xl whitespace-nowrap text-sm font-gabarito font-semibold">
-                              {type.label}
-                            </div>
-                          </div>
-                        </Link>
-                      );
-                    })}
+                    )}
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Eventos No Mesmo Dia */}
+              {/* Description Card */}
+              <Card className="bg-[#004731] border-white/20 shadow-xl">
+                <CardHeader className="bg-[#006345] border-b border-white/10">
+                  <CardTitle className="text-2xl md:text-3xl font-effloresce text-[#fbc942] flex items-center gap-3">
+                    <Star className="w-7 h-7" />
+                    Sobre o Evento
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 md:p-8">
+                  <p className="text-white/90 text-base md:text-lg leading-relaxed font-gabarito mb-6">
+                    {event.fullDescription}
+                  </p>
+                  
+                  {/* Accessibility Badge */}
+                  {event.accessibility && (
+                    <div className="pt-6 border-t border-white/10">
+                      <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-semibold px-4 py-2 text-sm">
+                        <Languages className="w-4 h-4 mr-2" />
+                        {event.accessibility}
+                      </Badge>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Quick Actions Card */}
+              <Card className="bg-[#004731] border-[#fbc942]/30 border-2 shadow-xl sticky top-24">
+                <CardHeader className="bg-[#006345] border-b border-white/10">
+                  <CardTitle className="text-xl font-effloresce text-[#fbc942]">Ações Rápidas</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 space-y-3">
+                  <Button 
+                    className="w-full bg-[#fbc942] text-[#7a1c18] hover:bg-white font-gabarito font-bold shadow-lg"
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator.share({
+                          title: event.name,
+                          text: event.description,
+                          url: window.location.href,
+                        });
+                      }
+                    }}
+                  >
+                    <Share2 className="w-4 h-4 mr-2" />
+                    Compartilhar Evento
+                  </Button>
+                  
+                  <Link to="/programacao-completa" className="block">
+                    <Button 
+                      variant="outline" 
+                      className="w-full bg-white/10 border-white/40 text-white hover:bg-white hover:text-[#7a1c18] font-gabarito font-semibold"
+                    >
+                      Ver Todos os Eventos
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+
+              {/* Outros Eventos do Dia */}
               {sameDayEvents.length > 0 && (
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-effloresce">Eventos no Mesmo Dia</CardTitle>
+                <Card className="bg-[#004731] border-white/20 shadow-xl">
+                  <CardHeader className="bg-[#006345] border-b border-white/10">
+                    <CardTitle className="text-xl font-effloresce text-[#fbc942]">
+                      Outros Eventos do Dia
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-3">
+                  <CardContent className="p-4 space-y-3">
                     {sameDayEvents.map((sameDayEvent) => {
                       const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
                       return (
                         <Link key={sameDayEvent.id} to={`/evento/${sameDayEvent.id}`}>
-                          <Card className="hover:shadow-md transition-shadow cursor-pointer">
-                            <CardContent className="p-4">
-                              <div className="flex gap-3">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                                  {SameDayIcon && <SameDayIcon className="w-6 h-6 text-primary" />}
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <h3 className="font-semibold text-sm line-clamp-2 mb-1">
-                                    {sameDayEvent.name}
-                                  </h3>
-                                  <p className="text-xs text-muted-foreground">
-                                    {sameDayEvent.time}
-                                  </p>
-                                </div>
+                          <div className="p-3 bg-[#006345] hover:bg-[#fbc942] rounded-lg transition-all hover:shadow-lg cursor-pointer group">
+                            <div className="flex gap-3 items-start">
+                              <div className="w-10 h-10 bg-[#fbc942] group-hover:bg-[#7a1c18] rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                                {SameDayIcon && <SameDayIcon className="w-5 h-5 text-[#7a1c18] group-hover:text-white" />}
                               </div>
-                            </CardContent>
-                          </Card>
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-semibold text-sm text-white group-hover:text-[#7a1c18] font-gabarito line-clamp-2 mb-1">
+                                  {sameDayEvent.name}
+                                </h3>
+                                <p className="text-xs text-white/70 group-hover:text-[#7a1c18]/80 font-gabarito">
+                                  {sameDayEvent.time}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </Link>
                       );
                     })}
@@ -313,34 +375,34 @@ export default function EventPage() {
                 </Card>
               )}
 
-              {/* Eventos do Dia Seguinte */}
+              {/* Próximos Eventos */}
               {nextDayEvents.length > 0 && (
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-effloresce">Eventos do Dia Seguinte</CardTitle>
+                <Card className="bg-[#004731] border-white/20 shadow-xl">
+                  <CardHeader className="bg-[#006345] border-b border-white/10">
+                    <CardTitle className="text-xl font-effloresce text-[#fbc942]">
+                      Próximos Eventos
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-3">
+                  <CardContent className="p-4 space-y-3">
                     {nextDayEvents.map((nextEvent) => {
                       const NextIcon = languageIcons[nextEvent.type as keyof typeof languageIcons];
                       return (
                         <Link key={nextEvent.id} to={`/evento/${nextEvent.id}`}>
-                          <Card className="hover:shadow-md transition-shadow cursor-pointer">
-                            <CardContent className="p-4">
-                              <div className="flex gap-3">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                                  {NextIcon && <NextIcon className="w-6 h-6 text-primary" />}
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <h3 className="font-semibold text-sm line-clamp-2 mb-1">
-                                    {nextEvent.name}
-                                  </h3>
-                                  <p className="text-xs text-muted-foreground">
-                                    {nextEvent.date} às {nextEvent.time}
-                                  </p>
-                                </div>
+                          <div className="p-3 bg-[#006345] hover:bg-[#fbc942] rounded-lg transition-all hover:shadow-lg cursor-pointer group">
+                            <div className="flex gap-3 items-start">
+                              <div className="w-10 h-10 bg-[#fbc942] group-hover:bg-[#7a1c18] rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                                {NextIcon && <NextIcon className="w-5 h-5 text-[#7a1c18] group-hover:text-white" />}
                               </div>
-                            </CardContent>
-                          </Card>
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-semibold text-sm text-white group-hover:text-[#7a1c18] font-gabarito line-clamp-2 mb-1">
+                                  {nextEvent.name}
+                                </h3>
+                                <p className="text-xs text-white/70 group-hover:text-[#7a1c18]/80 font-gabarito">
+                                  {nextEvent.date} às {nextEvent.time}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </Link>
                       );
                     })}
