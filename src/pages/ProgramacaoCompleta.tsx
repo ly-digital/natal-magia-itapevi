@@ -7,8 +7,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon } from "@/components/icons/CustomIcons";
+import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star } from "lucide-react";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "@/components/icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -425,7 +425,7 @@ const ProgramacaoCompleta = () => {
                         {attraction.hasLibras && (
                           <div className="pt-2">
                             <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-semibold">
-                              <Languages className="w-3 h-3 mr-1" />
+                              <LibrasIcon className="w-3 h-3 mr-1" />
                               Libras
                             </Badge>
                           </div>

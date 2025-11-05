@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon } from "./icons/CustomIcons";
+import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star } from "lucide-react";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "./icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -334,7 +334,7 @@ export const CalendarSection = () => {
                     {attraction.hasLibras && (
                       <div className="pt-2">
                         <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-semibold">
-                          <Languages className="w-3 h-3 mr-1" />
+                          <LibrasIcon className="w-3 h-3 mr-1" />
                           Libras
                         </Badge>
                       </div>
