@@ -48,15 +48,8 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         {/* Mobile Layout */}
         <div className="md:hidden">
-          {/* Logo centered at top */}
-          <div className="flex justify-center py-3 border-b border-white/20">
-            <Link to="/" className="cursor-pointer">
-              <img src={logo} alt="Rua de Natal Itapevi" className="h-10" />
-            </Link>
-          </div>
-          
-          {/* Menu and Instagram row */}
-          <div className="flex items-center justify-between py-2">
+          {/* Single row with hamburger, logo, and Instagram */}
+          <div className="flex items-center justify-between py-3 relative">
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <Button
@@ -114,6 +107,10 @@ export const Navigation = () => {
                 </div>
               </SheetContent>
             </Sheet>
+
+            <Link to="/" className="absolute left-1/2 -translate-x-1/2 cursor-pointer">
+              <img src={logo} alt="Rua de Natal Itapevi" className="h-10" />
+            </Link>
 
             <a
               href="https://instagram.com/ruadenatalitapevi"
