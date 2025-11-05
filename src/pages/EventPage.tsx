@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, Star, Languages, Share2 } from "lucide-react";
 import { Music, Theater, Bus } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat } from "@/components/icons/CustomIcons";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon } from "@/components/icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -177,7 +177,7 @@ export default function EventPage() {
     { id: "danca", label: "Dança", icon: BalletDancer },
     { id: "circo", label: "Circo", icon: CircusTent },
     { id: "papainoel", label: "Papai Noel", icon: SantaHat },
-    { id: "paradinha", label: "Paradinha", icon: Bus },
+    { id: "paradinha", label: "Paradinha", icon: ParadinhaIcon },
   ];
 
   return (

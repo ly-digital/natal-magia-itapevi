@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat } from "./icons/CustomIcons";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon } from "./icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -102,7 +102,7 @@ const languageIcons = {
   danca: BalletDancer,
   circo: CircusTent,
   papainoel: SantaHat,
-  paradinha: Bus,
+  paradinha: ParadinhaIcon,
 };
 
 export const CalendarSection = () => {

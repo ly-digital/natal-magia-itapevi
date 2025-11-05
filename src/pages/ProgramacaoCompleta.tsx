@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat } from "@/components/icons/CustomIcons";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon } from "@/components/icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -113,7 +113,7 @@ const types = [
   { id: "danca", label: "Dança", icon: BalletDancer },
   { id: "circo", label: "Circo", icon: CircusTent },
   { id: "papainoel", label: "Papai Noel", icon: SantaHat },
-  { id: "paradinha", label: "Paradinha", icon: Bus },
+  { id: "paradinha", label: "Paradinha", icon: ParadinhaIcon },
 ];
 
 const timeSlots = [
