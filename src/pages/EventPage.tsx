@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, Star, Languages, Share2 } from "lucide-react";
 import { Music, Theater, Bus } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon } from "@/components/icons/CustomIcons";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "@/components/icons/CustomIcons";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -265,7 +265,7 @@ export default function EventPage() {
                     </div>
                     
                     {event.location && (
-                      <div className="flex items-start gap-4 p-4 bg-[#006345] rounded-lg md:col-span-2">
+                      <div className="flex items-start gap-4 p-4 bg-[#006345] rounded-lg">
                         <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
                           <MapPin className="w-6 h-6 text-[#7a1c18]" />
                         </div>
@@ -275,44 +275,32 @@ export default function EventPage() {
                         </div>
                       </div>
                     )}
+
+                    {event.accessibility?.includes("libras") && (
+                      <div className="flex items-start gap-4 p-4 bg-[#006345] rounded-lg">
+                        <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
+                          <LibrasIcon className="w-6 h-6 text-[#7a1c18]" />
+                        </div>
+                        <div>
+                          <p className="text-white/70 text-sm font-gabarito">Acessibilidade</p>
+                          <p className="text-white font-bold text-lg font-gabarito">Libras</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Description Card */}
-              <Card className="bg-[#004731] border-white/20 shadow-xl">
-                <CardHeader className="bg-[#006345] border-b border-white/10">
-                  <CardTitle className="text-2xl md:text-3xl font-effloresce text-[#fbc942] flex items-center gap-3">
-                    <Star className="w-7 h-7" />
-                    Sobre o Evento
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-6 md:p-8">
-                  <p className="text-white/90 text-base md:text-lg leading-relaxed font-gabarito mb-6">
-                    {event.fullDescription}
-                  </p>
-                  
-                  {/* Accessibility Badge */}
-                  {event.accessibility && (
-                    <div className="pt-6 border-t border-white/10">
-                      <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-semibold px-4 py-2 text-sm">
-                        <Languages className="w-4 h-4 mr-2" />
-                        {event.accessibility}
-                      </Badge>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-6">
               {/* Quick Actions Card */}
-              <Card className="bg-[#004731] border-[#fbc942]/30 border-2 shadow-xl sticky top-24">
+              <Card className="bg-[#004731] border-[#fbc942]/30 border-2 shadow-xl sticky top-24 overflow-hidden">
                 <CardHeader className="bg-[#006345] border-b border-white/10">
                   <CardTitle className="text-xl font-effloresce text-[#fbc942]">Ações Rápidas</CardTitle>
                 </CardHeader>
-                <CardContent className="p-4 space-y-3">
+                <CardContent className="p-4 space-y-3 bg-[#004731]">
                   <Button 
                     className="w-full bg-[#fbc942] text-[#7a1c18] hover:bg-white font-gabarito font-bold shadow-lg"
                     onClick={() => {
