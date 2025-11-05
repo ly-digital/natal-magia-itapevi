@@ -169,10 +169,21 @@ const ProgramacaoCompleta = () => {
       return true;
     });
 
-    // Ordena por data e hora
+    // Ordena: próximos eventos primeiro, depois eventos passados
+    const now = new Date();
     filtered.sort((a, b) => {
       const dateA = new Date(`${a.date}T${a.time}`);
       const dateB = new Date(`${b.date}T${b.time}`);
+      
+      const isPastA = dateA < now;
+      const isPastB = dateB < now;
+      
+      // Se um é futuro e outro é passado, futuro vem primeiro
+      if (isPastA !== isPastB) {
+        return isPastA ? 1 : -1;
+      }
+      
+      // Se ambos são futuros ou ambos são passados, ordena por data
       return dateA.getTime() - dateB.getTime();
     });
 
