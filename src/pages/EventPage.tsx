@@ -5,8 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, MapPin, Star } from "lucide-react";
-import { Music, Theater, Users, Tent, Gift, Bus } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, Star, Users } from "lucide-react";
+import { Music, Theater, Bus } from "lucide-react";
+import { BalletDancer, CircusTent, SantaHat } from "@/components/icons/CustomIcons";
 
 // Mock data - replace with real data
 const events = [
@@ -39,9 +40,9 @@ const events = [
 const languageIcons = {
   musica: Music,
   teatro: Theater,
-  danca: Users,
-  circo: Tent,
-  papainoel: Gift,
+  danca: BalletDancer,
+  circo: CircusTent,
+  papainoel: SantaHat,
   paradinha: Bus,
 };
 
@@ -106,9 +107,9 @@ export default function EventPage() {
   const eventTypes = [
     { id: "musica", label: "Música", icon: Music },
     { id: "teatro", label: "Teatro", icon: Theater },
-    { id: "danca", label: "Dança", icon: Users },
-    { id: "circo", label: "Circo", icon: Tent },
-    { id: "papainoel", label: "Papai Noel", icon: Gift },
+    { id: "danca", label: "Dança", icon: BalletDancer },
+    { id: "circo", label: "Circo", icon: CircusTent },
+    { id: "papainoel", label: "Papai Noel", icon: SantaHat },
     { id: "paradinha", label: "Paradinha", icon: Bus },
   ];
 

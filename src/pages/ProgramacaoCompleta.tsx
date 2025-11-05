@@ -7,7 +7,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Music, Theater, Users, Tent, Gift, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
+import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
+import { BalletDancer, CircusTent, SantaHat } from "@/components/icons/CustomIcons";
 
 // Estrutura de dados dos eventos (mesma do CalendarSection)
 const attractions = [
@@ -71,18 +72,18 @@ const attractions = [
 const languageIcons = {
   musica: Music,
   teatro: Theater,
-  danca: Users,
-  circo: Tent,
-  papainoel: Gift,
+  danca: BalletDancer,
+  circo: CircusTent,
+  papainoel: SantaHat,
   paradinha: Bus,
 };
 
 const types = [
   { id: "musica", label: "Música", icon: Music },
   { id: "teatro", label: "Teatro", icon: Theater },
-  { id: "danca", label: "Dança", icon: Users },
-  { id: "circo", label: "Circo", icon: Tent },
-  { id: "papainoel", label: "Papai Noel", icon: Gift },
+  { id: "danca", label: "Dança", icon: BalletDancer },
+  { id: "circo", label: "Circo", icon: CircusTent },
+  { id: "papainoel", label: "Papai Noel", icon: SantaHat },
   { id: "paradinha", label: "Paradinha", icon: Bus },
 ];
 

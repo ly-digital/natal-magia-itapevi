@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Music, Theater, Users, Tent, Gift, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
+import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star, Languages } from "lucide-react";
+import { BalletDancer, CircusTent, SantaHat } from "./icons/CustomIcons";
 
 // Estrutura de dados dos eventos
 // Para adicionar eventos, edite o arquivo attractions-data.ts ou importe via CSV
@@ -69,9 +70,9 @@ const attractions = [
 const languageIcons = {
   musica: Music,
   teatro: Theater,
-  danca: Users,
-  circo: Tent,
-  papainoel: Gift,
+  danca: BalletDancer,
+  circo: CircusTent,
+  papainoel: SantaHat,
   paradinha: Bus,
 };
 
