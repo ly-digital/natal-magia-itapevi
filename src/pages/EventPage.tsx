@@ -28,7 +28,7 @@ const events = [
     fullDescription: "Um cortejo cheio de brilho e alegria que parte da Praça 18 de Fevereiro, percorre o novo calçadão e convida o público a se juntar para realizar o acendimento da Rua no Espetáculo de Luzes. É um desfile mágico com personagens natalinos pelas ruas, trazendo alegria e encantamento para toda a família.",
     location: "Praça 18 de Fevereiro",
     image: evento1,
-    accessibility: "Interpretação em Libras disponível",
+    accessibility: "Acessível com libras",
   },
   {
     id: "2",
@@ -52,7 +52,7 @@ const events = [
     fullDescription: "Uma apresentação teatral emocionante e envolvente que conta a história do nascimento de Jesus. É um espetáculo que utiliza arte, dança e figurinos para recontar a tradicional história do Natal, com foco na mensagem de união e esperança.",
     location: "Rua Leopoldina de Camargo, 260",
     image: evento3,
-    accessibility: "Interpretação em Libras disponível",
+    accessibility: "Acessível com libras",
   },
   {
     id: "4",
@@ -76,7 +76,7 @@ const events = [
     fullDescription: "Um show com a participação de músicos e coralistas da região, que interpretam os grandes clássicos natalinos internacionais e brasileiros. É uma noite de harmonia e celebração para acender o espírito festivo através da música.",
     location: "Rua Leopoldina de Camargo, 260",
     image: evento6,
-    accessibility: "Interpretação em Libras disponível",
+    accessibility: "Acessível com libras",
   },
   {
     id: "6",
@@ -100,7 +100,7 @@ const events = [
     fullDescription: "Prepare-se para ser transportado para um mundo de fantasia. Esta performance de balé clássico e contemporâneo apresenta a história da Fada Açucarada e seus brinquedos de madeira, que executam coreografias complexas e delicadas. É um espetáculo de dança com figurinos exuberantes e trilha sonora natalina, ideal para todas as idades, celebrando a imaginação e a magia dos presentes.",
     location: "",
     image: evento8,
-    accessibility: "Interpretação em Libras disponível",
+    accessibility: "Acessível com libras",
   },
 ];
 
@@ -353,16 +353,16 @@ export default function EventPage() {
                       const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
                       return (
                         <Link key={sameDayEvent.id} to={`/evento/${sameDayEvent.id}`}>
-                          <div className="p-3 bg-[#006345] hover:bg-[#fbc942] rounded-lg transition-all hover:shadow-lg cursor-pointer group">
+                          <div className="p-3 bg-[#006345] rounded-lg cursor-pointer">
                             <div className="flex gap-3 items-start">
-                              <div className="w-10 h-10 bg-[#fbc942] group-hover:bg-[#7a1c18] rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
-                                {SameDayIcon && <SameDayIcon className="w-5 h-5 text-[#7a1c18] group-hover:text-white" />}
+                              <div className="w-10 h-10 bg-[#fbc942] rounded-lg flex items-center justify-center flex-shrink-0">
+                                {SameDayIcon && <SameDayIcon className="w-5 h-5 text-[#7a1c18]" />}
                               </div>
                               <div className="flex-1 min-w-0">
-                                <h3 className="font-semibold text-sm text-white group-hover:text-[#7a1c18] font-gabarito line-clamp-2 mb-1">
+                                <h3 className="font-semibold text-sm text-white font-gabarito line-clamp-2 mb-1">
                                   {sameDayEvent.name}
                                 </h3>
-                                <p className="text-xs text-white/70 group-hover:text-[#7a1c18]/80 font-gabarito">
+                                <p className="text-xs text-white/70 font-gabarito">
                                   {sameDayEvent.time}
                                 </p>
                               </div>
