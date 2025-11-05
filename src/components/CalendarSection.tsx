@@ -228,42 +228,42 @@ export const CalendarSection = () => {
           </div>
 
           {/* Dropdowns de data, horário e período */}
-          <div className="flex flex-wrap gap-4 justify-between items-center">
-            <div className="flex flex-wrap gap-4">
-              <Select value={selectedDate} onValueChange={setSelectedDate}>
-                <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
-                  <SelectValue placeholder="Todas as datas" />
-                </SelectTrigger>
-                <SelectContent className="bg-white border-white/30">
-                  <SelectItem value="all">Todas as datas</SelectItem>
-                  {availableDates.map((date) => (
-                    <SelectItem key={date} value={date}>
-                      {formatDate(date)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+          <div className="flex flex-wrap gap-4 justify-center items-center">
+            <Select value={selectedDate} onValueChange={setSelectedDate}>
+              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
+                <CalendarIcon className="w-4 h-4 mr-2" />
+                <SelectValue placeholder="Todas as datas" />
+              </SelectTrigger>
+              <SelectContent className="bg-white border-white/30 z-50">
+                <SelectItem value="all">Todas as datas</SelectItem>
+                {availableDates.map((date) => (
+                  <SelectItem key={date} value={date}>
+                    {formatDate(date)}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
 
-              <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[220px] hover:bg-white/15 hover:border-white/60 transition-all">
-                  <SelectValue placeholder="Todos os horários" />
-                </SelectTrigger>
-                <SelectContent className="bg-white border-white/30">
-                  <SelectItem value="all">Todos os horários</SelectItem>
-                  {timeSlots.map((slot) => (
-                    <SelectItem key={slot.id} value={slot.id}>
-                      {slot.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            <Select value={selectedTime} onValueChange={setSelectedTime}>
+              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[220px] hover:bg-white/15 hover:border-white/60 transition-all">
+                <Clock className="w-4 h-4 mr-2" />
+                <SelectValue placeholder="Todos os horários" />
+              </SelectTrigger>
+              <SelectContent className="bg-white border-white/30 z-50">
+                <SelectItem value="all">Todos os horários</SelectItem>
+                {timeSlots.map((slot) => (
+                  <SelectItem key={slot.id} value={slot.id}>
+                    {slot.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
 
             <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
               <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
                 <SelectValue placeholder="Filtrar por período" />
               </SelectTrigger>
-              <SelectContent className="bg-white border-white/30">
+              <SelectContent className="bg-white border-white/30 z-50">
                 <SelectItem value="upcoming">Próximos eventos</SelectItem>
                 <SelectItem value="past">Eventos passados</SelectItem>
                 <SelectItem value="all">Todos os eventos</SelectItem>
