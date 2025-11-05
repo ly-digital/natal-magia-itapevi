@@ -1,4 +1,5 @@
-import { MapPin, Calendar, Clock, User } from "lucide-react";
+import { MapPin, Calendar, Clock } from "lucide-react";
+import { AccessibilityIcon } from "./icons/CustomIcons";
 
 export const InformationSection = () => {
   const infos = [
@@ -22,7 +23,7 @@ export const InformationSection = () => {
       content: "",
     },
     {
-      icon: User,
+      icon: AccessibilityIcon,
       title: "Acessibilidade",
       subtitle: "Consulte programação",
       content: "",
