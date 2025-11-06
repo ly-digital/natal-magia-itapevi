@@ -230,9 +230,9 @@ export const CalendarSection = () => {
           {/* Dropdowns de data, horário e período */}
           <div className="flex flex-wrap gap-4 justify-center items-center">
             <Select value={selectedDate} onValueChange={setSelectedDate}>
-              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
-                <CalendarIcon className="w-4 h-4 mr-2" />
-                <SelectValue placeholder="Todas as datas" />
+              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[50px] sm:w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
+                <CalendarIcon className="w-4 h-4 sm:mr-2" />
+                <span className="hidden sm:inline"><SelectValue placeholder="Todas as datas" /></span>
               </SelectTrigger>
               <SelectContent className="bg-white border-white/30 z-50">
                 <SelectItem value="all">Todas as datas</SelectItem>
@@ -245,9 +245,9 @@ export const CalendarSection = () => {
             </Select>
 
             <Select value={selectedTime} onValueChange={setSelectedTime}>
-              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[220px] hover:bg-white/15 hover:border-white/60 transition-all">
-                <Clock className="w-4 h-4 mr-2" />
-                <SelectValue placeholder="Todos os horários" />
+              <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[50px] sm:w-[220px] hover:bg-white/15 hover:border-white/60 transition-all">
+                <Clock className="w-4 h-4 sm:mr-2" />
+                <span className="hidden sm:inline"><SelectValue placeholder="Todos os horários" /></span>
               </SelectTrigger>
               <SelectContent className="bg-white border-white/30 z-50">
                 <SelectItem value="all">Todos os horários</SelectItem>
@@ -355,8 +355,9 @@ export const CalendarSection = () => {
         {filteredAttractions.length > 4 && (
           <div className="text-center mt-8">
             <Link to="/programacao-completa">
-              <Button className="bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 hover:shadow-xl font-gabarito font-semibold text-lg px-8 py-6 rounded-full transition-all">
-                Ver Programação Completa ({filteredAttractions.length} eventos)
+              <Button className="bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 hover:shadow-xl font-gabarito font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full transition-all">
+                <span className="hidden sm:inline">Ver Programação Completa ({filteredAttractions.length} eventos)</span>
+                <span className="sm:hidden">Ver Todos ({filteredAttractions.length})</span>
               </Button>
             </Link>
           </div>

@@ -39,7 +39,7 @@ export const InformationSection = () => {
               key={index}
               className="bg-[#004731] p-8 rounded-2xl border-2 border-[#fbc942]/30"
             >
-              <div className="flex items-start gap-6">
+              <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6">
                 <div className="w-16 h-16 bg-[#fbc942d1] rounded-full flex items-center justify-center flex-shrink-0">
                   <info.icon className="w-8 h-8 text-[#006345]" />
                 </div>
