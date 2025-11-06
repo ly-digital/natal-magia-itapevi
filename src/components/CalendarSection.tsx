@@ -231,8 +231,12 @@ export const CalendarSection = () => {
           <div className="flex flex-wrap gap-4 justify-center items-center">
             <Select value={selectedDate} onValueChange={setSelectedDate}>
               <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[50px] sm:w-[200px] hover:bg-white/15 hover:border-white/60 transition-all">
-                <CalendarIcon className="w-4 h-4 sm:mr-2" />
-                <span className="hidden sm:inline"><SelectValue placeholder="Todas as datas" /></span>
+                <div className="flex items-center">
+                  <CalendarIcon className="w-4 h-4 sm:mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">
+                    <SelectValue placeholder="Todas as datas" />
+                  </span>
+                </div>
               </SelectTrigger>
               <SelectContent className="bg-white border-white/30 z-50">
                 <SelectItem value="all">Todas as datas</SelectItem>
@@ -246,8 +250,12 @@ export const CalendarSection = () => {
 
             <Select value={selectedTime} onValueChange={setSelectedTime}>
               <SelectTrigger className="bg-white/10 backdrop-blur-sm border-white/40 text-white font-gabarito w-[50px] sm:w-[220px] hover:bg-white/15 hover:border-white/60 transition-all">
-                <Clock className="w-4 h-4 sm:mr-2" />
-                <span className="hidden sm:inline"><SelectValue placeholder="Todos os horários" /></span>
+                <div className="flex items-center">
+                  <Clock className="w-4 h-4 sm:mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">
+                    <SelectValue placeholder="Todos os horários" />
+                  </span>
+                </div>
               </SelectTrigger>
               <SelectContent className="bg-white border-white/30 z-50">
                 <SelectItem value="all">Todos os horários</SelectItem>
