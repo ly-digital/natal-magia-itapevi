@@ -39,7 +39,7 @@ export const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative w-full aspect-[8/3] overflow-hidden">
+    <div className="relative w-full aspect-[2/1] overflow-hidden">
       {/* Background images with transitions */}
       {slides.map((slide, idx) => (
         <div
