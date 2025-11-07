@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroAtracoes from "@/assets/hero-atracoes.jpg";
-import heroPapaiNoel from "@/assets/hero-papai-noel.jpg";
-import heroLuzes from "@/assets/hero-luzes.jpg";
+import heroPapaiNoel from "@/assets/hero-papai-noel-new.png";
+import heroAtracoes from "@/assets/hero-atracoes-new.png";
+import heroLuzes from "@/assets/hero-luzes-new.png";
 
 const slides = [
   {
     id: 1,
-    image: heroAtracoes,
+    image: heroPapaiNoel,
   },
   {
     id: 2,
-    image: heroPapaiNoel,
+    image: heroAtracoes,
   },
   {
     id: 3,
