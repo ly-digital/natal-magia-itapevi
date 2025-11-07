@@ -25,7 +25,8 @@ const attractions = [
     date: "2025-11-04",
     time: "19:00",
     type: "paradinha",
-    synopsis: "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
+    synopsis:
+      "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: evento1,
@@ -36,7 +37,8 @@ const attractions = [
     date: "2025-12-06",
     time: "20:30",
     type: "teatro",
-    synopsis: "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
+    synopsis:
+      "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: false,
     image: evento2,
@@ -58,7 +60,8 @@ const attractions = [
     date: "2025-12-08",
     time: "18:00",
     type: "papainoel",
-    synopsis: "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
+    synopsis:
+      "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
     location: "Praça 18 de Fevereiro",
     hasLibras: false,
     image: evento4,
@@ -80,7 +83,8 @@ const attractions = [
     date: "2025-11-01",
     time: "07:00",
     type: "circo",
-    synopsis: "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
+    synopsis:
+      "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
     location: "",
     hasLibras: false,
     image: evento7,
@@ -91,7 +95,8 @@ const attractions = [
     date: "2025-12-24",
     time: "15:00",
     type: "danca",
-    synopsis: "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
+    synopsis:
+      "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
     location: "",
     hasLibras: true,
     image: evento8,
@@ -125,7 +130,7 @@ const timeSlots = [
 const ProgramacaoCompleta = () => {
   const [searchParams] = useSearchParams();
   const tipoFromUrl = searchParams.get("tipo");
-  
+
   const [selectedDate, setSelectedDate] = useState("all");
   const [selectedTime, setSelectedTime] = useState("all");
   const [selectedType, setSelectedType] = useState(tipoFromUrl || "");
@@ -174,15 +179,15 @@ const ProgramacaoCompleta = () => {
     filtered.sort((a, b) => {
       const dateA = new Date(`${a.date}T${a.time}`);
       const dateB = new Date(`${b.date}T${b.time}`);
-      
+
       const isPastA = dateA < now;
       const isPastB = dateB < now;
-      
+
       // Se um é futuro e outro é passado, futuro vem primeiro
       if (isPastA !== isPastB) {
         return isPastA ? 1 : -1;
       }
-      
+
       // Se ambos são futuros ou ambos são passados, ordena por data
       return dateA.getTime() - dateB.getTime();
     });
@@ -227,7 +232,7 @@ const ProgramacaoCompleta = () => {
   return (
     <div className="min-h-screen bg-[#004731]">
       <Navigation />
-      
+
       <main className="container mx-auto px-4 pt-40 pb-12 md:pt-32 md:pb-16">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Navegação Lateral - Fixa no scroll */}
@@ -253,9 +258,7 @@ const ProgramacaoCompleta = () => {
                             <h4 className="text-sm font-semibold text-white font-gabarito line-clamp-1">
                               {event.name}
                             </h4>
-                            <p className="text-xs text-white/70 font-gabarito mt-1">
-                              {event.time}
-                            </p>
+                            <p className="text-xs text-white/70 font-gabarito mt-1">{event.time}</p>
                           </div>
                         </div>
                       </Link>
@@ -289,7 +292,10 @@ const ProgramacaoCompleta = () => {
                               <Icon className="w-6 h-6" />
                             </button>
                           </TooltipTrigger>
-                          <TooltipContent side="bottom" className="bg-white text-[#7a1c18] font-gabarito font-semibold z-50">
+                          <TooltipContent
+                            side="bottom"
+                            className="bg-white text-[#7a1c18] font-gabarito font-semibold z-50"
+                          >
                             <p>{type.label}</p>
                           </TooltipContent>
                         </Tooltip>
@@ -353,7 +359,7 @@ const ProgramacaoCompleta = () => {
                 Programação completa
               </h1>
               <p className="text-white text-lg font-gabarito">
-                Confira abaixo todos os dias e horários das atrações da Rua de Natal Itapevi 2025.
+                Confira abaixo todos os dias e horários das atrações da Rua de Natal.
               </p>
             </div>
 
@@ -406,9 +412,7 @@ const ProgramacaoCompleta = () => {
                         <div className="space-y-2 pt-2">
                           <div className="flex items-center gap-2 text-white/80">
                             <CalendarIcon className="w-4 h-4 flex-shrink-0" />
-                            <span className="text-sm font-gabarito font-semibold">
-                              {formatDate(attraction.date)}
-                            </span>
+                            <span className="text-sm font-gabarito font-semibold">{formatDate(attraction.date)}</span>
                           </div>
                           <div className="flex items-center gap-2 text-white/80">
                             <Clock className="w-4 h-4 flex-shrink-0" />
