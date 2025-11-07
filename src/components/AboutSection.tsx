@@ -17,7 +17,7 @@ export const AboutSection = () => {
         </h2>
 
         <div className="bg-[#006345] backdrop-blur-sm rounded-2xl p-8 md:p-16 border-2 border-[#fbc942]/30">
-          <div className="space-y-6 text-white leading-relaxed font-gabarito text-lg md:text-xl text-center">
+          <div className="space-y-2 text-white leading-relaxed font-gabarito text-lg md:text-xl text-center">
             <p>
               A <span className="text-[#fbc942] font-bold">Rua de Natal de Itapevi</span> chega à sua <span className="text-[#fbc942] font-bold">3ª edição</span>, em dezembro de 2025, transformando a cidade em um grande palco de <span className="text-[#fbc942] font-bold">celebração, arte e encantamento</span>.
             </p>
