@@ -76,13 +76,14 @@ export const Navigation = () => {
                       >
                         Sobre
                       </Button>
-                      <Button
-                        variant="ghost"
-                        onClick={() => scrollToSection("calendario")}
-                        className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg"
-                      >
-                        Calendário
-                      </Button>
+                      <Link to="/programacao-completa" onClick={() => setIsMenuOpen(false)}>
+                        <Button
+                          variant="ghost"
+                          className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
+                        >
+                          Calendário
+                        </Button>
+                      </Link>
                     </>
                   ) : (
                     <>
@@ -94,7 +95,7 @@ export const Navigation = () => {
                           Sobre
                         </Button>
                       </Link>
-                      <Link to="/#calendario" onClick={() => setIsMenuOpen(false)}>
+                      <Link to="/programacao-completa" onClick={() => setIsMenuOpen(false)}>
                         <Button
                           variant="ghost"
                           className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
@@ -139,13 +140,14 @@ export const Navigation = () => {
                 >
                   Sobre
                 </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => scrollToSection("calendario")}
-                  className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
-                >
-                  Calendário
-                </Button>
+                <Link to="/programacao-completa">
+                  <Button
+                    variant="ghost"
+                    className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
+                  >
+                    Calendário
+                  </Button>
+                </Link>
               </>
             ) : (
               <>
@@ -157,7 +159,7 @@ export const Navigation = () => {
                     Sobre
                   </Button>
                 </Link>
-                <Link to="/#calendario">
+                <Link to="/programacao-completa">
                   <Button
                     variant="ghost"
                     className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
