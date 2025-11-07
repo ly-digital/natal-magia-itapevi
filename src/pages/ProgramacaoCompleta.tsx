@@ -241,7 +241,7 @@ const ProgramacaoCompleta = () => {
             {eventsOfSelectedDay.length > 0 && (
               <Card className="bg-[#004731] border-white/20 overflow-hidden">
                 <div className="p-4 bg-[#006345]">
-                  <h3 className="text-lg font-bold text-[#fbc942] font-effloresce">Eventos do Dia</h3>
+                  <h3 className="text-lg font-bold text-[#fbc942] font-effloresce">Eventos do dia</h3>
                 </div>
                 <div className="p-4 space-y-3">
                   {eventsOfSelectedDay.map((event) => {
