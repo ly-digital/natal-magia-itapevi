@@ -24,8 +24,10 @@ const events = [
     date: "04/11/2025",
     time: "19:00",
     type: "paradinha",
-    description: "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
-    fullDescription: "Um cortejo cheio de brilho e alegria que parte da Praça 18 de Fevereiro, percorre o novo calçadão e convida o público a se juntar para realizar o acendimento da Rua no Espetáculo de Luzes. É um desfile mágico com personagens natalinos pelas ruas, trazendo alegria e encantamento para toda a família.",
+    description:
+      "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
+    fullDescription:
+      "Um cortejo cheio de brilho e alegria que parte da Praça 18 de Fevereiro, percorre o novo calçadão e convida o público a se juntar para realizar o acendimento da Rua no Espetáculo de Luzes. É um desfile mágico com personagens natalinos pelas ruas, trazendo alegria e encantamento para toda a família.",
     location: "Praça 18 de Fevereiro",
     image: evento1,
     accessibility: "Acessível com libras",
@@ -36,8 +38,10 @@ const events = [
     date: "06/12/2025",
     time: "20:30",
     type: "teatro",
-    description: "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
-    fullDescription: "Esta apresentação luminosa transforma a Rua Leopoldina de Camargo em um cenário mágico de Natal, com efeitos especiais e música. É um show emocionante de luzes, apresentado diariamente, que celebra o acendimento da rua.",
+    description:
+      "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
+    fullDescription:
+      "Esta apresentação luminosa transforma a Rua Leopoldina de Camargo em um cenário mágico de Natal, com efeitos especiais e música. É um show emocionante de luzes, apresentado diariamente, que celebra o acendimento da rua.",
     location: "Rua Leopoldina de Camargo, 260",
     image: evento2,
     accessibility: "Acessível para todos",
@@ -49,7 +53,8 @@ const events = [
     time: "19:30",
     type: "teatro",
     description: "Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.",
-    fullDescription: "Uma apresentação teatral emocionante e envolvente que conta a história do nascimento de Jesus. É um espetáculo que utiliza arte, dança e figurinos para recontar a tradicional história do Natal, com foco na mensagem de união e esperança.",
+    fullDescription:
+      "Uma apresentação teatral emocionante e envolvente que conta a história do nascimento de Jesus. É um espetáculo que utiliza arte, dança e figurinos para recontar a tradicional história do Natal, com foco na mensagem de união e esperança.",
     location: "Rua Leopoldina de Camargo, 260",
     image: evento3,
     accessibility: "Acessível com libras",
@@ -60,8 +65,10 @@ const events = [
     date: "08/12/2025",
     time: "18:00",
     type: "papainoel",
-    description: "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
-    fullDescription: "Encontro mágico com o Papai Noel para fotos e conversas especiais. O Papai Noel estará disponível na Praça 18 de Fevereiro para receber todas as famílias e ouvir os desejos de Natal das crianças.",
+    description:
+      "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
+    fullDescription:
+      "Encontro mágico com o Papai Noel para fotos e conversas especiais. O Papai Noel estará disponível na Praça 18 de Fevereiro para receber todas as famílias e ouvir os desejos de Natal das crianças.",
     location: "Praça 18 de Fevereiro",
     image: evento4,
     accessibility: "Acessível para todos",
@@ -73,7 +80,8 @@ const events = [
     time: "20:00",
     type: "musica",
     description: "Apresentação musical com canções natalinas interpretadas por artistas locais.",
-    fullDescription: "Um show com a participação de músicos e coralistas da região, que interpretam os grandes clássicos natalinos internacionais e brasileiros. É uma noite de harmonia e celebração para acender o espírito festivo através da música.",
+    fullDescription:
+      "Um show com a participação de músicos e coralistas da região, que interpretam os grandes clássicos natalinos internacionais e brasileiros. É uma noite de harmonia e celebração para acender o espírito festivo através da música.",
     location: "Rua Leopoldina de Camargo, 260",
     image: evento6,
     accessibility: "Acessível com libras",
@@ -84,8 +92,10 @@ const events = [
     date: "01/11/2025",
     time: "07:00",
     type: "circo",
-    description: "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
-    fullDescription: "Dois palhaços, vestidos como os mais desajeitados bonecos de neve, se enfrentam em uma 'batalha' de malabarismos com pinos, aros e bolas de Natal. Este é um show de circo com foco em comédia física e interação com a plateia, garantindo muitas risadas para as crianças e os adultos. O final surpresa inclui uma 'nevasca' artificial no local do evento.",
+    description:
+      "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
+    fullDescription:
+      "Dois palhaços, vestidos como os mais desajeitados bonecos de neve, se enfrentam em uma 'batalha' de malabarismos com pinos, aros e bolas de Natal. Este é um show de circo com foco em comédia física e interação com a plateia, garantindo muitas risadas para as crianças e os adultos. O final surpresa inclui uma 'nevasca' artificial no local do evento.",
     location: "",
     image: evento7,
     accessibility: "Acessível para todos",
@@ -96,8 +106,10 @@ const events = [
     date: "24/12/2025",
     time: "15:00",
     type: "danca",
-    description: "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
-    fullDescription: "Prepare-se para ser transportado para um mundo de fantasia. Esta performance de balé clássico e contemporâneo apresenta a história da Fada Açucarada e seus brinquedos de madeira, que executam coreografias complexas e delicadas. É um espetáculo de dança com figurinos exuberantes e trilha sonora natalina, ideal para todas as idades, celebrando a imaginação e a magia dos presentes.",
+    description:
+      "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
+    fullDescription:
+      "Prepare-se para ser transportado para um mundo de fantasia. Esta performance de balé clássico e contemporâneo apresenta a história da Fada Açucarada e seus brinquedos de madeira, que executam coreografias complexas e delicadas. É um espetáculo de dança com figurinos exuberantes e trilha sonora natalina, ideal para todas as idades, celebrando a imaginação e a magia dos presentes.",
     location: "",
     image: evento8,
     accessibility: "Acessível com libras",
@@ -145,11 +157,9 @@ export default function EventPage() {
       <div className="min-h-screen">
         <Navigation />
         <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl font-bold text-primary mb-4 font-effloresce">
-            Evento não encontrado
-          </h1>
+          <h1 className="text-4xl font-bold text-primary mb-4 font-effloresce">Evento não encontrado</h1>
           <Link to="/#calendario">
-            <Button variant="default">Voltar para Programação</Button>
+            <Button variant="default">Voltar para programação</Button>
           </Link>
         </div>
         <Footer />
@@ -159,18 +169,18 @@ export default function EventPage() {
 
   const Icon = languageIcons[event.type as keyof typeof languageIcons];
   const sameDayEvents = events.filter((e) => e.id !== id && e.date === event.date);
-  
+
   // Get next day events
   const getNextDayEvents = () => {
-    const currentDate = new Date(event.date.split('/').reverse().join('-'));
+    const currentDate = new Date(event.date.split("/").reverse().join("-"));
     const nextDay = new Date(currentDate);
     nextDay.setDate(currentDate.getDate() + 1);
-    const nextDayStr = `${String(nextDay.getDate()).padStart(2, '0')}/${String(nextDay.getMonth() + 1).padStart(2, '0')}`;
+    const nextDayStr = `${String(nextDay.getDate()).padStart(2, "0")}/${String(nextDay.getMonth() + 1).padStart(2, "0")}`;
     return events.filter((e) => e.id !== id && e.date === nextDayStr);
   };
-  
+
   const nextDayEvents = getNextDayEvents();
-  
+
   const eventTypes = [
     { id: "musica", label: "Música", icon: Music },
     { id: "teatro", label: "Teatro", icon: Theater },
@@ -183,30 +193,26 @@ export default function EventPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#004731] to-[#006345]">
       <Navigation />
-      
+
       <main className="pt-20 md:pt-24 pb-16">
         {/* Hero Section with Image */}
         <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
           {event.image ? (
-            <img 
-              src={event.image} 
-              alt={event.name}
-              className="w-full h-full object-cover"
-            />
+            <img src={event.image} alt={event.name} className="w-full h-full object-cover" />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30 flex items-center justify-center">
               {Icon && <Icon className="w-32 h-32 md:w-48 md:h-48 text-[#fbc942]/60" />}
             </div>
           )}
-          
+
           {/* Overlay Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#004731] via-[#004731]/50 to-transparent" />
-          
+
           {/* Back Button */}
           <div className="absolute top-6 left-4 md:left-8 z-10">
             <Link to="/programacao-completa">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-[#7a1c18] transition-all shadow-xl"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -214,7 +220,7 @@ export default function EventPage() {
               </Button>
             </Link>
           </div>
-          
+
           {/* Event Badge */}
           <div className="absolute top-6 right-4 md:right-8 z-10">
             <Badge className="bg-[#fbc942] text-[#7a1c18] border-none font-gabarito font-bold text-sm px-4 py-2 shadow-xl">
@@ -234,9 +240,7 @@ export default function EventPage() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#fbc942] font-effloresce mb-4 leading-tight">
                     {event.name}
                   </h1>
-                  <p className="text-white/90 text-lg md:text-xl font-gabarito leading-relaxed">
-                    {event.description}
-                  </p>
+                  <p className="text-white/90 text-lg md:text-xl font-gabarito leading-relaxed">{event.description}</p>
                 </CardContent>
               </Card>
 
@@ -253,7 +257,7 @@ export default function EventPage() {
                         <p className="text-white font-bold text-lg font-gabarito">{event.date}</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-4 p-4 bg-[#006345] rounded-lg">
                       <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-6 h-6 text-[#7a1c18]" />
@@ -263,7 +267,7 @@ export default function EventPage() {
                         <p className="text-white font-bold text-lg font-gabarito">{event.time}</p>
                       </div>
                     </div>
-                    
+
                     {event.location && (
                       <div className="flex items-start gap-4 p-4 bg-[#006345] rounded-lg">
                         <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
@@ -290,7 +294,6 @@ export default function EventPage() {
                   </div>
                 </CardContent>
               </Card>
-
             </div>
 
             {/* Sidebar */}
@@ -301,7 +304,7 @@ export default function EventPage() {
                   <CardTitle className="text-xl font-effloresce text-[#fbc942]">Ações rápidas</CardTitle>
                 </CardHeader>
                 <CardContent className="p-4 space-y-3 bg-[#004731]">
-                  <Button 
+                  <Button
                     className="w-full bg-[#fbc942] text-[#7a1c18] hover:bg-white font-gabarito font-bold shadow-lg"
                     onClick={() => {
                       if (navigator.share) {
@@ -314,15 +317,15 @@ export default function EventPage() {
                     }}
                   >
                     <Share2 className="w-4 h-4 mr-2" />
-                    Compartilhar Evento
+                    Compartilhar evento
                   </Button>
-                  
+
                   <Link to="/programacao-completa" className="block">
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       className="w-full bg-white/10 border-white/40 text-white hover:bg-white hover:text-[#7a1c18] font-gabarito font-semibold"
                     >
-                      Ver Todos os Eventos
+                      Ver todos os eventos
                     </Button>
                   </Link>
                 </CardContent>
@@ -332,9 +335,7 @@ export default function EventPage() {
               {sameDayEvents.length > 0 && (
                 <Card className="bg-[#004731] border-white/20 shadow-xl">
                   <CardHeader className="bg-[#006345] border-b border-white/10">
-                    <CardTitle className="text-xl font-effloresce text-[#fbc942]">
-                      Eventos no mesmo dia
-                    </CardTitle>
+                    <CardTitle className="text-xl font-effloresce text-[#fbc942]">Eventos no mesmo dia</CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
                     {sameDayEvents.map((sameDayEvent) => {
@@ -350,9 +351,7 @@ export default function EventPage() {
                                 <h3 className="font-semibold text-sm text-white font-gabarito line-clamp-2 mb-1">
                                   {sameDayEvent.name}
                                 </h3>
-                                <p className="text-xs text-white/70 font-gabarito">
-                                  {sameDayEvent.time}
-                                </p>
+                                <p className="text-xs text-white/70 font-gabarito">{sameDayEvent.time}</p>
                               </div>
                             </div>
                           </div>
@@ -367,9 +366,7 @@ export default function EventPage() {
               {nextDayEvents.length > 0 && (
                 <Card className="bg-[#004731] border-white/20 shadow-xl">
                   <CardHeader className="bg-[#006345] border-b border-white/10">
-                    <CardTitle className="text-xl font-effloresce text-[#fbc942]">
-                      Próximos Eventos
-                    </CardTitle>
+                    <CardTitle className="text-xl font-effloresce text-[#fbc942]">Próximos eventos</CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
                     {nextDayEvents.map((nextEvent) => {
