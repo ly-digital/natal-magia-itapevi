@@ -298,7 +298,7 @@ export default function EventPage() {
               {/* Quick Actions Card */}
               <Card className="bg-[#004731] border-[#fbc942]/30 border-2 shadow-xl sticky top-24 overflow-hidden">
                 <CardHeader className="bg-[#006345] border-b border-white/10">
-                  <CardTitle className="text-xl font-effloresce text-[#fbc942]">Ações Rápidas</CardTitle>
+                  <CardTitle className="text-xl font-effloresce text-[#fbc942]">Ações rápidas</CardTitle>
                 </CardHeader>
                 <CardContent className="p-4 space-y-3 bg-[#004731]">
                   <Button 
