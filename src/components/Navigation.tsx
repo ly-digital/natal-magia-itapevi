@@ -69,7 +69,7 @@ export const Navigation = () => {
                           variant="ghost"
                           className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
                         >
-                          Calendário
+                          Programação
                         </Button>
                       </Link>
                     </>
