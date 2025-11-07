@@ -2,13 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Instagram, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import logo from "@/assets/rua-de-natal-logo.png";
 
 export const Navigation = () => {
@@ -52,19 +46,13 @@ export const Navigation = () => {
           <div className="flex items-center justify-between py-3 relative">
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-primary-foreground hover:text-[#7a1c18]"
-                >
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:text-[#7a1c18]">
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="bg-primary text-primary-foreground">
                 <SheetHeader>
-                  <SheetTitle className="text-primary-foreground font-effloresce text-2xl">
-                    Menu
-                  </SheetTitle>
+                  <SheetTitle className="text-primary-foreground font-effloresce text-2xl">Menu</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-4 mt-8">
                   {isHomePage ? (
@@ -129,7 +117,7 @@ export const Navigation = () => {
           <Link to="/" className="cursor-pointer">
             <img src={logo} alt="Rua de Natal Itapevi" className="h-12 md:h-16" />
           </Link>
-          
+
           <div className="flex items-center gap-6">
             {isHomePage ? (
               <>
@@ -164,7 +152,7 @@ export const Navigation = () => {
                     variant="ghost"
                     className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
                   >
-                    Calendário
+                    Programação
                   </Button>
                 </Link>
               </>
