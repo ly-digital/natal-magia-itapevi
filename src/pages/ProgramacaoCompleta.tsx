@@ -350,7 +350,7 @@ const ProgramacaoCompleta = () => {
             {/* Cabeçalho */}
             <div className="mb-8">
               <h1 className="text-4xl md:text-6xl font-bold text-[#fbc942] font-effloresce mb-4">
-                Programação Completa
+                Programação completa
               </h1>
               <p className="text-white text-lg font-gabarito">
                 Confira abaixo todos os dias e horários das atrações da Rua de Natal Itapevi 2025.
