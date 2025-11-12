@@ -56,42 +56,22 @@ export const Navigation = () => {
                 </SheetHeader>
                 <div className="flex flex-col gap-4 mt-8">
                   {isHomePage ? (
-                    <>
+                    <Button
+                      variant="ghost"
+                      onClick={() => scrollToSection("sobre")}
+                      className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg"
+                    >
+                      Sobre
+                    </Button>
+                  ) : (
+                    <Link to="/#sobre" onClick={() => setIsMenuOpen(false)}>
                       <Button
                         variant="ghost"
-                        onClick={() => scrollToSection("sobre")}
-                        className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg"
+                        className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
                       >
                         Sobre
                       </Button>
-                      <Link to="/programacao-completa" onClick={() => setIsMenuOpen(false)}>
-                        <Button
-                          variant="ghost"
-                          className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
-                        >
-                          Programação
-                        </Button>
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <Link to="/#sobre" onClick={() => setIsMenuOpen(false)}>
-                        <Button
-                          variant="ghost"
-                          className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
-                        >
-                          Sobre
-                        </Button>
-                      </Link>
-                      <Link to="/programacao-completa" onClick={() => setIsMenuOpen(false)}>
-                        <Button
-                          variant="ghost"
-                          className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors justify-start text-lg w-full"
-                        >
-                          Programação
-                        </Button>
-                      </Link>
-                    </>
+                    </Link>
                   )}
                 </div>
               </SheetContent>
@@ -120,42 +100,22 @@ export const Navigation = () => {
 
           <div className="flex items-center gap-6">
             {isHomePage ? (
-              <>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("sobre")}
+                className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
+              >
+                Sobre
+              </Button>
+            ) : (
+              <Link to="/#sobre">
                 <Button
                   variant="ghost"
-                  onClick={() => scrollToSection("sobre")}
                   className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
                 >
                   Sobre
                 </Button>
-                <Link to="/programacao-completa">
-                  <Button
-                    variant="ghost"
-                    className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
-                  >
-                    Programação
-                  </Button>
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link to="/#sobre">
-                  <Button
-                    variant="ghost"
-                    className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
-                  >
-                    Sobre
-                  </Button>
-                </Link>
-                <Link to="/programacao-completa">
-                  <Button
-                    variant="ghost"
-                    className="text-primary-foreground hover:text-[#7a1c18] font-semibold transition-colors"
-                  >
-                    Programação
-                  </Button>
-                </Link>
-              </>
+              </Link>
             )}
             <a
               href="https://instagram.com/ruadenatalitapevi"

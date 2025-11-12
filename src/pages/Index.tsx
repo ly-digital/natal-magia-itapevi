@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { AboutSection } from "@/components/AboutSection";
 import { InformationSection } from "@/components/InformationSection";
-import { CalendarSection } from "@/components/CalendarSection";
+
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -12,7 +12,7 @@ const Index = () => {
       <HeroCarousel />
       <AboutSection />
       <InformationSection />
-      <CalendarSection />
+      
       <Footer />
     </div>
   );
