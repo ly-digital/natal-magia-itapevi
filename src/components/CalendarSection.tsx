@@ -42,9 +42,9 @@ export const CalendarSection = () => {
   ];
 
   const timeSlots = [
-    { id: "morning", label: "Manhã (06:00-12:00)", start: 6, end: 12 },
-    { id: "afternoon", label: "Tarde (12:00-18:00)", start: 12, end: 18 },
-    { id: "evening", label: "Noite (18:00-00:00)", start: 18, end: 24 },
+    { id: "18:00", label: "18h" },
+    { id: "19:00", label: "19h" },
+    { id: "21:00", label: "21h" },
   ];
 
   // Função para verificar se evento já passou
