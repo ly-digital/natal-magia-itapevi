@@ -8,100 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "@/components/icons/CustomIcons";
-import evento1 from "@/assets/evento-1.png";
-import evento2 from "@/assets/evento-2.png";
-import evento3 from "@/assets/evento-3.png";
-import evento4 from "@/assets/evento-4.png";
-import evento6 from "@/assets/evento-6.png";
-import evento7 from "@/assets/evento-7.png";
-import evento8 from "@/assets/evento-8.png";
-
-// Estrutura de dados dos eventos (mesma do CalendarSection)
-const attractions = [
-  {
-    id: 1,
-    name: "Paradinha de Natal",
-    date: "2025-11-04",
-    time: "19:00",
-    type: "paradinha",
-    synopsis:
-      "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
-    location: "Praça 18 de Fevereiro",
-    hasLibras: true,
-    image: evento1,
-  },
-  {
-    id: 2,
-    name: "Espetáculo de Luzes",
-    date: "2025-12-06",
-    time: "20:30",
-    type: "teatro",
-    synopsis:
-      "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
-    location: "Rua Leopoldina de Camargo, 260",
-    hasLibras: false,
-    image: evento2,
-  },
-  {
-    id: 3,
-    name: "O Príncipe da Paz",
-    date: "2025-12-07",
-    time: "19:30",
-    type: "teatro",
-    synopsis: "Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.",
-    location: "Rua Leopoldina de Camargo, 260",
-    hasLibras: true,
-    image: evento3,
-  },
-  {
-    id: 4,
-    name: "Visita ao Papai Noel",
-    date: "2025-12-08",
-    time: "18:00",
-    type: "papainoel",
-    synopsis:
-      "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
-    location: "Praça 18 de Fevereiro",
-    hasLibras: false,
-    image: evento4,
-  },
-  {
-    id: 5,
-    name: "Concerto de Natal",
-    date: "2025-12-10",
-    time: "20:00",
-    type: "musica",
-    synopsis: "Apresentação musical com canções natalinas interpretadas por artistas locais.",
-    location: "Rua Leopoldina de Camargo, 260",
-    hasLibras: true,
-    image: evento6,
-  },
-  {
-    id: 6,
-    name: "Batalha de Bonecos de Neve",
-    date: "2025-11-01",
-    time: "07:00",
-    type: "circo",
-    synopsis:
-      "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
-    location: "",
-    hasLibras: false,
-    image: evento7,
-  },
-  {
-    id: 7,
-    name: "A Dança dos Brinquedos",
-    date: "2025-12-24",
-    time: "15:00",
-    type: "danca",
-    synopsis:
-      "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
-    location: "",
-    hasLibras: true,
-    image: evento8,
-  },
-];
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon, EspetaculoDeLuzesIcon } from "@/components/icons/CustomIcons";
+import { events } from "@/data/events";
 
 const languageIcons = {
   musica: Music,
@@ -109,7 +17,8 @@ const languageIcons = {
   danca: BalletDancer,
   circo: CircusTent,
   papainoel: SantaHat,
-  paradinha: Bus,
+  paradinha: ParadinhaIcon,
+  espetaculodeluzes: EspetaculoDeLuzesIcon,
 };
 
 const types = [
@@ -122,9 +31,9 @@ const types = [
 ];
 
 const timeSlots = [
-  { id: "morning", label: "Manhã (06:00-12:00)", start: 6, end: 12 },
-  { id: "afternoon", label: "Tarde (12:00-18:00)", start: 12, end: 18 },
-  { id: "evening", label: "Noite (18:00-00:00)", start: 18, end: 24 },
+  { id: "18:00", label: "18h" },
+  { id: "19:00", label: "19h" },
+  { id: "21:00", label: "21h" },
 ];
 
 const ProgramacaoCompleta = () => {
@@ -155,7 +64,7 @@ const ProgramacaoCompleta = () => {
 
   // Filtra e ordena eventos
   const filteredAttractions = useMemo(() => {
-    let filtered = attractions.filter((attraction) => {
+    let filtered = events.filter((attraction) => {
       // Filtro de data
       if (selectedDate !== "all" && attraction.date !== selectedDate) return false;
 
@@ -164,11 +73,7 @@ const ProgramacaoCompleta = () => {
 
       // Filtro de horário
       if (selectedTime !== "all") {
-        const timeSlot = timeSlots.find((t) => t.id === selectedTime);
-        if (timeSlot) {
-          const eventHour = parseInt(attraction.time.split(":")[0]);
-          if (eventHour < timeSlot.start || eventHour >= timeSlot.end) return false;
-        }
+        if (attraction.time !== selectedTime) return false;
       }
 
       return true;
@@ -197,7 +102,7 @@ const ProgramacaoCompleta = () => {
 
   // Gera lista única de datas
   const availableDates = useMemo(() => {
-    const dates = [...new Set(attractions.map((a) => a.date))].sort();
+    const dates = [...new Set(events.map((a) => a.date))].sort();
     return dates;
   }, []);
 
@@ -206,7 +111,7 @@ const ProgramacaoCompleta = () => {
     if (selectedDate === "all") {
       // Pega a data mais próxima futura
       const now = new Date();
-      const futureEvents = attractions.filter((a) => {
+      const futureEvents = events.filter((a) => {
         const eventDate = new Date(`${a.date}T${a.time}`);
         return eventDate >= now;
       });
@@ -216,11 +121,11 @@ const ProgramacaoCompleta = () => {
           const dateB = new Date(`${b.date}T${b.time}`);
           return dateA.getTime() - dateB.getTime();
         })[0].date;
-        return attractions.filter((a) => a.date === nextDate).slice(0, 5);
+        return events.filter((a) => a.date === nextDate).slice(0, 5);
       }
       return [];
     }
-    return attractions.filter((a) => a.date === selectedDate).slice(0, 5);
+    return events.filter((a) => a.date === selectedDate).slice(0, 5);
   }, [selectedDate]);
 
   // Formata data para exibição
