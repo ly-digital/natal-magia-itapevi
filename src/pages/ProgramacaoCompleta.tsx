@@ -28,6 +28,7 @@ const types = [
   { id: "circo", label: "Circo", icon: CircusTent },
   { id: "papainoel", label: "Papai Noel", icon: SantaHat },
   { id: "paradinha", label: "Paradinha", icon: ParadinhaIcon },
+  { id: "espetaculodeluzes", label: "Espetáculo de Luzes", icon: EspetaculoDeLuzesIcon },
 ];
 
 const timeSlots = [
@@ -141,7 +142,7 @@ const ProgramacaoCompleta = () => {
       <main className="container mx-auto px-4 pt-40 pb-12 md:pt-32 md:pb-16">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Navegação Lateral - Fixa no scroll */}
-          <aside className="lg:w-80 lg:sticky lg:top-24 lg:self-start space-y-6">
+          <aside className="lg:w-80 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto space-y-6">
             {/* Eventos do Dia */}
             {eventsOfSelectedDay.length > 0 && (
               <Card className="bg-[#004731] border-white/20 overflow-hidden">
