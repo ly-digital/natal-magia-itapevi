@@ -7,7 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, Star, Languages, Share2 } from "lucide-react";
 import { Music, Theater, Bus } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon, EspetaculoDeLuzesIcon } from "@/components/icons/CustomIcons";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "@/components/icons/CustomIcons";
+import { EspetaculoDeLuzesIcon } from "@/components/icons/EspetaculoDeLuzesIcon";
 import { events } from "@/data/events";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
@@ -16,106 +17,6 @@ import evento4 from "@/assets/evento-4.png";
 import evento6 from "@/assets/evento-6.png";
 import evento7 from "@/assets/evento-7.png";
 import evento8 from "@/assets/evento-8.png";
-
-// Mock data - replace with real data
-const events = [
-  {
-    id: "1",
-    name: "Paradinha de Natal",
-    date: "04/11/2025",
-    time: "19:00",
-    type: "paradinha",
-    description:
-      "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
-    fullDescription:
-      "Um cortejo cheio de brilho e alegria que parte da Praça 18 de Fevereiro, percorre o novo calçadão e convida o público a se juntar para realizar o acendimento da Rua no Espetáculo de Luzes. É um desfile mágico com personagens natalinos pelas ruas, trazendo alegria e encantamento para toda a família.",
-    location: "Praça 18 de Fevereiro",
-    image: evento1,
-    accessibility: "Acessível com libras",
-  },
-  {
-    id: "2",
-    name: "Espetáculo de Luzes",
-    date: "06/12/2025",
-    time: "20:30",
-    type: "teatro",
-    description:
-      "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
-    fullDescription:
-      "Esta apresentação luminosa transforma a Rua Leopoldina de Camargo em um cenário mágico de Natal, com efeitos especiais e música. É um show emocionante de luzes, apresentado diariamente, que celebra o acendimento da rua.",
-    location: "Rua Leopoldina de Camargo, 260",
-    image: evento2,
-    accessibility: "Acessível para todos",
-  },
-  {
-    id: "3",
-    name: "O Príncipe da Paz",
-    date: "07/12/2025",
-    time: "19:30",
-    type: "teatro",
-    description: "Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.",
-    fullDescription:
-      "Uma apresentação teatral emocionante e envolvente que conta a história do nascimento de Jesus. É um espetáculo que utiliza arte, dança e figurinos para recontar a tradicional história do Natal, com foco na mensagem de união e esperança.",
-    location: "Rua Leopoldina de Camargo, 260",
-    image: evento3,
-    accessibility: "Acessível com libras",
-  },
-  {
-    id: "4",
-    name: "Visita ao Papai Noel",
-    date: "08/12/2025",
-    time: "18:00",
-    type: "papainoel",
-    description:
-      "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
-    fullDescription:
-      "Encontro mágico com o Papai Noel para fotos e conversas especiais. O Papai Noel estará disponível na Praça 18 de Fevereiro para receber todas as famílias e ouvir os desejos de Natal das crianças.",
-    location: "Praça 18 de Fevereiro",
-    image: evento4,
-    accessibility: "Acessível para todos",
-  },
-  {
-    id: "5",
-    name: "Concerto de Natal",
-    date: "10/12/2025",
-    time: "20:00",
-    type: "musica",
-    description: "Apresentação musical com canções natalinas interpretadas por artistas locais.",
-    fullDescription:
-      "Um show com a participação de músicos e coralistas da região, que interpretam os grandes clássicos natalinos internacionais e brasileiros. É uma noite de harmonia e celebração para acender o espírito festivo através da música.",
-    location: "Rua Leopoldina de Camargo, 260",
-    image: evento6,
-    accessibility: "Acessível com libras",
-  },
-  {
-    id: "6",
-    name: "Batalha de Bonecos de Neve",
-    date: "01/11/2025",
-    time: "07:00",
-    type: "circo",
-    description:
-      "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
-    fullDescription:
-      "Dois palhaços, vestidos como os mais desajeitados bonecos de neve, se enfrentam em uma 'batalha' de malabarismos com pinos, aros e bolas de Natal. Este é um show de circo com foco em comédia física e interação com a plateia, garantindo muitas risadas para as crianças e os adultos. O final surpresa inclui uma 'nevasca' artificial no local do evento.",
-    location: "",
-    image: evento7,
-    accessibility: "Acessível para todos",
-  },
-  {
-    id: "7",
-    name: "A Dança dos Brinquedos",
-    date: "24/12/2025",
-    time: "15:00",
-    type: "danca",
-    description:
-      "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
-    fullDescription:
-      "Prepare-se para ser transportado para um mundo de fantasia. Esta performance de balé clássico e contemporâneo apresenta a história da Fada Açucarada e seus brinquedos de madeira, que executam coreografias complexas e delicadas. É um espetáculo de dança com figurinos exuberantes e trilha sonora natalina, ideal para todas as idades, celebrando a imaginação e a magia dos presentes.",
-    location: "",
-    image: evento8,
-    accessibility: "Acessível com libras",
-  },
-];
 
 const languageIcons = {
   musica: Music,
