@@ -127,6 +127,8 @@ export const ParadinhaIcon = ({ size = 24, color = "currentColor", className, ..
   </svg>
 );
 
+export { EspetaculoDeLuzesIcon } from './EspetaculoDeLuzesIcon';
+
 export const LibrasIcon = ({ size = 24, color = "currentColor", className, ...props }: LucideProps) => (
   <svg
     id="Camada_2"

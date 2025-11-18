@@ -7,8 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, Star, Languages, Share2 } from "lucide-react";
 import { Music, Theater, Bus } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "@/components/icons/CustomIcons";
-import { EspetaculoDeLuzesIcon } from "@/components/icons/EspetaculoDeLuzesIcon";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon, EspetaculoDeLuzesIcon } from "@/components/icons/CustomIcons";
 import { events } from "@/data/events";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
@@ -25,6 +24,7 @@ const languageIcons = {
   circo: CircusTent,
   papainoel: SantaHat,
   paradinha: Bus,
+  espetaculodeluzes: EspetaculoDeLuzesIcon,
 };
 
 const languageColors = {

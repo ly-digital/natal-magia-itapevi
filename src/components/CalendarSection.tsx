@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Music, Theater, Bus, Calendar as CalendarIcon, Clock, MapPin, Star } from "lucide-react";
-import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon } from "./icons/CustomIcons";
+import { BalletDancer, CircusTent, SantaHat, ParadinhaIcon, LibrasIcon, EspetaculoDeLuzesIcon } from "./icons/CustomIcons";
+import { events } from "@/data/events";
 import evento1 from "@/assets/evento-1.png";
 import evento2 from "@/assets/evento-2.png";
 import evento3 from "@/assets/evento-3.png";
@@ -14,88 +15,6 @@ import evento6 from "@/assets/evento-6.png";
 import evento7 from "@/assets/evento-7.png";
 import evento8 from "@/assets/evento-8.png";
 
-// Estrutura de dados dos eventos
-// Para adicionar eventos, edite o arquivo attractions-data.ts ou importe via CSV
-const attractions = [
-  {
-    id: 1,
-    name: "Paradinha de Natal",
-    date: "2025-11-04",
-    time: "19:00",
-    type: "paradinha",
-    synopsis: "Desfile mágico com personagens natalinos pelas ruas de Itapevi, trazendo alegria e encantamento para toda a família.",
-    location: "Praça 18 de Fevereiro",
-    hasLibras: true,
-    image: evento1,
-  },
-  {
-    id: 2,
-    name: "Espetáculo de Luzes",
-    date: "2025-12-06",
-    time: "20:30",
-    type: "teatro",
-    synopsis: "Apresentação luminosa que transforma a rua em um cenário mágico de Natal, com efeitos especiais e música.",
-    location: "Rua Leopoldina de Camargo, 260",
-    hasLibras: false,
-    image: evento2,
-  },
-  {
-    id: 3,
-    name: "O Príncipe da Paz",
-    date: "2025-12-07",
-    time: "19:30",
-    type: "teatro",
-    synopsis: "Espetáculo teatral que conta a história do nascimento de Jesus de forma emocionante e envolvente.",
-    location: "Rua Leopoldina de Camargo, 260",
-    hasLibras: true,
-    image: evento3,
-  },
-  {
-    id: 4,
-    name: "Visita ao Papai Noel",
-    date: "2025-12-08",
-    time: "18:00",
-    type: "papainoel",
-    synopsis: "Encontro especial com o Papai Noel, onde crianças podem tirar fotos e entregar suas cartinhas com pedidos de Natal.",
-    location: "Praça 18 de Fevereiro",
-    hasLibras: false,
-    image: evento4,
-  },
-  {
-    id: 5,
-    name: "Concerto de Natal",
-    date: "2025-12-10",
-    time: "20:00",
-    type: "musica",
-    synopsis: "Apresentação musical com canções natalinas interpretadas por artistas locais.",
-    location: "Rua Leopoldina de Camargo, 260",
-    hasLibras: true,
-    image: evento6,
-  },
-  {
-    id: 6,
-    name: "Batalha de Bonecos de Neve",
-    date: "2025-11-01",
-    time: "07:00",
-    type: "circo",
-    synopsis: "Uma apresentação de comédia e malabarismo com bonecos de neve brincalhões que disputam a atenção do público com travessuras hilárias.",
-    location: "",
-    hasLibras: false,
-    image: evento7,
-  },
-  {
-    id: 7,
-    name: "A Dança dos Brinquedos",
-    date: "2025-12-24",
-    time: "15:00",
-    type: "danca",
-    synopsis: "Um balé encantador onde os brinquedos de uma loja de Natal ganham vida magicamente ao soar da meia-noite.",
-    location: "",
-    hasLibras: true,
-    image: evento8,
-  },
-];
-
 const languageIcons = {
   musica: Music,
   teatro: Theater,
@@ -103,6 +22,7 @@ const languageIcons = {
   circo: CircusTent,
   papainoel: SantaHat,
   paradinha: ParadinhaIcon,
+  espetaculodeluzes: EspetaculoDeLuzesIcon,
 };
 
 export const CalendarSection = () => {
@@ -118,6 +38,7 @@ export const CalendarSection = () => {
     { id: "circo", label: "Circo" },
     { id: "papainoel", label: "Papai Noel" },
     { id: "paradinha", label: "Paradinha" },
+    { id: "espetaculodeluzes", label: "Espetáculo de Luzes" },
   ];
 
   const timeSlots = [
@@ -134,7 +55,7 @@ export const CalendarSection = () => {
 
   // Filtra e ordena eventos
   const filteredAttractions = useMemo(() => {
-    let filtered = attractions.filter((attraction) => {
+    let filtered = events.filter((attraction) => {
       const eventDateTime = new Date(`${attraction.date}T${attraction.time}`);
       const now = new Date();
       const isPast = eventDateTime < now;
@@ -151,11 +72,7 @@ export const CalendarSection = () => {
 
       // Filtro de horário
       if (selectedTime !== "all") {
-        const timeSlot = timeSlots.find((t) => t.id === selectedTime);
-        if (timeSlot) {
-          const eventHour = parseInt(attraction.time.split(":")[0]);
-          if (eventHour < timeSlot.start || eventHour >= timeSlot.end) return false;
-        }
+        if (attraction.time !== selectedTime) return false;
       }
 
       return true;
@@ -173,7 +90,7 @@ export const CalendarSection = () => {
 
   // Gera lista única de datas
   const availableDates = useMemo(() => {
-    const dates = [...new Set(attractions.map((a) => a.date))].sort();
+    const dates = [...new Set(events.map((a) => a.date))].sort();
     return dates;
   }, []);
 
@@ -242,7 +159,7 @@ export const CalendarSection = () => {
                 <SelectItem value="all">Todas as datas</SelectItem>
                 {availableDates.map((date) => (
                   <SelectItem key={date} value={date}>
-                    {formatDate(date)}
+                    {date}
                   </SelectItem>
                 ))}
               </SelectContent>
