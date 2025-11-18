@@ -48,7 +48,7 @@ const typeLabels = {
 
 export default function EventPage() {
   const { id } = useParams();
-  const event = events.find((e) => e.id === id);
+  const event = events.find((e) => e.id.toString() === id);
 
   // Scroll to top when page loads
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function EventPage() {
   }
 
   const Icon = languageIcons[event.type as keyof typeof languageIcons];
-  const sameDayEvents = events.filter((e) => e.id !== id && e.date === event.date);
+  const sameDayEvents = events.filter((e) => e.id.toString() !== id && e.date === event.date);
 
   // Get next day events
   const getNextDayEvents = () => {
@@ -79,7 +79,7 @@ export default function EventPage() {
     const nextDay = new Date(currentDate);
     nextDay.setDate(currentDate.getDate() + 1);
     const nextDayStr = `${String(nextDay.getDate()).padStart(2, "0")}/${String(nextDay.getMonth() + 1).padStart(2, "0")}`;
-    return events.filter((e) => e.id !== id && e.date === nextDayStr);
+    return events.filter((e) => e.id.toString() !== id && e.date === nextDayStr);
   };
 
   const nextDayEvents = getNextDayEvents();
@@ -143,7 +143,10 @@ export default function EventPage() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#fbc942] font-effloresce mb-4 leading-tight">
                     {event.name}
                   </h1>
-                  <p className="text-white/90 text-lg md:text-xl font-gabarito leading-relaxed">{event.description}</p>
+                  {event.cia && (
+                    <h3 className="text-2xl text-white/80 font-gabarito mb-4">{event.cia}</h3>
+                  )}
+                  <p className="text-white/90 text-lg md:text-xl font-gabarito leading-relaxed">{event.synopsis}</p>
                 </CardContent>
               </Card>
 
@@ -183,7 +186,7 @@ export default function EventPage() {
                       </div>
                     )}
 
-                    {event.accessibility?.includes("libras") && (
+                    {event.hasLibras && (
                       <div className="flex items-start gap-4 p-4 bg-[#006345] rounded-lg">
                         <div className="w-12 h-12 bg-[#fbc942] rounded-full flex items-center justify-center flex-shrink-0">
                           <LibrasIcon className="w-6 h-6 text-[#7a1c18]" />
@@ -213,7 +216,7 @@ export default function EventPage() {
                       if (navigator.share) {
                         navigator.share({
                           title: event.name,
-                          text: event.description,
+                          text: event.synopsis,
                           url: window.location.href,
                         });
                       }
