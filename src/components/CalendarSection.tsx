@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,6 +30,7 @@ export const CalendarSection = () => {
   const [selectedTime, setSelectedTime] = useState("all");
   const [selectedType, setSelectedType] = useState("");
   const [selectedPeriod, setSelectedPeriod] = useState("upcoming"); // "upcoming", "past", "all"
+  const [visibleCount, setVisibleCount] = useState(4); // Controla quantos eventos mostrar
 
   const types = [
     { id: "musica", label: "Música" },
@@ -93,6 +94,11 @@ export const CalendarSection = () => {
     const dates = [...new Set(events.map((a) => a.date))].sort();
     return dates;
   }, []);
+  
+  // Reseta o contador quando os filtros mudarem
+  useEffect(() => {
+    setVisibleCount(4);
+  }, [selectedDate, selectedTime, selectedType, selectedPeriod]);
 
   // Formata data para exibição
   const formatDate = (dateStr: string) => {
@@ -100,8 +106,16 @@ export const CalendarSection = () => {
     return `${day}/${month}/${year}`;
   };
 
-  // Limita para 4 eventos mais próximos na home
-  const displayedAttractions = filteredAttractions.slice(0, 4);
+  // Limita eventos baseado no estado visibleCount
+  const displayedAttractions = filteredAttractions.slice(0, visibleCount);
+  
+  // Função para carregar mais eventos
+  const loadMore = () => {
+    setVisibleCount(prev => prev + 4);
+  };
+  
+  // Verifica se há mais eventos para carregar
+  const hasMore = visibleCount < filteredAttractions.length;
 
   return (
     <section id="calendario" className="py-20 px-4 bg-[#006345]">
@@ -282,14 +296,14 @@ export const CalendarSection = () => {
           </p>
         )}
 
-        {filteredAttractions.length > 4 && (
+        {hasMore && (
           <div className="text-center mt-8">
-            <Link to="/programacao-completa">
-              <Button className="bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 hover:shadow-xl font-gabarito font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full transition-all">
-                <span className="hidden sm:inline">Ver Programação Completa ({filteredAttractions.length} eventos)</span>
-                <span className="sm:hidden">Ver Todos ({filteredAttractions.length})</span>
-              </Button>
-            </Link>
+            <Button 
+              onClick={loadMore}
+              className="bg-[#fbc942] text-[#7a1c18] hover:bg-[#fbc942]/90 hover:shadow-xl font-gabarito font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full transition-all"
+            >
+              Ver mais
+            </Button>
           </div>
         )}
       </div>
