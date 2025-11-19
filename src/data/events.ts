@@ -30,6 +30,7 @@ import mostraEscolaLivre from "@/assets/Mostra da Escola Livre.jpg";
 import aliferFerraz from "@/assets/Alifer Ferraz.jpg";
 import giancarllo from "@/assets/IMG_20251107_200248 - Giancarllo.jpg";
 import felipebarros from "@/assets/2023.12.23_D12_Rua_de_Natal_@FelipeBarrosPhotos-79.jpg";
+import ruadenatal25 from "@/assets/ruadenatal25.jpg";
 
 export interface Event {
   id: number;
@@ -797,7 +798,7 @@ export const events: Event[] = [
       "Neste show DKassia reverencia as mulheres do samba, apresentando um repertório com clássicos que vão desde a década de 80 e  até a atualidade.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: ,
+    image: ruadenatal25,
   },
   {
     id: 60,
@@ -937,7 +938,7 @@ export const events: Event[] = [
     time: "19:30",
     type: "danca",
     synopsis:
-      "O projeto "Espetáculo Encantos Amazônicos" tem como objetivo apresentar a cultura, ritmos, danças e coreografias da Amazônia, como carimbó, lundu marajoara, dança do boto, Pretinha da Angola e dança da sereia. Para isso, serão utilizadas indumentárias específicas para cada ritmo, e sonoplastia, a fim de envolver o público para participar junto com o grupo. O "Espetáculo Encantos Amazônicos" celebra a riqueza cultural e os encantos desta região, por meio da dança e contando com a participação do público.",
+      "O projeto \"Espetáculo Encantos Amazônicos\" tem como objetivo apresentar a cultura, ritmos, danças e coreografias da Amazônia, como carimbó, lundu marajoara, dança do boto, Pretinha da Angola e dança da sereia. Para isso, serão utilizadas indumentárias específicas para cada ritmo, e sonoplastia, a fim de envolver o público para participar junto com o grupo. O \"Espetáculo Encantos Amazônicos\" celebra a riqueza cultural e os encantos desta região, por meio da dança e contando com a participação do público.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: adriaFortes,
