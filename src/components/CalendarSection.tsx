@@ -159,7 +159,7 @@ export const CalendarSection = () => {
                 <SelectItem value="all">Todas as datas</SelectItem>
                 {availableDates.map((date) => (
                   <SelectItem key={date} value={date}>
-                    {date}
+                    {formatDate(date)}
                   </SelectItem>
                 ))}
               </SelectContent>
