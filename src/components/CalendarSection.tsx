@@ -96,8 +96,8 @@ export const CalendarSection = () => {
 
   // Formata data para exibição
   const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
+    const [year, month, day] = dateStr.split('-');
+    return `${day}/${month}/${year}`;
   };
 
   // Limita para 4 eventos mais próximos na home
