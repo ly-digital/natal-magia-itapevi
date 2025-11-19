@@ -1,7 +1,7 @@
 // Event types and data structure for Rua de Natal events
-import paradinhaNatal from "@/assets/paradinha da rua de natal.jpg";
-import espetaculoLuzes from "@/assets/espetáculo de luzes.jpg";
-import chegadaPapaiNoel from "@/assets/chegada do papai noel.jpg";
+import paradinhaNatal from "@/assets/paradinha-natal.jpg";
+import espetaculoLuzes from "@/assets/espetaculo-luzes.jpg";
+import chegadaPapaiNoel from "@/assets/chegada-papai-noel.jpg";
 import circoSoLadies from "@/assets/CréditoSissyEiko_Estupendo02jpg - Circo di SóLadies e Nem SóLadies também!.jpg";
 import marceloNakamura from "@/assets/AP1-1172-ts1759505840 - Marcelo Nakamura.jpg";
 import anjosLibertacao from "@/assets/IMG_6018 - Celso Figueiredo.jpg";
