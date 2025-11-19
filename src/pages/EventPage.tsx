@@ -160,7 +160,11 @@ export default function EventPage() {
                       </div>
                       <div>
                         <p className="text-white/70 text-sm font-gabarito">Data</p>
-                        <p className="text-white font-bold text-lg font-gabarito">{event.date}</p>
+                        <p className="text-white font-bold text-lg font-gabarito">
+                          {event.date.includes('-') 
+                            ? event.date.split('-').reverse().join('/').replace(/^(\d{4})\/(\d{2})\/(\d{2})$/, '$3/$2/$1')
+                            : event.date}
+                        </p>
                       </div>
                     </div>
 
@@ -243,12 +247,12 @@ export default function EventPage() {
                   <CardHeader className="bg-[#006345] border-b border-white/10">
                     <CardTitle className="text-xl font-effloresce text-[#fbc942]">Eventos no mesmo dia</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-4 space-y-3">
+                  <CardContent className="p-4 space-y-4">
                     {sameDayEvents.map((sameDayEvent) => {
                       const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
                       return (
                         <Link key={sameDayEvent.id} to={`/evento/${sameDayEvent.id}`}>
-                          <div className="p-3 bg-[#006345] rounded-lg cursor-pointer">
+                          <div className="p-4 bg-[#006345] rounded-lg cursor-pointer hover:bg-[#007a52] transition-colors">
                             <div className="flex gap-3 items-start">
                               <div className="w-10 h-10 bg-[#fbc942] rounded-lg flex items-center justify-center flex-shrink-0">
                                 {SameDayIcon && <SameDayIcon className="w-5 h-5 text-[#7a1c18]" />}
@@ -274,12 +278,12 @@ export default function EventPage() {
                   <CardHeader className="bg-[#006345] border-b border-white/10">
                     <CardTitle className="text-xl font-effloresce text-[#fbc942]">Próximos eventos</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-4 space-y-3">
+                  <CardContent className="p-4 space-y-4">
                     {nextDayEvents.map((nextEvent) => {
                       const NextIcon = languageIcons[nextEvent.type as keyof typeof languageIcons];
                       return (
                         <Link key={nextEvent.id} to={`/evento/${nextEvent.id}`}>
-                          <div className="p-3 bg-[#006345] hover:bg-[#fbc942] rounded-lg transition-all hover:shadow-lg cursor-pointer group">
+                          <div className="p-4 bg-[#006345] hover:bg-[#fbc942] rounded-lg transition-all hover:shadow-lg cursor-pointer group">
                             <div className="flex gap-3 items-start">
                               <div className="w-10 h-10 bg-[#fbc942] group-hover:bg-[#7a1c18] rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
                                 {NextIcon && <NextIcon className="w-5 h-5 text-[#7a1c18] group-hover:text-white" />}
