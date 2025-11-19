@@ -736,7 +736,7 @@ export const events: Event[] = [
     image: nataliaSantos,
   },
   {
-    id: 49,
+    id: 55,
     name: "Paradinha da Rua de Natal",
     cia: "",
     date: "2025-12-21",
@@ -749,7 +749,7 @@ export const events: Event[] = [
     image: paradinhaNatal,
   },
   {
-    id: 50,
+    id: 56,
     name: "Espetáculo de Luzes",
     cia: "",
     date: "2025-12-21",
@@ -762,7 +762,7 @@ export const events: Event[] = [
     image: espetaculoLuzes,
   },
   {
-    id: 51,
+    id: 57,
     name: "Chegada do Papai Noel",
     cia: "",
     date: "2025-12-21",
