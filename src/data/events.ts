@@ -411,16 +411,16 @@ export const events: Event[] = [
   },
   {
     id: 30,
-    name: "Chegada do Papai Noel",
-    cia: "",
-    date: "2025-12-10",
-    time: "19:00",
-    type: "papainoel",
+    name: "Lechuga Circus",
+    cia: "Cia Tramp de Palhaços",
+    date: "2025-12-13",
+    time: "19:30",
+    type: "circo",
     synopsis:
-      "A Chegada do Papai Noel é o ponto alto das noites da Rua de Natal de Itapevi, e acontece logo após o Espetáculo de Luzes. O bom velhinho surge em meio ao brilho das luzes e à música, saudando o público. Após sua chegada, é oficialmente aberta a Vila do Natal — um espaço especialmente preparado para receber as crianças que desejam tirar fotos, entregar suas cartinhas e viver de perto a magia do Natal.",
+      "Chega o circo na cidade e quatro funcionários começam a preparar o picadeiro para o espetáculo. Ao encontrarem um baú, se divertem com as magníficas situações que aparecem a partir dos objetos guardados nele, realizando assim o sonho de poderem fazer parte deste fantástico mundo dos espetáculos circenses.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: chegadaPapaiNoel,
+    image: luanSilva,
   },
   {
     id: 31,
