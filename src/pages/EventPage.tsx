@@ -247,7 +247,7 @@ export default function EventPage() {
                   <CardHeader className="bg-[#006345] border-b border-white/10">
                     <CardTitle className="text-xl font-effloresce text-[#fbc942]">Eventos no mesmo dia</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 space-y-6">
+                  <CardContent className="p-6 space-y-8">
                     {sameDayEvents.map((sameDayEvent) => {
                       const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
                       return (
@@ -278,7 +278,7 @@ export default function EventPage() {
                   <CardHeader className="bg-[#006345] border-b border-white/10">
                     <CardTitle className="text-xl font-effloresce text-[#fbc942]">Próximos eventos</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 space-y-6">
+                  <CardContent className="p-6 space-y-8">
                     {nextDayEvents.map((nextEvent) => {
                       const NextIcon = languageIcons[nextEvent.type as keyof typeof languageIcons];
                       return (
