@@ -99,12 +99,21 @@ export default function EventPage() {
 
       <main className="pt-20 md:pt-24 pb-16">
         {/* Hero Section with Image */}
-        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30">
           {event.image ? (
-            <img src={event.image} alt={event.name} className="w-full h-full object-cover" />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30 flex items-center justify-center">
-              {Icon && <Icon className="w-32 h-32 md:w-48 md:h-48 text-[#fbc942]/60" />}
+            <img 
+              src={event.image} 
+              alt={event.name} 
+              className="w-full h-full object-cover" 
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+              loading="eager"
+            />
+          ) : null}
+          {(!event.image) && Icon && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Icon className="w-32 h-32 md:w-48 md:h-48 text-[#fbc942]/60" />
             </div>
           )}
 

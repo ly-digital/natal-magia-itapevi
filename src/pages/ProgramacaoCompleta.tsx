@@ -279,15 +279,20 @@ const ProgramacaoCompleta = () => {
                   <Link key={attraction.id} to={`/evento/${attraction.id}`}>
                     <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 cursor-pointer h-full bg-[#004731] backdrop-blur-sm border-2 border-white/20 hover:border-[#fbc942] rounded-2xl">
                       {/* Imagem ou placeholder */}
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30">
                         {attraction.image ? (
                           <img
                             src={attraction.image}
                             alt={attraction.name}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                            loading="eager"
                           />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-[#fbc942]/30 to-[#7a1c18]/30 flex items-center justify-center">
+                        ) : null}
+                        {!attraction.image && (
+                          <div className="absolute inset-0 flex items-center justify-center">
                             <Icon className="w-20 h-20 text-[#fbc942]/60" />
                           </div>
                         )}
