@@ -73,18 +73,12 @@ export default function EventPage() {
   const Icon = languageIcons[event.type as keyof typeof languageIcons];
   const sameDayEvents = events.filter((e) => e.id.toString() !== id && e.date === event.date);
 
-  // Format date to dd/mm/yyyy
-  const formatDate = (dateStr: string) => {
-    const [year, month, day] = dateStr.split('-');
-    return `${day}/${month}/${year}`;
-  };
-
   // Get next day events
   const getNextDayEvents = () => {
-    const currentDate = new Date(event.date);
+    const currentDate = new Date(event.date.split("/").reverse().join("-"));
     const nextDay = new Date(currentDate);
     nextDay.setDate(currentDate.getDate() + 1);
-    const nextDayStr = nextDay.toISOString().split('T')[0];
+    const nextDayStr = `${String(nextDay.getDate()).padStart(2, "0")}/${String(nextDay.getMonth() + 1).padStart(2, "0")}`;
     return events.filter((e) => e.id.toString() !== id && e.date === nextDayStr);
   };
 
@@ -166,7 +160,7 @@ export default function EventPage() {
                       </div>
                       <div>
                         <p className="text-white/70 text-sm font-gabarito">Data</p>
-                        <p className="text-white font-bold text-lg font-gabarito">{formatDate(event.date)}</p>
+                        <p className="text-white font-bold text-lg font-gabarito">{event.date}</p>
                       </div>
                     </div>
 
@@ -249,7 +243,7 @@ export default function EventPage() {
                   <CardHeader className="bg-[#006345] border-b border-white/10">
                     <CardTitle className="text-xl font-effloresce text-[#fbc942]">Eventos no mesmo dia</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-4 space-y-4">
+                  <CardContent className="p-4 space-y-3">
                     {sameDayEvents.map((sameDayEvent) => {
                       const SameDayIcon = languageIcons[sameDayEvent.type as keyof typeof languageIcons];
                       return (
