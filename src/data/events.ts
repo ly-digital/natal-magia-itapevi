@@ -53,7 +53,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      '<p>Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia.</p><p>Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs".</p>',
+      'Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs". ',
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -66,7 +66,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -118,7 +118,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -144,7 +144,7 @@ export const events: Event[] = [
     time: "19:30",
     type: "danca",
     synopsis:
-      "<p>A apresentação de dança interativa convida o público a viver a atmosfera divertida e contagiante, inspirada no programa da TV norte-americana “Soul Train”, veiculado no canal CBS a partir de 1971. Os dançarinos promovem uma grande improvisação de movimentos e passos, resgatando a essência dos bailes e das “social dances” da década de 60 até os dias atuais.</p><p>No repertório de passos e sons, o público faz uma viagem por estilos como “cyphers” de improviso, “lines” de passos marcados, e “pocket shows”, que são performances sincronizadas. Tudo com a trilha sonora de grandes sucessos de James Brown, Aretha Franklin, Tim Maia, Sandra de Sá, entre outros.</p>",
+      "A apresentação de dança interativa convida o público a viver a atmosfera divertida e contagiante, inspirada no programa da TV norte-americana “Soul Train”, veiculado no canal CBS a partir de 1971. Os dançarinos promovem uma grande improvisação de movimentos e passos, resgatando a essência dos bailes e das “social dances” da década de 60 até os dias atuais. No repertório de passos e sons, o público faz uma viagem por estilos como “cyphers” de improviso, “lines” de passos marcados, e “pocket shows”, que são performances sincronizadas. Tudo com a trilha sonora de grandes sucessos de James Brown, Aretha Franklin, Tim Maia, Sandra de Sá, entre outros. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: toolsProdutora3,
@@ -183,7 +183,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      '<p>Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia.</p><p>Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs".</p>',
+      'Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs". ',
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -196,7 +196,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -248,7 +248,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -261,7 +261,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -274,7 +274,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -287,7 +287,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -313,7 +313,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      '<p>Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia.</p><p>Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs".</p>',
+      'Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs". ',
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -326,7 +326,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
@@ -378,7 +378,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      '<p>Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia.</p><p>Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs".</p>',
+      'Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance  "O Despertar das Guardiãs". ',
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -391,7 +391,7 @@ export const events: Event[] = [
     time: "19:00",
     type: "espetaculodeluzes",
     synopsis:
-      "<p>Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto.</p><p>Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal.</p>",
+      "Diariamente a Rua de Natal ganha vida com vida com o Espetáculo de Luzes. A experiência imersiva e emocionante, transforma a rua em um cenário iluminado e repleto de encanto. Em 2025 quem conta essa história são as Guardiãs do Natal.  Elas convidam o público a embarcar nessa aventura até o grande momento do acendimento da Rua de Natal. ",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: espetaculoLuzes,
