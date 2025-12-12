@@ -1,7 +1,7 @@
 // Event types and data structure for Rua de Natal events
-import paradinhaNatal from "@/assets/paradinha-natal.jpg";
-import espetaculoLuzes from "@/assets/espetaculo-luzes.jpg";
-import chegadaPapaiNoel from "@/assets/chegada-papai-noel.jpg";
+import paradinhaNatal from "@/assets/paradinha-12-12.jpeg";
+import espetaculoLuzes from "@/assets/espetaculo-de-luzes-12-12.jpeg";
+import chegadaPapaiNoel from "@/assets/papai-noel-12-12.jpeg";
 import circoSoLadies from "@/assets/circo-soladies.jpg";
 import marceloNakamura from "@/assets/marcelo-nakamura.jpg";
 import anjosLibertacao from "@/assets/celso-figueiredo.jpg";
@@ -31,6 +31,8 @@ import aliferFerraz from "@/assets/alifer-ferraz.jpg";
 import giancarllo from "@/assets/giancarllo.jpg";
 import felipebarros from "@/assets/felipe-barros.jpg";
 import ruadenatal25 from "@/assets/ruadenatal25.jpg";
+import dkassia from "@/assets/dkassia-12-12.jpeg";
+import hojeTem from "@/assets/hoje-tem-espetaculo-12-12.jpeg";
 
 export interface Event {
   id: number;
@@ -798,7 +800,7 @@ export const events: Event[] = [
       "Neste show DKassia reverencia as mulheres do samba, apresentando um repertório com clássicos que vão desde a década de 80 e  até a atualidade.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: ruadenatal25,
+    image: dkassia,
   },
   {
     id: 60,
@@ -889,7 +891,7 @@ export const events: Event[] = [
       "Hoje Têm Espetáculo! é um show de variedades circenses com apresentações de Malabarismo, Bambolê, Acrobacia cômicas, Trapézio e a presença inigualavel de Mixuruca: o palhaço musical, que, com objetos inusitados como garrafas, serrote, e sinos, faz com que o público seja parte de uma grande orquestra.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: felipebarros,
+    image: hojeTem,
   },
   {
     id: 67,
