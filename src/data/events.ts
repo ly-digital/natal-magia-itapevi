@@ -623,8 +623,8 @@ export const events: Event[] = [
   },
   {
     id: 46,
-    name: "1, 2, 3 S.O.M.E - Espetáculo de Magia Espetácular",
-    cia: "Núcleo Bassusseder",
+    name: "A RODA",
+    cia: "",
     date: "2025-12-19",
     time: "19:30",
     type: "circo",
@@ -941,7 +941,7 @@ export const events: Event[] = [
     time: "19:30",
     type: "danca",
     synopsis:
-      "O projeto \"Espetáculo Encantos Amazônicos\" tem como objetivo apresentar a cultura, ritmos, danças e coreografias da Amazônia, como carimbó, lundu marajoara, dança do boto, Pretinha da Angola e dança da sereia. Para isso, serão utilizadas indumentárias específicas para cada ritmo, e sonoplastia, a fim de envolver o público para participar junto com o grupo. O \"Espetáculo Encantos Amazônicos\" celebra a riqueza cultural e os encantos desta região, por meio da dança e contando com a participação do público.",
+      'O projeto "Espetáculo Encantos Amazônicos" tem como objetivo apresentar a cultura, ritmos, danças e coreografias da Amazônia, como carimbó, lundu marajoara, dança do boto, Pretinha da Angola e dança da sereia. Para isso, serão utilizadas indumentárias específicas para cada ritmo, e sonoplastia, a fim de envolver o público para participar junto com o grupo. O "Espetáculo Encantos Amazônicos" celebra a riqueza cultural e os encantos desta região, por meio da dança e contando com a participação do público.',
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: adriaFortes,
