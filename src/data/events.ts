@@ -629,7 +629,7 @@ export const events: Event[] = [
     time: "19:30",
     type: "circo",
     synopsis:
-      "Um pretenso “mestre da magia” realiza as mágicas, mas elas não saem da maneira como ele espera, o que é pra desaparecer se multiplica, a água que parecia ter acabado jorra sem explicação da garrafa. Tudo isso com a relação dos palhaços que interagem diretamente com o público.",
+      'Dois palhaços anunciam um espetáculo de variedades artísticas: músicas, poesias, mágicas, danças... Aos poucos, os curiosos se aproximam e, sem saber, estão formando o que será o verdadeiro espetáculo: Roda SARAU - Um espetáculo inacabado de artistas imperfeitos!\n\nOs palhaços Adão (Paulo Federal) e Gastão (Danilo Dal Farra) são dois artistas mambembes que apresentam números artísticos em uma Roda de rua. Entre sucessos e fracassos, passeiam por várias formas de arte. Logo constatam que esse espetáculo precisa de mais artistas e, em busca de novos talentos, convidam o público a se expressar artisticamente. Passam então a instigar a plateia a experimentar esse abismo divino da expressão artística.\n\nO risco, o momento presente, os prêmios e a oportunidade de ser artista de si mesmo.\n\nO Caldeirão está formado! Entre artistas profissionais, de rua, ocasionais, de banheiro ou simplesmente de "cara de pau" mesmo, os dois palhaços se lambuzam em talentos, simplicidade e espontaneidade dessas pessoas comuns, distantes de qualquer glória. São esses, os verdadeiros artistas, que surgem para nos ensinar tanto e fazer com que sempre aconteça mais uma Roda.',
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: aRoda,
