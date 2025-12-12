@@ -33,6 +33,7 @@ import felipebarros from "@/assets/felipe-barros.jpg";
 import ruadenatal25 from "@/assets/ruadenatal25.jpg";
 import dkassia from "@/assets/dkassia-12-12.jpeg";
 import hojeTem from "@/assets/hoje-tem-espetaculo-12-12.jpeg";
+import aRoda from "@/assets/a-roda-12-12.jpeg";
 
 export interface Event {
   id: number;
@@ -631,7 +632,7 @@ export const events: Event[] = [
       "Um pretenso “mestre da magia” realiza as mágicas, mas elas não saem da maneira como ele espera, o que é pra desaparecer se multiplica, a água que parecia ter acabado jorra sem explicação da garrafa. Tudo isso com a relação dos palhaços que interagem diretamente com o público.",
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
-    image: leandroGodoi,
+    image: aRoda,
   },
   {
     id: 47,
