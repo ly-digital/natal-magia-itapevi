@@ -590,7 +590,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      "Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance 'O Despertar das Guardiãs'.",
+      "Um dos sucessos desta edição é a Paradinha da Rua de Natal, que tem início na Praça 18 de Fevereiro, segue pelo calçadão revitalizado e chega à Praça Carlos de Castro. Após o cortejo, personagens, artistas circenses e músicos retornam para a Rua de Natal, onde o público acompanha o Espetáculo de Luzes e a chegada do Papai Noel.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -668,7 +668,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      "Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance 'O Despertar das Guardiãs'.",
+      "Um dos sucessos desta edição é a Paradinha da Rua de Natal, que tem início na Praça 18 de Fevereiro, segue pelo calçadão revitalizado e chega à Praça Carlos de Castro. Após o cortejo, personagens, artistas circenses e músicos retornam para a Rua de Natal, onde o público acompanha o Espetáculo de Luzes e a chegada do Papai Noel.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -746,7 +746,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      "Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance 'O Despertar das Guardiãs'.",
+      "Um dos sucessos desta edição é a Paradinha da Rua de Natal, que tem início na Praça 18 de Fevereiro, segue pelo calçadão revitalizado e chega à Praça Carlos de Castro. Após o cortejo, personagens, artistas circenses e músicos retornam para a Rua de Natal, onde o público acompanha o Espetáculo de Luzes e a chegada do Papai Noel.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -824,7 +824,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      "Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance 'O Despertar das Guardiãs'.",
+      "Um dos sucessos desta edição é a Paradinha da Rua de Natal, que tem início na Praça 18 de Fevereiro, segue pelo calçadão revitalizado e chega à Praça Carlos de Castro. Após o cortejo, personagens, artistas circenses e músicos retornam para a Rua de Natal, onde o público acompanha o Espetáculo de Luzes e a chegada do Papai Noel.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
@@ -902,7 +902,7 @@ export const events: Event[] = [
     time: "18:00",
     type: "paradinha",
     synopsis:
-      "Com muita música, brilho e alegria, a Paradinha da Rua de Natal abre o caminho da festa! Este ano, quem conduz o cortejo são as Guardiãs do Natal — Coralina, Bravalina, Risinho e Uny. Juntas, elas lideram o desfile pelas ruas do centro de Itapevi espalhando a magia. Colorida e vibrante, a paradinha tem início na Praça 18 de Fevereiro e convida o público a seguir junto até a Rua de Natal, para a realização do Espetáculo de Luzes. Nesses dias especiais, após o acendimento da rua, as Guardiãs sobem ao palco para a performance 'O Despertar das Guardiãs'.",
+      "Um dos sucessos desta edição é a Paradinha da Rua de Natal, que tem início na Praça 18 de Fevereiro, segue pelo calçadão revitalizado e chega à Praça Carlos de Castro. Após o cortejo, personagens, artistas circenses e músicos retornam para a Rua de Natal, onde o público acompanha o Espetáculo de Luzes e a chegada do Papai Noel.",
     location: "Praça 18 de Fevereiro",
     hasLibras: true,
     image: paradinhaNatal,
