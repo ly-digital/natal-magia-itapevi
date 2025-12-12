@@ -34,6 +34,7 @@ import ruadenatal25 from "@/assets/ruadenatal25.jpg";
 import dkassia from "@/assets/dkassia-12-12.jpeg";
 import hojeTem from "@/assets/hoje-tem-espetaculo-12-12.jpeg";
 import aRoda from "@/assets/a-roda-12-12.jpeg";
+import casaKlandestina from "@/assets/casa-de-klandestina-12-12.jpeg";
 
 export interface Event {
   id: number;
@@ -958,5 +959,18 @@ export const events: Event[] = [
     location: "Rua Leopoldina de Camargo, 260",
     hasLibras: true,
     image: alexAllan,
+  },
+  {
+    id: 72,
+    name: "Casa de KLANDESTINA",
+    cia: "",
+    date: "2025-12-12",
+    time: "21:00",
+    type: "danca",
+    synopsis:
+      "Em um território onde cada esquina é uma distorção do que parece a realidade, apenas as Klandestinas sabem driblar as armadilhas. Klandestinas são pessoas que negam: negam se moldar as normas contraditórias de quem impõe, negam calar-se quando tentam tirar sua voz e negam ser coniventes com as violencias do sistema. A Casa de Klandestina é um lugar onde as vozes revolucionárias se encontram, para atraves do movimento dos bailes abrirem caminho para sua comunidade. Usando a tecnologia ancestral da Ballroom, as Klandestinas chegam ganhando todes com sua energia, paixão e força, contagiando todo espaço ao seu redor. Como um mergulho nas profundezas das festas mais contagiantes e brilhantes que ja se viu, o baile das Klandestinas abre o caminho.",
+    location: "Rua Leopoldina de Camargo, 260",
+    hasLibras: true,
+    image: casaKlandestina,
   },
 ];
